@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>{$Think.config.sitename}</title>
+
+  <link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin_style.css" />
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/blue.css" />
+
+</head>
+<body class="right_body">
+  <div class="body">
+    <div class="top_subnav">{$Think.config.sitename} ＞ 系统设置</div>
+
+    <form method="post" id="form1" action="__URL__/update/" class="form-horizontal pageForm required-validate">
+      <input type="hidden" name="a_id" value="{$vo.a_id}" /> 
+      <fieldset>
+        <legend>系统设置</legend>
+
+        <div class="control-group">
+          <label class="control-label">网站名称：</label>
+          <div class="controls">
+            <input type="text" name="site_name" value="<?php echo C('site_name');?>" class="input_text required"></div>
+        </div> 
+		
+		
+		<div class="control-group">
+          <label class="control-label">网站标题：</label>
+          <div class="controls">
+            <input type="text" name="site_title" value="<?php echo C('site_title');?>" class="input_text required"></div>
+        </div> 
+
+
+
+		<div class="control-group">
+          <label class="control-label">机器人名称：</label>
+          <div class="controls">
+            <input type="text" name="site_my" value="<?php echo C('site_my');?>" class="input_text required"></div>
+        </div>
+		
+
+		<div class="control-group">
+          <label class="control-label">顶级域名：</label>
+          <div class="controls">
+            <input type="text" name="server_topdomain" value="<?php echo C('server_topdomain');?>" class="input_text required"></div>
+        </div>
+
+
+		<div class="control-group">
+          <label class="control-label">用户请求数超出提示：</label>
+          <div class="controls">
+            <input type="text" name="connectout" value="<?php echo C('connectout');?>" class="input_text required"></div>
+        </div>
+
+
+
+
+        <div class="control-group">
+          <label class="control-label">网站域名：</label>
+          <div class="controls">
+            <input type="text" name="site_url" value="<?php echo C('site_url');?>" class="input_text required"></div>
+        </div>        
+		
+
+
+        <div class="control-group">
+          <label class="control-label">文件上传大小：</label>
+          <div class="controls">
+            <input type="text" name="up_size" value="<?php echo C('up_size');?>" class="input_text required"></div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label">文件上传类型：</label>
+          <div class="controls">
+            <input type="text" name="up_exts" value="<?php echo C('up_exts');?>" class="input_text required"></div>
+        </div> 
+
+
+        <div class="control-group">
+          <label class="control-label">QQ：</label>
+          <div class="controls">
+            <input type="text" name="site_qq" value="<?php echo C('site_qq');?>" class="input_text required"></div>
+        </div> 
+
+
+
+
+        <div class="control-group">
+          <label class="control-label">站长Email：</label>
+          <div class="controls">
+            <input type="text" name="site_email" value="<?php echo C('site_email');?>" class="input_text required"></div>
+        </div> 
+
+
+
+        <div class="control-group">
+          <label class="control-label">网站关键词：</label>
+          <div class="controls">
+            <textarea name="keyword" style="width:50%;height:8em;" class="input_text required"><?php echo C('keyword');?></textarea>
+		    </div>
+        </div> 
+
+
+        <div class="control-group">
+          <label class="control-label">网站描述：</label>
+          <div class="controls">
+            <textarea name="content" style="width:50%;height:8em;" class="input_text required"><?php echo C('content');?></textarea>
+		    </div>
+        </div> 
+
+
+        <div class="control-group">
+          <label class="control-label">电话：</label>
+          <div class="controls">
+            <input type="text" name="site_tel" value="<?php echo C('site_tel');?>" class="input_text required"></div>
+        </div> 
+
+        <div class="control-group">
+          <label class="control-label">站点logo：</label>
+          <div class="controls">
+            <input type="text" id="site_logo" name="site_logo" value="<?php echo C('site_logo');?>" class="input-large   required">
+			<input type="button" name="button" value="上传" class="btn btn-info" onclick="upyunPicUpload('site_logo',0,0)" />
+			<input type="button" name="button" value="预览" class="btn btn-info" onclick="viewImg('site_logo')" /> 
+			
+			</div>
+        </div>
+
+
+        <div class="control-group">
+          <label class="control-label">底部版权：</label>
+          <div class="controls">
+            <input type="text" name="copyright" value="<?php echo C('copyright');?>" class="input_text required"></div>
+        </div> 
+
+	
+        <div class="control-group">
+          <div class="controls">
+            <a class="btn btn-primary" id="sub"> <i class="icon-ok icon-white"></i>
+              保存
+            </a>
+          </div>
+        </div>
+		
+		
+      </fieldset>
+    </form>
+
+  </div>
+
+ <include file="Public:footer" />
+
+<script src="__PUBLIC__/static/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="__PUBLIC__/static/artDialog/plugins/iframeTools.js"></script>
+<script src="__PUBLIC__/static/upyun.js?2013"></script>     
+  
+  
+</body>
+</html>

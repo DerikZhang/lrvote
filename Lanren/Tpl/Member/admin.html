@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>{$Think.config.sitename}</title>
+  <link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin_style.css" />
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/blue.css" />
+</head>
+<body class="right_body">
+  <div class="body">
+    <div class="top_subnav">{$Think.config.sitename} ＞ 经销商列表</div>
+
+    <table class="table">
+      <tr>
+        <td>
+          <form class="form-inline pageForm required-validate" id="form1" >
+            <div class="row-fluid">
+
+              <div class="span1">
+                <h5>经销商账号:</h5>
+              </div>
+              <div class="span1">
+                <input type="text" name="m_username" style="width:80px;" />
+              </div>
+
+
+              <div class="span1">
+                <h5>经销商公司名:</h5>
+              </div>
+              <div class="span1">
+                <input type="text" name="m_companyName" style="width:80px;" />
+              </div>
+
+
+
+            <div class="span1">
+              <button type="button" id="sub" class="btn btn-primary">搜索</button>
+            </div>
+      </div>
+
+
+
+    </form>
+  </td>
+</tr>
+</table>
+
+<table class="table table-bordered table-hover">
+<tbody>
+  <tr >
+    <td colspan="10" style="text-align:left;">
+      <a href="#" id="ids" class="btn" onclick="del();" > <i class="icon-trash"></i>
+        删 除
+      </a>
+      
+      <a href="__URL__/memberAdd" class="btn"><i class="icon-plus"></i> 添 加</a>
+
+
+    </td>
+  </tr>
+  <tr class="info">
+    <td style="width:40px">
+      选择
+      <input type="checkbox" onclick="addids_all()" ></td>
+    <td>经销商名称</td>
+    <td>经销商用户名</td>
+    <td>经销商用户邮箱</td>
+    <td>经销商用户手机</td>
+    <td>经销商用户QQ</td>
+    <td>注册时间</td>
+    <td>结束时间</td>
+    <td>备注</td>
+    <td>操作</td>
+  </tr>
+
+  <volist id="vo" name="list">
+    <tr>
+      <td>
+        <input name="id" value="{$vo['m_id']}" type="checkbox" onclick="addids()"></td>
+      <td>
+          {$vo['m_companyName']}
+      </td>
+      <td>{$vo['m_username']}</td>
+      <td>{$vo['m_email']}</td>
+      <td>{$vo['m_mytel']}</td>
+      <td>{$vo['m_myqq']}</td>
+      <td>{$vo['m_reg_time']|date="Y-m-d H:i:s",###}</td>
+      <td>{$vo['m_end_time']|date="Y-m-d",###}</td>
+      <td>{$vo['m_summary']}</td>
+      <td>
+        <a href="__URL__/memberDelete/m_id/{$vo['m_id']}/" onclick="return window.confirm('确定删除？');" title="删除"> <i class="icon-trash"></i>
+        </a>
+        <a href="__URL__/memberEdit/m_id/{$vo['m_id']}" title="编辑">
+          <i class="icon-pencil"></i>
+        </a>
+      </td>
+    </tr>
+  </volist>
+
+  <tr>
+    <td colspan="10">
+      <div class="pagination">{$page}</div>
+    </td>
+
+  </tr>
+
+</tbody>
+</table>
+
+</div>
+
+<script type="text/javascript">
+        function addids(){
+          ids ="";
+          $("input[name='id']:checkbox:checked").each(function(){ 
+            ids+=","+$(this).val(); 
+          });
+          if(ids !==""){
+            ids = ids.substring(1);
+            tmp = "__URL__/delete/m_id/";
+            $("#ids").attr("href",tmp+ids);
+          }
+          else{
+            $("#ids").attr("href","#");
+          }         
+
+        }
+        var is_all = true;
+        function addids_all(){
+          if(is_all){
+            $("input[name='id']").attr("checked","true"); 
+            is_all = false;
+          }else{
+            $("input[name='id']").removeAttr("checked");
+            is_all = true;
+            $("#ids").attr("href","#");
+          }
+          addids();
+        }
+        
+        function del(){
+          if($("#ids").attr("href") == "#"){
+            alert("请选择"); return;
+          }
+        }
+  
+      </script>
+
+<include file="Public:footer" />
+
+</body>
+</html>

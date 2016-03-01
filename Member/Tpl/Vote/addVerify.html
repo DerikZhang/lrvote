@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>{$Think.config.sitename}</title>
+
+  <link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin_style.css" />
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/blue.css" />
+
+    <script src="__PUBLIC__/js/Calendar.js" type="text/javascript"></script>
+
+
+</head>
+<body class="right_body">
+  <div class="body">
+    <div class="top_subnav">{$Think.config.sitename} ＞ 添加验证码</div>
+
+    <form method="post" id="form1" action="__URL__/insertVerify/" class="form-horizontal pageForm required-validate">
+      <fieldset>
+        <legend>添加验证码</legend>
+
+        <div class="control-group">
+          <label class="control-label" for="mobile">验证码标题：</label>
+          <div class="controls">
+            <input type="text" name="title" value="{$vo.title}"  class="input_text required" > (必须四个字的中文，如：懒人投票) </div>
+        </div>
+
+
+        <div class="control-group">
+          <div class="controls">
+
+            <a class="btn btn-primary" id="sub"> <i class="icon-ok icon-white"></i>
+              保存
+            </a>
+
+
+          </div>
+		  </div>
+		  
+        </fieldset>
+      </form>
+
+    </div>
+
+    <include file="Public:footer" />
+<script src="__PUBLIC__/static/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="__PUBLIC__/static/artDialog/plugins/iframeTools.js"></script>
+<script src="__PUBLIC__/static/upyun.js?2013"></script>     
+  
+  
+</body>
+  </html>

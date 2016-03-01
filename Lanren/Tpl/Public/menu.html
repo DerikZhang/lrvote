@@ -1,0 +1,70 @@
+	
+<div class="accordion" fillSpace="sideBar">
+	<div class="accordionHeader">
+		<h2><span>Folder</span>应用</h2>
+	</div>
+	<div class="accordionContent">
+	
+		<!--
+		<ul class="tree treeFolder">
+			<volist id="item" name="menu" ><li>
+			<neq name="item['name']|strtolower" value="public" >
+				<neq name="item['name']|strtolower" value="index" >
+				<eq name="item['access']" value="1">
+				<li><a href="__APP__/{$item['name']}/index/" target="navTab" rel="{$item['name']}">{$item['title']}</a></li>
+				</eq>
+				</neq>
+			</neq>
+			</volist>
+
+		</ul>
+		-->
+
+
+
+<ul class="tree treeFolder">
+							
+							<li><a>系统管理</a>
+								<ul>
+									<li><a href="/Admin/index.php/Trade/index/" target="navTab" rel="Trade">公司行业管理</a></li>								
+									<li><a href="/Admin/index.php/Group/index/" target="navTab" rel="Group">用户组管理</a></li>								
+									<li><a href="/Admin/index.php/Admin/index/" target="navTab" rel="Admin">后台用户</a></li>								
+								</ul>
+							</li>
+							<li><a>用户管理</a>
+								<ul>
+									<li><a href="/Admin/index.php/Member/index/" target="navTab" rel="Member">用户管理</a></li>								
+									<li><a href="/Admin/index.php/Domain/index/" target="navTab" rel="Domain">站点管理</a></li>								
+									<li><a href="/Admin/index.php/Customer/index/" target="navTab" rel="Customer">客户管理</a></li>								
+								</ul>
+							</li>
+							<li><a>短信管理</a>
+								<ul>
+									<li><a href="/Admin/index.php/Sms/index/" target="navTab" rel="Sms">短信管理</a></li>								
+									<li><a href="/Admin/index.php/Sms/batchsend/" target="navTab" rel="Sms">群发短信</a></li>								
+								</ul>
+							</li>
+							<li><a>邮件管理</a>
+								<ul>
+									<li><a href="/Admin/index.php/Orderemail/index/" target="navTab" rel="Orderemail">序列邮件</a></li>								
+									<li><a href="/Admin/index.php/Airemail/index/" target="navTab" rel="Airemail">广播邮件</a></li>								
+								</ul>
+							</li>
+							
+							<li><a>财务管理</a>
+								<ul>
+									<li><a href="/Admin/index.php/Money/index/" target="navTab" rel="Money">充值管理</a></li>								
+								</ul>
+							</li>			
+
+							<li><a>信息发布</a>
+								<ul>
+									<li><a href="/Admin/index.php/News/News_list" target="navTab" rel="news_list">后台信息列表</a></li>		
+									<li><a href="/Admin/index.php/News/News_add" target="navTab" rel="news_add">后台信息添加</a></li>							
+								</ul>
+							</li>				
+							
+</ul>
+
+	</div>
+</div>

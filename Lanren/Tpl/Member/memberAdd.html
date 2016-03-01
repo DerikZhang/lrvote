@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>{$Think.config.sitename}</title>
+
+  <link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin_style.css" />
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/blue.css" />
+
+    <script src="__PUBLIC__/js/Calendar.js" type="text/javascript"></script>
+
+
+</head>
+<body class="right_body">
+  <div class="body">
+    <div class="top_subnav">{$Think.config.sitename} ＞ 添加经销商</div>
+
+    <form method="post" id="form1" action="__URL__/insertMember/" class="form-horizontal pageForm required-validate">
+      <input type="hidden" name="m_id" value="{$vo.m_id}"/>
+      <fieldset>
+        <legend>添加经销商</legend>
+
+        <div class="control-group">
+          <label class="control-label" for="mobile">手机号：</label>
+          <div class="controls">
+            <input type="text" name="m_mytel" value="{$vo.m_mytel}"  class="input_text required number" maxlength="11">  </div>
+        </div>
+
+		<div class="control-group">
+          <label class="control-label" for="inputEmail">EMAIL：</label>
+          <div class="controls">
+            <input type="text"  id="inputEmail" name="m_email" value="{$vo.m_email}" class="input_text"> 
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="mobile">公司名称：</label>
+          <div class="controls">
+            <input type="text" name="m_companyName" value="{$vo.m_companyName}"  class="input_text required" maxlength="11">  </div>
+        </div>
+
+
+
+        <div class="control-group">
+          <label class="control-label">登陆名：</label>
+          <div class="controls">
+            <input type="text" name="m_username" value="{$vo.m_username}"  class="input_text"> </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="backmail">密码：</label>
+          <div class="controls">
+            <input type="password" name="m_password" value="" class="input_text"></div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="backmail">QQ号码：</label>
+          <div class="controls">
+            <input type="text" name="m_myqq" value="{$vo.m_myqq}" class="input_text number"></div>
+        </div> 
+
+	
+        <div class="control-group">
+          <label class="control-label" for="backmail">功能模块：</label>
+          <div class="controls">
+            <volist name="list" id="list">
+                 {$list.m_title}<input name="aa[]" value="{$list.m_id}"   type="checkbox">&nbsp;&nbsp;
+            </volist>  
+          </div>
+        </div> 
+
+		  
+        <div class="control-group">
+          <label class="control-label" for="backmail">结束时间：</label>
+          <div class="controls">
+            <input type="text" name="m_end_time" value="<?php echo date("Y-m-d");?>" onclick="new Calendar().show(this);" class="input_text">
+		  </div>
+        </div> 
+
+        <div class="control-group">
+          <label class="control-label" for="backmail">备注：</label>
+          <div class="controls">
+			 <textarea name="summary" style="width:20%;height:8em;" class="input_text">{$vo.m_summary}</textarea>            
+		   </div>
+        </div> 
+
+ 
+
+        <div class="control-group">
+          <div class="controls">
+            <a class="btn btn-primary" id="sub"> <i class="icon-ok icon-white"></i>
+              保存
+            </a>
+          </div>
+        </div>
+    
+      </fieldset>
+
+
+
+
+
+      </form>
+
+    </div>
+
+    <include file="Public:footer" />
+
+</body>
+  </html>

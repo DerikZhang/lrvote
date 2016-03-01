@@ -1,0 +1,10 @@
+/*/*密码强度*/
+.rank { border:none; background:url("../images/rank.gif") no-repeat; width:145px; height:22px; vertical-align:middle; cursor:default; margin:0 0 0 5px;}
+.r0 { background-position:0 2; }
+.r1 { background-position:0 -19px; }
+.r2 { background-position:0 -40px; }
+.r3 { background-position:0 -61px; }
+.r4 { background-position:0 -82px; }
+.r5 { background-position:0 -103px; }
+.r6 { background-position:0 -124px; }
+.r7 { background-position:0 -145px; }

@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$Think.config.sitename}</title>
+<meta name="Author" content="武汉仁裕元科技有限公司" />
+<meta name="description" content="{$Think.config.sitename}" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/new/css/style.css" />
+<script src="__PUBLIC__/js/jquery-1.4.4.min.js"></script>
+<style type="text/css">
+.download{margin:20px 33px 10px;*margin-bottom:30px;padding:5px;border-radius:3px;-webkit-border-radius:3px;-moz-border-radius:3px;background:#e6e6e6;border:1px dashed #df0031;font-size:14px;font-family:Comic Sans MS;font-weight:bolder;color:#555}
+.download a{padding-left:5px;font-size:14px;font-weight:normal;color:#555;text-decoration:none;letter-spacing:1px}
+.download a:hover{text-decoration:underline;color:#36F}
+.download span{float:right}
+</style>
+<script>
+
+  $(function(){
+
+  var _select=$('.select');
+
+    _select.click(function(){
+
+      $(this).find('ul').show();
+
+    })
+
+
+
+    $('.select li').click(function(){
+
+      var eid=$(this).attr('eid');
+
+      var eid_input='<input type="hidden" value="'+eid+'" name="eid" id="eid" \/>';
+
+      var _eidhtml=$(this).html();
+
+      $('.eid_value').html(_eidhtml);
+
+      if($('#eid').attr('value')){
+
+        $('#eid').attr('value',eid);  
+
+      }
+
+      
+
+    })
+
+    $('.select ul').hover(function(){
+
+      
+
+    },function(){
+
+      $(this).hide();
+
+    })
+
+  })
+
+</script>
+</head>
+
+<body>
+<div class="main">
+	<div class="header hide">{$Think.config.sitename}</div>
+	<div class="content">
+		<div class="title hide">管理登录</div>
+		<form class="form-signin" action="__URL__/checkLogin/" method="post">
+			<fieldset>
+				<div class="input">
+					<input type="text" name="admin_name" class="input_all name" maxLength="24">
+
+				</div>
+				<div class="input">
+					
+					<input type="password" name="password" class="input_all password" maxLength="24">
+
+					
+				</div>
+				
+				<div class="enter">
+<button class="button hide" onclick="javascript:window.location='main.html'"></button>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</div>
+<script type="text/javascript" src="__PUBLIC__/new/js/placeholder.js"></script>
+<!--[if IE 6]>
+<script type="text/javascript" src="__PUBLIC__/new/js/belatedpng.js" ></script>
+<script type="text/javascript">
+	DD_belatedPNG.fix("*");
+</script>
+<![endif]-->
+<script language="JavaScript">
+
+<!--
+
+function fleshVerify(type){ 
+
+  //重载验证码
+
+  var timenow = new Date().getTime();
+
+  if (type){
+
+    $('#verifyImg').attr("src", '__URL__/verify/adv/1/'+timenow);
+
+  }else{
+
+    $('#verifyImg').attr("src", '__URL__/verify/'+timenow);
+
+  }
+
+}
+
+//-->
+
+</script>
+</body>
+</html>

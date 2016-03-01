@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>{$Think.config.sitename}</title>
+
+    <link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin_style.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/blue.css" />
+
+    <script src="__PUBLIC__/js/Calendar.js" type="text/javascript"></script>
+
+
+</head>
+<body class="right_body">
+  <div class="body">
+    <div class="top_subnav">{$Think.config.sitename} ＞ 用户详细资料</div>
+
+  <form method="post" id="form1" action="__URL__/update/" class="form-horizontal pageForm required-validate">
+    <input type="hidden" name="id" value="{$vo.id}"/>      
+      <fieldset>
+        <legend>用户详细资料</legend>
+        <div class="control-group">
+
+        <div class="control-group">
+          <label class="control-label" for="mobile">手机号：</label>
+          <div class="controls">
+            <input type="text" name="mytel" value="{$vo.mytel}"  class="input_text required number" maxlength="11">  </div>
+        </div>
+
+		<div class="control-group">
+          <label class="control-label" for="inputEmail">EMAIL：</label>
+          <div class="controls">
+            <input type="text"  id="inputEmail" name="email" value="{$vo.email}" class="input_text"> 
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label">登陆名：</label>
+          <div class="controls">
+            <input type="text" name="username" value="{$vo.username}"  class="input_text"> </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="backmail">密码：</label>
+          <div class="controls">
+            <input type="password" name="password" value="" class="input_text"> (不填表示不修改)</div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="backmail">QQ号码：</label>
+          <div class="controls">
+            <input type="text" name="myqq" value="{$vo.myqq}" class="input_text number"></div>
+        </div> 
+		
+
+		
+
+        <div class="control-group">
+          <label class="control-label" for="backmail">通用特效选择：</label>
+          <div class="controls">
+			<?php
+				$tmp  = explode(',',C("EFFECTS"));
+				foreach($tmp as $v){
+					$tmp2='';
+					$tmp3 = explode(",",$vo['template']);
+					if(array_search($v,$tmp3)>-1){
+						$tmp2 = "checked='checked'";	
+					}
+					echo '特效'.$v.'<input name="aa[]" value="'.$v.'" type="checkbox" '.$tmp2.'>';
+				}
+			?>
+		  </div>
+        </div> 
+		
+
+        <div class="control-group">
+          <label class="control-label" for="backmail">自定义特效选择：</label>
+          <div class="controls">
+			<?php
+				$tmp  = explode(',',C("C_EFFECTS"));
+				foreach($tmp as $v){
+					$tmp2='';
+					$tmp3 = explode(",",$vo['c_template']);
+					if(array_search($v,$tmp3)>-1){
+						$tmp2 = "checked='checked'";	
+					}
+
+					echo '&nbsp;'.$v.'<input name="bb[]" value="'.$v.'" type="checkbox" '.$tmp2.'>';
+				}
+			?>
+		  </div>
+        </div> 
+		
+
+		
+		
+		
+		
+
+        <div class="control-group">
+          <label class="control-label" for="backmail">结束时间：</label>
+          <div class="controls">
+            <input type="text" name="end_time" value="{$vo.end_time|date="Y-m-d",### }" onclick="new Calendar().show(this);" class="input_text">
+		  </div>
+        </div> 
+
+        <div class="control-group">
+          <label class="control-label" for="backmail">备注：</label>
+          <div class="controls">
+			 <textarea name="summary" style="width:20%;height:8em;" class="input_text">{$vo.summary}</textarea>            
+		   </div>
+        </div> 
+
+
+        <div class="control-group">
+          <div class="controls">
+
+            <a class="btn btn-primary" id="sub"> <i class="icon-ok icon-white"></i>
+              保存
+            </a>
+
+
+          </div>
+        </div>
+      </fieldset>
+    </form>
+
+  </div>
+
+  <include file="Public:footer" />
+
+</body>
+</html>

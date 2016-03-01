@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>{$Think.config.sitename}</title>
+
+  <link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin_style.css" />
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/blue.css" />
+
+    <script src="__PUBLIC__/js/Calendar.js" type="text/javascript"></script>
+
+
+</head>
+<body class="right_body">
+  <div class="body">
+    <div class="top_subnav">{$Think.config.sitename} ＞ 添加报名</div>
+
+    <form method="post" id="form1" action="__URL__/formInsert/" class="form-horizontal pageForm required-validate">
+      <input type="hidden" name="mid" value="<?php echo $_SESSION[C('USER_AUTH_KEY')];?>">
+      <fieldset>
+        <legend>添加报名</legend>
+
+        <div class="control-group">
+          <label class="control-label" for="mobile">投票标题：</label>
+          <div class="controls">
+            <select name="vid">
+              <?php
+               $list = M("Vote")->where("status=1 and mid=".$_SESSION[C('USER_AUTH_KEY')])->select();
+               foreach($list as $tmp){
+                 echo "<option value='".$tmp['id']."'>".$tmp['title']."</option>";
+               }
+              ?>         
+            </select>
+			 </div>
+        </div>
+
+
+        <div class="control-group">
+          <label class="control-label" for="mobile">姓名：</label>
+          <div class="controls">
+        <input type="text" name="username" value="{$vo.username}"  class="input_text" > 
+       </div>
+        </div>
+
+
+        <div class="control-group">
+          <label class="control-label" for="mobile">投票号：</label>
+          <div class="controls">
+				<input type="text" name="num" value="{$vo.num}"  class="input_text number" >	
+        <input type="hidden" value="{$vo.num}" name="o_num">
+			 </div>
+        </div>
+   
+        <div class="control-group">
+          <label class="control-label" for="mobile">点击数：</label>
+          <div class="controls">
+            <input type="text" name="view" value="{$vo.view}"  class="input_text" >  </div>
+        </div>
+  
+
+        <div class="control-group">
+          <label class="control-label" for="mobile">票数：</label>
+          <div class="controls">
+            <input type="text" name="ticket" value="{$vo.ticket}"  class="input_text" >  </div>
+        </div>
+
+
+        <div class="control-group">
+          <label class="control-label" for="mobile">手机号：</label>
+          <div class="controls">
+            <input type="text" name="tel" value="{$vo.tel}"  class="input_text" >  </div>
+        </div>
+
+
+      <div class="control-group">
+          <label class="control-label" for="mobile">姓别：</label>
+          <div class="controls">
+            保密　<input type="radio" id="auth" value = '0' name="sex" <if condition="$vo.sex eq 0">checked</if>>&nbsp;&nbsp;&nbsp;男　<input type="radio" id="auth2" value = "1" name="sex" <if condition="$vo.sex eq 1">checked</if>>&nbsp;&nbsp;&nbsp;女　<input type="radio" id="auth2" value = "2" name="sex" <if condition="$vo.sex eq 2">checked</if>>
+			  </div>
+        </div>
+
+
+      <div class="control-group">
+          <label class="control-label" for="mobile">审核状态：</label>
+          <div class="controls">
+            待审　<input type="radio" id="auth" value = '0' name="status" <if condition="$vo.status eq 0">checked</if>>&nbsp;&nbsp;&nbsp;已审　<input type="radio" id="auth2" value = "1" name="status" <if condition="$vo.status eq 1">checked</if>>
+			  </div>
+        </div>
+
+
+        <div class="control-group">
+          <label class="control-label" for="mobile">地址：</label>
+          <div class="controls">
+            <input type="text" name="address" value="{$vo.address}"  class="input_text" >  </div>
+        </div>
+
+
+      <div class="control-group">
+        <label class="control-label" for="mobile">照片1：</label>
+        <div class="controls">
+          <input type="text" id="picurl" name="picurl" value="{$vo.picurl}" class="input-large   required">
+          <input type="button" name="button" value="上传" class="btn btn-info" onclick="upyunPicUpload('picurl',0,0)">
+          <input type="button" name="button" value="预览" class="btn btn-info" onclick="viewImg('picurl')">
+        </div>
+      </div>
+
+      <div class="control-group">
+      <label class="control-label" for="mobile">照片2：</label>
+      <div class="controls">
+      <input type="text" id="picurl1" name="picurl1" value="{$vo.picurl1}" class="input-large ">
+      <input type="button" name="button" value="上传" class="btn btn-info" onclick="upyunPicUpload('picurl1',0,0)">
+      <input type="button" name="button" value="预览" class="btn btn-info" onclick="viewImg('picurl1')">
+      </div>
+      </div>
+
+
+
+	  <div class="control-group">
+	  <label class="control-label" for="mobile">照片3：</label>
+	  <div class="controls">
+	  <input type="text" id="picurl2" name="picurl2" value="{$vo.picurl2}" class="input-large ">
+	  <input type="button" name="button" value="上传" class="btn btn-info" onclick="upyunPicUpload('picurl2',0,0)">
+	  <input type="button" name="button" value="预览" class="btn btn-info" onclick="viewImg('picurl2')">
+	  </div>
+	  </div>
+
+
+
+	  <div class="control-group">
+	  <label class="control-label" for="mobile">照片4：</label>
+	  <div class="controls">
+	  <input type="text" id="picurl3" name="picurl3" value="{$vo.picurl3}" class="input-large ">
+	  <input type="button" name="button" value="上传" class="btn btn-info" onclick="upyunPicUpload('picurl3',0,0)">
+	  <input type="button" name="button" value="预览" class="btn btn-info" onclick="viewImg('picurl3')">
+	  </div>
+	  </div>
+
+
+
+
+
+	  <div class="control-group">
+	  <label class="control-label" for="mobile">照片5：</label>
+	  <div class="controls">
+	  <input type="text" id="picurl4" name="picurl4" value="{$vo.picurl4}" class="input-large">
+	  <input type="button" name="button" value="上传" class="btn btn-info" onclick="upyunPicUpload('picurl4',0,0)">
+	  <input type="button" name="button" value="预览" class="btn btn-info" onclick="viewImg('picurl4')">
+	  </div>
+	  </div>
+								 
+
+
+        <div class="control-group">
+          <label class="control-label" for="mobile">介绍：</label>
+          <div class="controls">
+				<textarea name="info" style="width:20%;height:8em;" class="input_text required">{$vo.info}</textarea>
+			 </div>
+        </div>
+
+
+
+        <div class="control-group">
+          <div class="controls">
+
+            <a class="btn btn-primary" id="sub"> <i class="icon-ok icon-white"></i>
+              保存
+            </a>
+
+
+          </div>
+		  </div>
+		  
+        </fieldset>
+      </form>
+
+    </div>
+
+    <include file="Public:footer" />
+<script src="__PUBLIC__/static/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="__PUBLIC__/static/artDialog/plugins/iframeTools.js"></script>
+<script src="__PUBLIC__/static/upyun.js?2013"></script>     
+  
+  
+</body>
+  </html>

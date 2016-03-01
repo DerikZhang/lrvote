@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>{$Think.config.sitename}</title>
+
+  <link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin_style.css" />
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/blue.css" />
+
+
+    <link rel="stylesheet" href="__PUBLIC__/kindeditor/themes/default/default.css" />
+    <script charset="utf-8" src="__PUBLIC__/kindeditor/kindeditor-min.js"></script>
+    <script charset="utf-8" src="__PUBLIC__/kindeditor/lang/zh_CN.js"></script>
+<script>
+      var editor;
+      KindEditor.ready(function(K) {
+        editor = K.create('textarea[name="a_content"]', {
+          resizeType : 1,
+          allowPreviewEmoticons : false,
+          allowImageUpload : false,
+          items : [
+            'source','fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+            'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+            'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+        });
+      });
+    </script>
+
+</head>
+<body class="right_body">
+  <div class="body">
+    <div class="top_subnav">{$Think.config.sitename} ＞ 广告素材管理</div>
+
+    <form method="post" id="form1" action="__URL__/insertAadData/" class="form-horizontal pageForm required-validate">
+      <input type="hidden" value="{$vo.a_id}" name="a_id" />
+      <fieldset>
+        <legend>添加广告素材</legend>
+
+        <div class="control-group">
+          <label class="control-label">广告素材类型：</label>
+          <div class="controls">
+            <select name="a_ad_type" class="input-medium required">
+              <option value="1">文字广告素材</option>
+              <option value="2">图片广告素材</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label">内容：</label>
+          <div class="controls">
+            <textarea name="a_content" style="width:70%;height:400px;"></textarea>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <div class="controls">
+           <input type="submit" name="button" value="提交内容" class="btn btn-primary" />
+          </div>
+        </div>
+      </fieldset>
+    </form>
+
+  </div>
+
+  <include file="Public:footer" />
+
+</body>
+</html>

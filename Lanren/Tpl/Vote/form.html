@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>{$Think.config.sitename}</title>
+  <link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin_style.css" />
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/blue.css" />
+</head>
+<body class="right_body">
+  <div class="body">
+    <div class="top_subnav">{$Think.config.sitename} ＞ 报名列表</div>
+
+
+    <table class="table table-bordered table-hover">
+      <tr>
+        <td>
+          <form class="form-inline pageForm required-validate" id="form1" action="__URL__/form/">
+            <div class="row-fluid">
+              <div class="span1">
+                <h5>姓名:</h5>
+              </div>  
+              <div class="span2">  
+                <input type="text" name="username" class="input-small" value="<?php echo $_GET['username'];?>" />              
+              </div> 
+
+              <div class="span1">
+                <h5>投票标题:</h5>
+              </div>
+              <div class="span2">
+					<select name="vid" class="input-small required">
+					  <option value=""></option>
+					  <volist name="voteList" id="voteList">
+						<option value="{$voteList.id}" <?php if($_GET['vid'] == $voteList['id']){echo 'selected';} ?> >{$voteList.title}</option>
+					  </volist>
+					</select>              
+			   </div>
+
+             
+              <div class="span1">
+                <input type="submit" value="搜索" class="btn btn-primary" />
+              </div>
+            </div>
+          </form>
+        </td>
+      </tr>
+    </table>
+
+
+
+
+<table class="table table-bordered table-hover">
+<tbody>
+  <tr >
+    <td colspan="11" style="text-align:left;">
+      <a href="#" id="ids" class="btn" onclick="del();" style="float:left;" > <i class="icon-trash"></i>
+        删 除
+      </a>
+
+      <div class="alert alert-info" style="float:left;margin-bottom: 0px;margin-left:15px;padding: 4px 30px 4px 10px;">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>注意!</strong> 点击“投票号”、“点击数”、“票数”可进行排序
+      </div>
+
+    </td>
+  </tr>
+  <tr class="info">
+    <td style="width:40px">
+      选择
+      <input type="checkbox" onclick="addids_all()" ></td>
+	  <td>用户登陆名</td>
+    <td style="width:40px">姓名</td>
+    <td style="width:50px">
+        <?php if($_GET['_order'] == "num"){ ?>
+              <?php if($_GET['_sort'] == "asc"){ ?>
+                  <a href="{:U("Vote/form",array("_order"=>"num","_sort"=>"desc","vid"=>$_GET['vid']))}"><i class="icon-arrow-down"></i>
+              <?php }elseif ($_GET['_sort'] == "desc") { ?>
+                  <a href="{:U("Vote/form",array("_order"=>"num","_sort"=>"asc","vid"=>$_GET['vid']))}"><i class="icon-arrow-up"></i>
+              <?php } ?>
+        <?php }else{ ?>  
+                  <a href="{:U("Vote/form",array("_order"=>"num","_sort"=>"asc","vid"=>$_GET['vid']))}">
+         <?php } ?>投票号</a></td>
+    <td style="width:50px">
+        <?php if($_GET['_order'] == "view"){ ?>
+              <?php if($_GET['_sort'] == "asc"){ ?>
+                  <a href="{:U("Vote/form",array("_order"=>"view","_sort"=>"desc","vid"=>$_GET['vid']))}"><i class="icon-arrow-down"></i>
+              <?php }elseif ($_GET['_sort'] == "desc") { ?>
+                  <a href="{:U("Vote/form",array("_order"=>"view","_sort"=>"asc","vid"=>$_GET['vid']))}"><i class="icon-arrow-up"></i>
+              <?php } ?>
+        <?php }else{ ?>  
+                  <a href="{:U("Vote/form",array("_order"=>"view","_sort"=>"asc","vid"=>$_GET['vid']))}">
+         <?php } ?>点击数</a></td>
+    <td style="width:40px">
+       <?php if($_GET['_order'] == "ticket"){ ?>
+              <?php if($_GET['_sort'] == "asc"){ ?>
+                  <a href="{:U("Vote/form",array("_order"=>"ticket","_sort"=>"desc","vid"=>$_GET['vid']))}"><i class="icon-arrow-down"></i>
+              <?php }elseif ($_GET['_sort'] == "desc") { ?>
+                  <a href="{:U("Vote/form",array("_order"=>"ticket","_sort"=>"asc","vid"=>$_GET['vid']))}"><i class="icon-arrow-up"></i>
+              <?php } ?>
+        <?php }else{ ?>  
+                  <a href="{:U("Vote/form",array("_order"=>"ticket","_sort"=>"asc","vid"=>$_GET['vid']))}">
+         <?php } ?>票数</a></td>
+    <td>投票标题</td>
+    <td>手机</td>
+    <td>状态</td>
+    <td>报名时间</td>
+    <td style="width:100px">操作</td>
+  </tr>
+
+  <volist id="vo" name="list">
+    <tr>
+      <td>
+        <input name="id" value="{$vo['id']}" type="checkbox" onclick="addids()"></td>
+      <td>
+         <?php
+            $tmp = M("Member")->where("m_id=".$vo['mid'])->field("m_username")->find();
+            echo $tmp['m_username'];
+         ?>
+      </td>        
+      <td>
+          {$vo['username']}
+      </td>
+      <td>
+          {$vo['num']}
+      </td>
+      <td>
+          {$vo['view']}
+      </td>
+      <td>{$vo['ticket']}</td>
+      <td style="text-align:left;">
+		<?php
+		 $tmp = M("Vote")->where('id='.$vo['vid'])->field('title')->find();
+		 echo $tmp['title'];
+		?>
+	  
+	  </td>
+      <td>{$vo['tel']}</td>
+      <td>
+            <eq name="vo.status" value="0">
+                <span class="label">待审</span>
+            </eq>
+            <eq name="vo.status" value="1">
+                <span class="label label-success">已审</span>
+            </eq>            
+			
+	  </td>
+      <td>{$vo['addtime']|date="Y-m-d H:i:s",###}</td>
+      <td>
+
+
+        <a href="__URL__/formDelete/id/{$vo['id']}/" onclick="return window.confirm('确定删除？');" title="删除"> <i class="icon-trash"></i>
+        </a>
+
+       <a href="__URL__/formEdit/id/{$vo['id']}" title="编辑">
+          <i class="icon-pencil"></i>
+        </a>
+   
+         &nbsp;&nbsp;
+         <span class="label label-inverse"><a href="#myModal{$vo.id}" data-toggle="modal" style="color:#fff">详细查看</a></span>
+
+          <div id="myModal{$vo.id}" class="modal hide">
+              <div class="modal-header">
+                <button data-dismiss="modal" class="close" type="button">&times;</button>
+                <h3>详细查看</h3>
+                <label style="text-align:left;">
+                   <b>姓名：</b>{$vo['username']}
+                </label>
+                <label style="text-align:left;">
+                   <b>投票号：</b>{$vo['num']}
+                </label>
+                <label style="text-align:left;">
+                   <b>点击数：</b>{$vo['view']}
+                </label>
+                <label style="text-align:left;">
+                   <b>票数：</b>{$vo['ticket']}
+                </label>
+                <label style="text-align:left;">
+                   <b>照片：</b> <a href="{$vo.picurl}" target="_blank"><img src="{$vo['picurl']}" width="100" height="130"></a>  (点击查看大图)
+                </label>
+
+                <label style="text-align:left;">
+                   <b>姓别：</b>
+                    <eq name="vo.sex" value="0">
+                    <span class="label">保密</span>
+                    </eq>
+                    <eq name="vo.sex" value="1">
+                    <span class="label label-success">男</span>
+                    </eq>            
+                    <eq name="vo.sex" value="2">
+                    <span class="label label-important">女</span>
+                    </eq>  
+                </label>
+
+                <label style="text-align:left;">
+                   <b>状态：</b>
+                  <eq name="vo.status" value="0">
+                  <span class="label">待审</span>
+                  </eq>
+                  <eq name="vo.status" value="1">
+                  <span class="label label-success">已审</span>
+                  </eq>            
+                </label>
+
+                <label style="text-align:left;">
+                   <b>地址：</b>{$vo['address']}
+                </label>
+                <label style="text-align:left;">
+                   <b>手机：</b>{$vo['tel']}
+                </label>
+                <label style="text-align:left;">
+                   <b>报名时间：</b> {$vo['addtime']|date="Y-m-d H:i:s",###}
+                </label>
+                <label style="text-align:left;">
+                   <b>介绍：</b>{$vo['info']}  
+                </label>
+              </div>
+              <div class="modal-body"></div>
+            </div>
+      </td>
+    </tr>
+  </volist>
+
+
+</tbody>
+</table>
+
+<div class="pagination">{$page}</div>
+
+
+<br/><br/><br/><br/><br/><br/><br/><br/>
+
+
+</div>
+
+<script type="text/javascript">
+        function addids(){
+          ids ="";
+          $("input[name='id']:checkbox:checked").each(function(){ 
+            ids+=","+$(this).val(); 
+          });
+          if(ids !==""){
+            ids = ids.substring(1);
+            tmp = "__URL__/formDelete/id/";
+            $("#ids").attr("href",tmp+ids);
+          }
+          else{
+            $("#ids").attr("href","#");
+          }         
+
+        }
+        var is_all = true;
+        function addids_all(){
+          if(is_all){
+            $("input[name='id']").attr("checked","true"); 
+            is_all = false;
+          }else{
+            $("input[name='id']").removeAttr("checked");
+            is_all = true;
+            $("#ids").attr("href","#");
+          }
+          addids();
+        }
+        
+        function del(){
+          if($("#ids").attr("href") == "#"){
+            alert("请选择"); return;
+          }
+        }
+  
+      </script>
+
+<include file="Public:footer" />
+
+</body>
+</html>

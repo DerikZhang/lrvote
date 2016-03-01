@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>{$Think.config.sitename}</title>
+  <link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin_style.css" />
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/blue.css" />
+  <script src="__PUBLIC__/js/Calendar.js" type="text/javascript"></script>  
+</head>
+<body class="right_body">
+  <div class="body">
+    <div class="top_subnav">万企利网络营销管理平台 ＞ 提现明细</div>
+
+    <table class="table">
+      <tr>
+        <td>
+          <form class="form-inline pageForm required-validate" id="form1" >
+            <div class="row-fluid">
+              <div class="span1">
+                <h5>用户电话:</h5>
+              </div>
+              <div class="span2">
+                <input type="text" name="mytel" class="input-medium search-query" placeholder="用户电话" />    
+              </div>
+              <div class="span1">
+                <h5>用户QQ:</h5>
+              </div>
+              <div class="span2">
+                <input type="text" name="myqq" class="input-medium search-query" placeholder="用户QQ" />    
+              </div>
+
+              <div class="span1">
+                <h5>提现状态:</h5>
+              </div>
+              <div class="span1">
+                <select name="tx_zt" class="input-small">
+                    <option value=""></option>
+                    <option value="0">待支付</option>
+                    <option value="2">已支付</option>
+                </select>
+              </div>   
+
+              <div class="span1">
+                <h5>提现起始时间:</h5>
+              </div>
+              <div class="span2">
+                <input type="text" name="startdate" onclick="new Calendar().show(this);" class="input-small search-query" placeholder="提现起始时间" />              
+              </div>
+              <div class="span1">
+                <h5>提现结束时间:</h5>
+              </div>
+              <div class="span2">
+                <input type="text" name="enddate" onclick="new Calendar().show(this);" class="input-small search-query" placeholder="提现结束时间" />              
+              </div>
+
+
+            <div class="span1">
+              <h5>专属客服:</h5>
+            </div>
+            <div class="span1">
+              <select name="service" class="input-small" style="width:100px;">
+                <option value="" >请选择</option>
+                <option value="客服1001" <?php if($_GET['service']=="客服1001"){echo 'selected';} ?> >客服1001</option>
+                <option value="客服1002" <?php if($_GET['service']=="客服1002"){echo 'selected';} ?> >客服1002</option>
+                <option value="客服1003" <?php if($_GET['service']=="客服1003"){echo 'selected';} ?> >客服1003</option>
+                <option value="客服1004" <?php if($_GET['service']=="客服1004"){echo 'selected';} ?> >客服1004</option>
+                <option value="客服1005" <?php if($_GET['service']=="客服1005"){echo 'selected';} ?> >客服1005</option>
+                <option value="客服1006" <?php if($_GET['service']=="客服1006"){echo 'selected';} ?> >客服1006</option>
+                <option value="客服1007" <?php if($_GET['service']=="客服1007"){echo 'selected';} ?> >客服1007</option>
+                <option value="客服1008" <?php if($_GET['service']=="客服1008"){echo 'selected';} ?> >客服1008</option>
+                <option value="客服1009" <?php if($_GET['service']=="客服1009"){echo 'selected';} ?> >客服1009</option>
+                <option value="客服1010" <?php if($_GET['service']=="客服1010"){echo 'selected';} ?> >客服1010</option>
+              </select>    
+            </div>              
+
+              <div class="span1">
+                <button type="button" id="sub" class="btn">搜索</button>
+              </div>
+            </div>
+          </form>
+        </td>
+      </tr>
+    </table>
+
+    <table class="table table-bordered table-hover">
+      <tbody>
+      <tr >
+        <td colspan="12" style="text-align:left;">
+          <a href="#" id="ids0" class="btn" onclick="action('Status/c/0','ids0');" > <i class="icon-minus-sign"></i>
+            待支付
+          </a>
+          <a href="#" id="ids2" class="btn" onclick="action('Status/c/2','ids2');" > <i class="icon-ok"></i>
+            已支付
+          </a>
+<!--           <a href="#" id="ids" class="btn" onclick="action('deleteTX','ids');" > <i class="icon-trash"></i>
+            删 除
+          </a> -->
+        </td>
+      </tr> 
+
+        <tr class="info">
+          <td style="width:40px">选择 <input type="checkbox" onclick="addids_all()" ></td>
+          <td>专属客服</td>
+          <td>用户姓名</td>
+          <td>用户邮箱</td>
+          <td>用户电话</td>
+          <td>用户QQ</td>
+          <td>提现帐号</td>
+          <td>提现金额</td>
+          <td>手续费</td>
+          <td>实际到账</td>
+          <td>提现时间</td>
+          <td>提现状态</td>
+        </tr>
+
+    <?php
+      $d_price = 0;
+      $y_price = 0;
+    ?>
+    <volist id="vo" name="list">
+        <?php
+            if(!empty($vo['tx_zlmid'])){  //战略
+              $User = findById("Z_member",$vo['tx_zlmid']);
+            }
+            // if(!empty($vo['tx_sid'])){ //商家
+            //   $User = findById("Member",$vo['tx_sid']);
+            // } 
+            if(!empty($vo['tx_uid'])){ //用户
+              $User = findById("User",$vo['tx_uid']);
+            }
+
+            if($User){
+        ?>
+  
+        <tr>
+           <eq name="vo.tx_zt" value="0">
+              <td><input name="id" value="{$vo['tx_id']}" type="checkbox" onclick="addids(this)"></td>
+          </eq>
+           <eq name="vo.tx_zt" value="1">
+              <td><input name="id" value="{$vo['tx_id']}" type="checkbox" onclick="addids(this)"></td>
+          </eq>
+           <eq name="vo.tx_zt" value="2">
+              <td></td>
+          </eq>
+          <td><?php echo $User['service'];?></td>
+          <td><?php echo $User['username'];?></td>
+          <td><?php echo $User['email'];?></td>
+          <td><?php echo $User['mytel'];?></td>
+          <td><?php echo $User['myqq'];?></td>
+    		  <td><?php echo $User['alipayname'];?>(<?php echo $User['alipaytruename'];?>)-<?php echo $User['alipay'];?></td>
+          <td>{$vo['tx_price']}</td>
+          <td>
+            <?php
+              $tmp = intval($vo['tx_price']) * C('CHARGE') ;
+              if($tmp > 50){
+                  $tmp = 50;
+              }
+              echo $tmp;
+            ?>
+          </td>
+          <td>
+          <?php
+            $tmp2 = intval($vo['tx_price']) - $tmp ; 
+            echo  $tmp2; 
+            if($vo['tx_zt'] == 0) {
+                $d_price+=$tmp2;
+            }elseif ($vo['tx_zt'] == 2) {
+                $y_price+=$tmp2; 
+            }
+          ?>
+          </td>
+          <td>{$vo['tx_time']|date="Y-m-d H:i:s",###}</td>
+          <td>
+             <eq name="vo.tx_zt" value="0" >
+                <span class="label label label-important">待支付!</span>
+             </eq>
+             <eq name="vo.tx_zt" value="1" >
+                <span class="label label label-success">已审核!</span>
+             </eq>  
+
+             <eq name="vo.tx_zt" value="2" >
+                <span class="label label label-success">已支付!</span>
+             </eq>  
+          </td>
+        </tr>
+        <?php } ?>
+    </volist>
+
+
+        <tr>
+          <td colspan="12">
+            <span class="label  label-important">待支付<?php echo $d_price;  ?>元</span>
+            <span class="label  label-success">已支付<?php echo $y_price;  ?>元</span>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="12">
+          <div class="pagination">
+          {$page}
+          </div>
+          
+          </td>
+
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+
+  
+      <script type="text/javascript">
+        var ids = "";
+        function addids(bb){
+            if($(bb).is(':checked')){
+              ids+=","+$(bb).val(); 
+            }else{
+               ids = ids.replace(","+$(bb).val(),""); 
+            }
+            //alert(ids);
+        }
+        var is_all = true;
+        function addids_all(){
+          if(is_all){
+            $("input[name='id']").attr("checked","true"); 
+            is_all = false;
+
+            $("input[name='id']:checkbox:checked").each(function(){ 
+              ids+=","+$(this).val(); 
+            });
+          }else{
+            $("input[name='id']").removeAttr("checked");
+            is_all = true;
+            ids = "";
+          }
+        }
+        
+        function action(aa,bb){
+          if(ids == ""){
+            alert("请选择"); return;
+          }
+          if(ids !==""){
+            ids = ids.substring(1);
+          }          
+          tmp = "__URL__/"+aa+"/id/";          
+          $("#"+bb).attr("href",tmp+ids);
+        }
+      </script>
+
+  <include file="Public:footer" />
+
+</body>
+</html>

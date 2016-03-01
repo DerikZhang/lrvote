@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>{$Think.config.sitename}</title>
+  <link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin_style.css" />
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/blue.css" />
+     <script src="__PUBLIC__/js/Calendar.js" type="text/javascript"></script>
+  
+</head>
+<body class="right_body">
+  <div class="body">
+    <div class="top_subnav">{$Think.config.sitename} ＞ 支出管理</div>
+
+    <table class="table">
+      <tr>
+        <td>
+          <form class="form-inline pageForm required-validate" id="form1" >
+              <div class="span2">
+                <h5>支出起始时间:</h5>
+              </div>
+              <div class="span2">
+                <input type="text" name="startdate" onclick="new Calendar().show(this);" class="input-small search-query" placeholder="起始时间" value="" />              
+              </div>
+              <div class="span2">
+                <h5>支出结束时间:</h5>
+              </div>
+              <div class="span2">
+                <input type="text" name="enddate" onclick="new Calendar().show(this);" class="input-small search-query" placeholder="结束时间" value="" />              
+              </div>
+            <div class="span1">
+              <button type="button" id="sub" class="btn btn-primary">搜索</button>
+            </div>
+
+          </form>
+        </td>
+      </tr>
+    </table>
+
+    <table class="table table-bordered table-hover">
+      <tbody>
+        <tr >
+          <td colspan="7" style="text-align:left;">
+            <a href="#" id="ids0" class="btn" onclick="action('delete/id/','ids0');"> <i class=" icon-ban-circle"></i>
+              删 除
+            </a>
+            <a href="__URL__/OutlayAdd/" class="btn"> <i class="icon-plus"></i>
+              添 加
+            </a>
+          </td>
+        </tr>
+        <tr class="info">
+          <td style="width:40px">
+            选择
+            <input type="checkbox" onclick="addids_all()" ></td>
+          <td>编号</td>
+          <td>支出金额</td>
+          <td>支出时间</td>
+          <td>凭证图片</td>
+          <td>备注</td>
+          <td>操作</td>
+        </tr>
+
+        <volist id="vo" name="list">
+          <tr>
+            <td>
+              <input name="id" value="{$vo['a_id']}" type="checkbox" onclick="addids(this)"></td>
+            <td>{$vo['a_id']}</td>
+            <td>{$vo['a_price']}</td>
+            <td>{$vo['a_arrival_time'] |date="Y-m-d H:i:s",###}</td>
+            <td>
+              <neq name="vo.a_img" value="">
+                <a href="/Admin/{$vo['a_img']}" target="_blank">
+                  <img src="/Admin/{$vo['a_img']}"  style="width:100px;height:25px;" title="点击查看大图" />
+                </a>
+              </neq>
+            </td>
+            <td>{$vo['a_summary']}</td>
+            <td>
+              <a href="__URL__/delete/id/{$vo['a_id']}/" onclick="return window.confirm('确定删除？');" title="删除">
+                <i class="icon-trash"></i>
+              </a>
+              <a href="__URL__/OutlayEdit/id/{$vo['a_id']}" title="编辑">
+                <i class="icon-pencil"></i>
+              </a>
+            </td>
+          </tr>
+        </volist>
+        <tr>
+          <td colspan="7">
+            <span style="color:red;font-weight:bold;font-size:14px;">支出总计：￥{$total_money}元</span>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="7">
+
+            <div class="pagination">{$page}</div>
+
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+
+  <script type="text/javascript">
+        var ids = "";
+        function addids(bb){
+            if($(bb).is(':checked')){
+              ids+=","+$(bb).val(); 
+            }else{
+               ids = ids.replace(","+$(bb).val(),""); 
+            }
+            //alert(ids);
+        }
+        var is_all = true;
+        function addids_all(){
+          if(is_all){
+            $("input[name='id']").attr("checked","true"); 
+            is_all = false;
+
+            $("input[name='id']:checkbox:checked").each(function(){ 
+              ids+=","+$(this).val(); 
+            });
+          }else{
+            $("input[name='id']").removeAttr("checked");
+            is_all = true;
+            ids = "";
+          }
+        }
+        
+        function action(aa,bb){
+          if(ids == ""){
+            alert("请选择"); return;
+          }
+          if(ids !==""){
+            ids = ids.substring(1);
+          }          
+          tmp = "__URL__/"+aa;          
+          $("#"+bb).attr("href",tmp+ids);
+        }
+      </script>
+
+  <include file="Public:footer" />
+
+</body>
+</html>

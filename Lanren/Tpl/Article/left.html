@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>{$Think.config.sitename}</title>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin_style.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/skins/tpphp.css" />
+    <script src="__PUBLIC__/dwz/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function menucss(id){
+            $('#menu li a').each(
+                function(){
+                    $('.selected').removeClass('selected');
+                }
+            );
+            $("#"+id).addClass('selected');
+        }
+</script>
+</head>
+<body style="overflow:hidden;">
+
+    <div class="left">
+
+        <div class="left_title">文章(管理)中心</div>
+        <ul class="side" id="menu">
+            <li>
+                <a href="__URL__/" target="main" id="menu1" onClick="menucss('menu1');" class='selected' >用户公告发布</a>
+            </li>
+            <li>
+                <a href="__URL__/index/t/4/" target="main" id="menu5" onClick="menucss('menu5');" >商家公告发布</a>
+            </li> 
+            <li>
+                <a href="__URL__/index/t/6/" target="main" id="menu8" onClick="menucss('menu8');" >战略伙伴公告</a>
+            </li> 
+
+
+<!--                                    
+            <li>
+                <a href="__URL__/index/t/1/" target="main" id="menu2" onClick="menucss('menu2');"  >用户帮助手册</a>
+            </li>
+            <li>
+                <a href="__URL__/index/t/5/" target="main" id="menu6" onClick="menucss('menu6');"  >商家帮助手册</a>
+            </li> 
+            <li>
+                <a href="__URL__/index/t/7/" target="main" id="menu9" onClick="menucss('menu9');"  >战略伙伴手册</a>
+            </li> 
+
+                                    
+            <li>
+                <a href="__URL__/index/t/2/" target="main" id="menu3" onClick="menucss('menu3');"  >成为VIP用户</a>
+            </li>
+            <li>
+                <a href="__URL__/index/t/3/" target="main" id="menu4" onClick="menucss('menu4');"  >成为战略伙伴</a>
+            </li>
+ -->
+            <li>
+                <a href="__URL__/ad/" target="main" id="menu7" onClick="menucss('menu7');"  >广告素材管理</a>
+            </li>
+
+
+<!-- 
+            <li>
+                <a href="__URL__/adData/" target="main" id="menu10" onClick="menucss('menu10');"  >营销资料广告素材</a>
+            </li>
+            <li>
+                <a href="__URL__/adzlList/" target="main" id="menu11" onClick="menucss('menu11');"  >战略伙伴广告素材</a>
+            </li>
+
+ -->
+
+            <li>
+                <a href="__APP__/Marketing/index/classid/1" target="main" id="menu13" onClick="menucss('menu13');">免费推广课程</a>
+            </li>
+            <li>
+                <a href="__APP__/Marketing/lession/classid/1" target="main" id="menu15" onClick="menucss('menu15');">收费推广课程</a>
+            </li>
+
+        </ul>
+    </div>
+
+</body>
+</html>

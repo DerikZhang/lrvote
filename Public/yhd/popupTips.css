@@ -1,0 +1,102 @@
+.m_popup_wrap{
+    position: fixed;
+    left:50%;
+    top:50%; 
+    z-index: 806;
+    display: table;
+    width: 260px;
+    transform:translate(-50%,-50%); 
+    -webkit-transform:translate(-50%,-50%);
+    border:1px solid #e5e5e5;
+    border-radius: 3px;
+    background-color: #fff;
+    font-size: 12px;
+    color:#666;
+}
+.m_popup_wrap .title{
+    position: relative;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-bottom:1px solid #e5e5e5;
+}
+.m_popup_wrap .close{
+    position: absolute;
+    left: 10px;
+    top: 6px;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+}
+.m_popup_wrap .close:before,.m_popup_wrap .close:after{
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 1px;
+    width: 1px;
+    height: 14px;
+    background-color: #ddd;
+}
+.m_popup_wrap .close:before{
+    -webkit-transform: rotate(45deg);
+}
+.m_popup_wrap .close:after{
+    -webkit-transform: rotate(-45deg);
+}
+.m_popup_wrap .text{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    height: 68px;
+    line-height: 20px;
+    text-align: center;
+}
+.m_popup_wrap .text p{
+    margin: auto;
+}
+.m_popup_wrap .btn_box{
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    border-top:1px solid #e5e5e5;
+    padding: 10px;
+}
+.m_popup_wrap .btn_public{
+    -webkit-box-flex:1;
+    -webkit-flex:1;
+    -ms-flex:1;
+    flex:1;
+    display: block;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 4px;
+    text-align: center;
+    color:#fff;
+    font-size: 12px;
+    text-decoration: none;
+}
+.m_popup_wrap .btn_public:last-of-type:not(:first-of-type){
+    margin-left: 10px;
+}
+.m_popup_wrap .btn_highlight{
+    background-color: #ff6600;
+}
+.m_popup_wrap .btn_general{
+    background-color: #666;
+}
+.m_popup_wrap_mask{
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 804;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.4);
+}

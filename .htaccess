@@ -1,0 +1,16 @@
+
+# BEGIN DEDECMS
+<Files ~ "^.(htaccess|htpasswd)$">
+deny from all
+</Files>
+DirectoryIndex index.php index.html      
+order deny,allow
+<IfModule mod_rewrite.c>
+RewriteEngine on
+Options +FollowSymLinks
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]
+ </IfModule>
+# END DEDECMS
+

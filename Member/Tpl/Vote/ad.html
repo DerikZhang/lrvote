@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>{$Think.config.sitename}</title>
+  <link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin_style.css" />
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/blue.css" />
+</head>
+<body class="right_body">
+  <div class="body">
+    <div class="top_subnav">{$Think.config.sitename} ＞ 广告列表</div>
+
+<table class="table table-bordered table-hover">
+<tbody>
+  <tr >
+    <td colspan="8" style="text-align:left;">
+      <a href="#" id="ids" class="btn" onclick="del();" > <i class="icon-trash"></i>
+        删 除
+      </a>
+      
+      <a href="__URL__/addAd" class="btn"><i class="icon-plus"></i> 添 加</a>
+
+
+    </td>
+  </tr>
+  <tr class="info">
+    <td style="width:40px">
+      选择
+      <input type="checkbox" onclick="addids_all()" ></td>
+    <td>编号</td>
+    <td>投票标题</td>
+    <td>广告标题</td>
+    <td>广告图片</td>
+    <td>弹出显示</td>
+    <td>添加时间</td>
+    <td>操作</td>
+  </tr>
+
+  <volist id="vo" name="list">
+    <tr>
+      <td>
+        <input name="id" value="{$vo['id']}" type="checkbox" onclick="addids()"></td>
+      <td>
+          {$vo['id']}
+      </td>
+      <td>
+	  		<?php
+		 $tmp = M("Vote")->where('id='.$vo['vid'])->field('title')->find();
+		 echo $tmp['title'];
+		?>
+	  </td>
+      <td>{$vo['title']}</td>
+      <td>{$vo['picurl']}</td>
+	  <td>
+	  		   <eq name="vo.display" value="0" >
+                <span class="label label label-important">关闭</span>
+             </eq>
+             <eq name="vo.display" value="1" >
+                <span class="label label label-success">启用</span>
+             </eq>  
+	  </td>
+	  <td>{$vo['addtime']|date="Y-m-d H:i:s",###}</td>
+      <td>
+        <a href="__URL__/deleteAd/id/{$vo['id']}/" onclick="return window.confirm('确定删除？');" title="删除"> <i class="icon-trash"></i>
+        </a>
+        <a href="__URL__/editAd/id/{$vo['id']}" title="编辑">
+          <i class="icon-pencil"></i>
+        </a>
+      </td>
+    </tr>
+  </volist>
+
+  <tr>
+    <td colspan="8">
+      <div class="pagination">{$page}</div>
+    </td>
+
+  </tr>
+
+</tbody>
+</table>
+
+</div>
+
+<script type="text/javascript">
+        function addids(){
+          ids ="";
+          $("input[name='id']:checkbox:checked").each(function(){ 
+            ids+=","+$(this).val(); 
+          });
+          if(ids !==""){
+            ids = ids.substring(1);
+            tmp = "__URL__/deleteAd/id/";
+            $("#ids").attr("href",tmp+ids);
+          }
+          else{
+            $("#ids").attr("href","#");
+          }         
+
+        }
+        var is_all = true;
+        function addids_all(){
+          if(is_all){
+            $("input[name='id']").attr("checked","true"); 
+            is_all = false;
+          }else{
+            $("input[name='id']").removeAttr("checked");
+            is_all = true;
+            $("#ids").attr("href","#");
+          }
+          addids();
+        }
+        
+        function del(){
+          if($("#ids").attr("href") == "#"){
+            alert("请选择"); return;
+          }
+        }
+  
+      </script>
+
+<include file="Public:footer" />
+
+</body>
+</html>

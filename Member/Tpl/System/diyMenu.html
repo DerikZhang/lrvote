@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>{$Think.config.sitename}</title>
+  <link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin_style.css" />
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/blue.css" />
+</head>
+<body class="right_body">
+  <div class="body">
+    <div class="top_subnav">{$Think.config.sitename} ＞ 自定义菜单</div>
+
+<table class="table table-bordered table-hover">
+<tbody>
+
+  <tr >
+    <td colspan="5" style="text-align:left;">
+
+      <a href="{:U("System/addMenu")}"  class="btn" style="float:left;" > <i class="icon-plus"></i>
+        添 加
+      </a>
+
+
+      <div class="alert alert-error" style="float:left;margin-bottom: 0px;margin-left:15px;padding: 4px 30px 4px 10px;">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>注意!</strong> 1级菜单最多只能开启3个，2级子菜单最多开启5个! (通过认证的订阅号或者服务号才能使用自定义菜单)
+      </div>
+
+    </td>
+  </tr>
+
+  <tr class="info">
+    <td>显示顺序</td>
+    <td>主菜单名称</td>
+    <td>菜单类型</td>
+    <td>类型数值</td>
+    <td>操作</td>
+  </tr>
+
+  <volist id="vo" name="list">
+    <tr>
+      <td>
+          {$vo['sort']}
+      </td>
+      <td style="text-align:left;">{$vo['title']}</td>
+      <td>
+             <neq name="vo.pid" value="0" >
+           <eq name="vo.typeid" value="0" >
+                    <span class="label label-success">关键词回复菜单</span>
+             </eq>
+             <eq name="vo.typeid" value="1" >
+                    <span class="label label-important">url链接菜单</span>
+             </eq> 
+           </neq>
+           <eq name="vo.pid" value="0" >父级菜单</eq>
+      </td>
+      <td>
+             <neq name="vo.pid" value="0" >
+               <eq name="vo.typeid" value="0" >
+                     {$vo['keyword']}
+               </eq>
+               <eq name="vo.typeid" value="1" >
+                      {$vo['url']}
+
+               </eq>   
+             </neq> 
+             <eq name="vo.pid" value="0" >无</eq>
+
+      </td>
+  	  <td>
+        <a href="__URL__/deleteDiymenu/id/{$vo['id']}/" onclick="return window.confirm('确定删除？');" title="删除"> <i class="icon-trash"></i>
+        </a>
+
+       <a href="__URL__/editMenu/id/{$vo['id']}" title="编辑">
+          <i class="icon-pencil"></i>
+        </a>
+	  		  
+  	  </td>
+    </tr>
+
+    <?php
+      $tmp = M("Diymenu")->where("pid=".$vo['id'])->select();
+      foreach ($tmp as $key => $value) {
+    ?>
+    <tr>
+      <td>
+         <?php echo $value['sort']; ?>
+      </td>
+      <td style="text-align:left;">
+        <img src="__PUBLIC__/images/bg_repno.gif" />
+        <?php echo $value['title']; ?></td>
+      <td>
+             <?php if($value['typeid'] == 0){ ?>
+                    <span class="label label-success">关键词回复菜单</span>
+             <?php } ?>  
+
+             <?php if($value['typeid'] == 1){ ?>
+                  <span class="label label-important">url链接菜单</span>
+             <?php } ?>  
+      </td>
+      <td>
+             <?php if($value['typeid'] == 0){ ?>
+                <?php echo $value['keyword']; ?>
+             <?php } ?>  
+
+             <?php if($value['typeid'] == 1){ ?>
+                <?php echo $value['url']; ?>
+             <?php } ?>         
+      </td>
+      <td>
+        <a href="__URL__/deleteDiymenu/id/<?php echo $value['id']; ?>/" onclick="return window.confirm('确定删除？');" title="删除"> <i class="icon-trash"></i>
+        </a>
+
+       <a href="__URL__/editMenu/id/<?php echo $value['id']; ?>" title="编辑">
+          <i class="icon-pencil"></i>
+        </a>
+          
+      </td>
+    </tr>
+
+    <?php
+      }
+    ?>
+
+
+  </volist>
+  <tr>
+    <td colspan="5" style="text-align:left;">
+              <a href="{:U("System/greateMenu")}"  class="btn" style="float:left;" > <i class="icon-file"></i>
+        生成自定义菜单
+      </a>
+<br/>
+<br/>
+<p style="color:red">
+生成自定义菜单 注：
+</p>
+<p style="color:red">
+(使用前提是已经拥有了自定义菜单的用户才能够使用，)
+</p>
+<p style="color:red">
+第一步:必须先填写【AppId】【 AppSecret】！
+</p>
+<p style="color:red">
+第二步:添加菜单，
+</p>
+<p style="color:red">
+第三步:点击生成!
+</p>
+<p style="color:red">
+注意：1级菜单最多只能开启3个，2级子菜单最多开启5个
+</p>
+<p style="color:red">
+官方说明：修改后，需要重新关注，或者最迟隔天才会看到修改后的效果！
+</p>
+
+
+    </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+
+<script type="text/javascript">
+        function addids(){
+          ids ="";
+          $("input[name='id']:checkbox:checked").each(function(){ 
+            ids+=","+$(this).val(); 
+          });
+          if(ids !==""){
+            ids = ids.substring(1);
+            tmp = "__URL__/deleteAd/id/";
+            $("#ids").attr("href",tmp+ids);
+          }
+          else{
+            $("#ids").attr("href","#");
+          }         
+
+        }
+        var is_all = true;
+        function addids_all(){
+          if(is_all){
+            $("input[name='id']").attr("checked","true"); 
+            is_all = false;
+          }else{
+            $("input[name='id']").removeAttr("checked");
+            is_all = true;
+            $("#ids").attr("href","#");
+          }
+          addids();
+        }
+        
+        function del(){
+          if($("#ids").attr("href") == "#"){
+            alert("请选择"); return;
+          }
+        }
+  
+      </script>
+
+<include file="Public:footer" />
+
+</body>
+</html>

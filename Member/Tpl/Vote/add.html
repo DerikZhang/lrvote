@@ -1,0 +1,465 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>{$Think.config.sitename}</title>
+
+  <link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin_style.css" />
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/blue.css" />
+
+    <script src="__PUBLIC__/js/Calendar.js" type="text/javascript"></script>
+
+
+</head>
+<body class="right_body">
+  <div class="body">
+    <div class="top_subnav">{$Think.config.sitename} ＞ 添加投票</div>
+
+    <form method="post" id="form1" action="__URL__/insert/" class="form-horizontal pageForm required-validate">
+      <fieldset>
+        <legend>添加投票</legend>
+
+
+        <div class="control-group">
+          <label class="control-label" for="mobile">投票标题：</label>
+          <div class="controls">
+            <input type="text" name="title" value="{$vo.title}"  class="input_text required" >  </div>
+        </div>
+
+
+
+      <div class="control-group">
+          <label class="control-label" for="mobile">触发关键词：</label>
+          <div class="controls">
+            <input type="text" name="keyword" value="{$vo.keyword}"  class="input_text required">  </div>
+        </div>
+
+
+      <div class="control-group">
+          <label class="control-label" for="mobile">微信描述：</label>
+          <div class="controls">
+            <input type="text" name="wx_info" value="{$vo.wx_info}"  class="input-xlarge">(限200字以内,显示在分享、回复关键词图文中)</div>
+        </div>
+
+
+
+      <div class="control-group">
+        <label class="control-label" for="mobile">图片：</label>
+        <div class="controls">
+          <input type="text" id="picurl" name="picurl" value="{$vo.picurl}" class="input-large   required">
+          <input type="button" name="button" value="上传" class="btn btn-info" onclick="upyunPicUpload('picurl',0,0)">
+          <input type="button" name="button" value="预览" class="btn btn-info" onclick="viewImg('picurl')">
+        </div>
+      </div>
+
+
+      <div class="control-group">
+        <label class="control-label" for="mobile">音乐：</label>
+        <div class="controls">
+          <input type="text" id="music" name="music" value="{$vo.music}" class="input-large">
+          <input type="button" name="button" value="上传" class="btn btn-info" onclick="upyunPicUpload('music',0,0)">
+        </div>
+      </div>
+
+ <div class="control-group">
+          <label class="control-label" for="inputEmail">访问量设置：</label>
+          <div class="controls">
+        <input type="text" name="count" value="{$vo.count}"  class="input_text">  
+          </div>
+        </div>
+
+
+
+<div class="control-group">
+<label class="control-label" for="inputEmail">活动开始时间：</label>
+<div class="controls">
+<input type="text"  id="statdate" name="statdate" value="{$vo.statdate|date="Y-m-d",### }" onclick="new Calendar().show(this);" class="input_text required"> 
+</div>
+</div>
+
+
+<div class="control-group">
+<label class="control-label" for="inputEmail">活动结束时间：</label>
+<div class="controls">
+<input type="text"  id="enddate" name="enddate" value="{$vo.enddate|date="Y-m-d",### }" onclick="new Calendar().show(this);" class="input_text required"> 
+</div>
+</div>
+
+
+
+
+
+<div class="control-group">
+<label class="control-label" for="inputEmail">投票开始时间：</label>
+<div class="controls">
+<input type="text"  id="v_startdate" name="v_startdate" value="" onclick="new Calendar().show(this);" class="input_text required"> 
+</div>
+</div>
+
+
+<div class="control-group">
+<label class="control-label" for="inputEmail">投票结束时间：</label>
+<div class="controls">
+<input type="text"  id="v_enddate" name="v_enddate" value="" onclick="new Calendar().show(this);" class="input_text required"> 
+</div>
+</div>
+
+
+
+
+
+        <div class="control-group">
+          <label class="control-label" for="backmail">是否人工审核：</label>
+          <div class="controls">
+              是　<input type="radio" id="isCheck" value = '1' name="isCheck" <if condition="$vo.isCheck eq 1">checked</if>>&nbsp;&nbsp;&nbsp;否　<input type="radio" id="isCheck2" value = "0" name="isCheck" <if condition="$vo.isCheck eq 0">checked</if>>
+                   
+       </div>
+        </div>
+        
+
+
+        <div class="control-group">
+          <label class="control-label" for="backmail">状态：</label>
+          <div class="controls">
+              启用　<input type="radio" id="auth" value = '1' name="status" <if condition="$vo.status eq 1">checked</if>>&nbsp;&nbsp;&nbsp;关闭　<input type="radio" id="auth2" value = "0" name="status" <if condition="$vo.status eq 0">checked</if>>
+			             
+		   </div>
+        </div>
+
+
+       <div class="control-group">
+          <label class="control-label" for="backmail">防恶意刷新：</label>
+          <div class="controls">
+              启用　<input type="radio" id="prevent" value = '1' name="prevent" <if condition="$vo.prevent eq 1">checked</if>>&nbsp;&nbsp;&nbsp;关闭　<input type="radio" id="prevent2" value = "0" name="prevent" <if condition="$vo.prevent eq 0">checked</if>>
+               （开启防刷新后一个微信号每天只能投一票）    
+       </div>
+        </div>
+
+
+<div class="control-group">
+<label class="control-label" for="backmail">是否开启验证码：</label>
+<div class="controls">
+启用　<input type="radio" id="isVerify" value = '1' name="isVerify">&nbsp;&nbsp;&nbsp;关闭　<input type="radio" id="isVerify2" value = "0" name="isVerify" checked>    
+</div>
+</div>
+
+
+
+
+  
+     <div class="control-group">
+          <label class="control-label" for="mobile">设置限制时间(小时)：</label>
+          <div class="controls">
+            <input type="text" name="hour" value="24"  class="input-small required number" >  </div>
+        </div>
+
+
+       <div class="control-group">
+          <label class="control-label" for="mobile">限制每人小时投票数：</label>
+          <div class="controls">
+            <input type="text" name="cknums" value="{$vo.cknums}"  class="input-small required number" > (小时数以上面设置为准) </div>
+        </div>
+
+       <div class="control-group">
+          <label class="control-label" for="backmail">在规定时间内不能重复投给同一个人：</label>
+          <div class="controls">
+              启用　<input type="radio" id="allperson" value = '1' name="allperson" <if condition="$vo.allperson eq 1">checked</if>>&nbsp;&nbsp;&nbsp;关闭　<input type="radio" id="allperson2" value = "0" name="allperson" <if condition="$vo.allperson eq 0">checked</if>> （这个时间是您设置的限制时间）
+       </div>
+        </div>
+
+
+
+<div class="control-group">
+<label class="control-label" for="backmail">设置投票地区：(根据需要设置)</label>
+<div class="controls">
+
+
+<div style="float:left;">
+<select name="nativeplace" id="province" class="input-small" onchange="first(this.value)">
+<option value="">选择省份</option>
+</select>
+</div>
+<div id="f1" style="float:left;">
+</div>
+<div id="f2" style="float:left;">
+</div>
+(地区根据IP判断，由于运营商机制IP可能不准)  
+
+</div>
+</div>
+
+
+
+
+
+
+
+       <div class="control-group">
+          <label class="control-label" for="mobile">自义定投票背景色：</label>
+          <div class="controls">
+            <input type="text" name="bgcolor" value="{$vo.bgcolor}"  class="input_text colorpick" > (如：#f0e1ca) </div>
+        </div>
+
+
+
+        <div class="control-group">
+          <label class="control-label" for="backmail">微信关注链接：</label>
+          <div class="controls">
+            <input type="text" name="wx_url" value="{$vo.wx_url}"  class="input_text required">
+		   </div>
+        </div>
+
+
+        <div class="control-group">
+          <label class="control-label" for="backmail">电话：</label>
+          <div class="controls">
+            <input type="text" name="tel" value="{$vo.tel}"  class="input_text required">
+       </div>
+        </div>
+
+
+         <div class="control-group">
+          <label class="control-label" for="backmail">投票成功跳转网址：</label>
+          <div class="controls">
+            <input type="text" name="jump" value="{$vo.jump}"  class="input_text"> （如：http://www.lanrenmb.com 如果不填，则跳转首页）
+       </div>
+        </div>   
+
+
+       <div class="control-group">
+          <label class="control-label" for="mobile">模板风格：</label>
+          <div class="controls">
+            <select name="template" class="input-small required">
+              <volist name="list" id="list">
+                <option value="{$list.id}"  >{$list.title}</option>
+              </volist>
+            </select>
+      </div>
+        </div>
+
+
+
+
+    <link rel="stylesheet" href="__PUBLIC__/kindeditor/themes/default/default.css" />
+    <script charset="utf-8" src="__PUBLIC__/kindeditor/kindeditor-min.js"></script>
+    <script charset="utf-8" src="__PUBLIC__/kindeditor/lang/zh_CN.js"></script>
+<script>
+      var editor;
+      KindEditor.ready(function(K) {
+        editor = K.create('textarea[name="info"]', {
+          resizeType : 1,
+          allowPreviewEmoticons : false,
+          allowImageUpload : false,
+          items : [
+            'source','fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+            'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+            'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+        });
+      });
+    </script>
+      <div class="control-group">
+          <label class="control-label">投票说明：</label>
+          <div class="controls">
+            <textarea name="info" style="width:40%;height:30em;" class="input_text required"><?php echo htmlspecialchars($vo['info']); ?></textarea>
+          </div>
+        </div> 
+
+
+
+
+<div class="control-group">
+          <label class="control-label" for="mobile">底部导航菜单设置：</label>
+		  (温馨提示：导航菜单图标颜色最佳为白色，推荐在阿里巴巴最大图标库下载：<a href="http://www.iconfont.cn" target="_blank">www.iconfont.cn </a> 搜索自己喜欢图标，建议选择白色，大小选择128px 大小)
+        </div>
+
+
+<div class="control-group">
+          <label class="control-label" for="mobile">导航栏一：</label>
+          <div class="controls">
+		菜单图标:
+          <input type="text" id="ico_1" name="ico_1" value="{$vo.ico_1}" class="input-large">
+          <input type="button" name="button" value="上传" class="btn btn-info" onclick="upyunPicUpload('ico_1',0,0)">
+			<input type="button" name="button" value="预览" class="btn btn-info" onclick="viewImg('ico_1')">
+
+         名称：<input type="text" name="dao_1" value="{$vo.dao_1}"  class="input-small" > 链接：<input type="text" name="dao_11" value="{$vo.dao_11}"  class="input_text" > (若该行为空不填写，系统默认显示“我要报名”入口)
+			
+
+			</div>
+
+        </div>
+
+
+<div class="control-group">
+          <label class="control-label" for="mobile">导航栏二：</label>
+          <div class="controls">
+		  菜单图标:
+          <input type="text" id="ico_2" name="ico_2" value="{$vo.ico_2}" class="input-large">
+          <input type="button" name="button" value="上传" class="btn btn-info" onclick="upyunPicUpload('ico_2',0,0)">
+			<input type="button" name="button" value="预览" class="btn btn-info" onclick="viewImg('ico_2')">
+         名称：<input type="text" name="dao_2" value="{$vo.dao_2}"  class="input-small" > 链接：<input type="text" name="dao_22" value="{$vo.dao_22}"  class="input_text" > (若该行为空不填写，系统默认显示“电话咨询”入口)
+			
+
+			</div>
+
+        </div>
+
+
+
+<div class="control-group">
+          <label class="control-label" for="mobile">导航栏三：</label>
+          <div class="controls">
+		  菜单图标:
+          <input type="text" id="ico_3" name="ico_3" value="{$vo.ico_3}" class="input-large">
+          <input type="button" name="button" value="上传" class="btn btn-info" onclick="upyunPicUpload('ico_3',0,0)">
+			<input type="button" name="button" value="预览" class="btn btn-info" onclick="viewImg('ico_3')">
+         名称：<input type="text" name="dao_3" value="{$vo.dao_3}"  class="input-small" > 链接：<input type="text" name="dao_33" value="{$vo.dao_33}"  class="input_text" > (若该行为空不填写，系统默认显示“排行”入口)
+			
+
+			</div>
+
+        </div>
+
+
+
+<div class="control-group">
+          <label class="control-label" for="mobile">导航栏四：</label>
+          <div class="controls">
+		  菜单图标:
+          <input type="text" id="ico_4" name="ico_4" value="{$vo.ico_4}" class="input-large">
+          <input type="button" name="button" value="上传" class="btn btn-info" onclick="upyunPicUpload('ico_4',0,0)">
+			<input type="button" name="button" value="预览" class="btn btn-info" onclick="viewImg('ico_4')">
+         名称：<input type="text" name="dao_4" value="{$vo.dao_4}"  class="input-small" > 链接：<input type="text" name="dao_44" value="{$vo.dao_44}"  class="input_text" > (若该行为空不填写，系统默认显示“点击拉票”入口)
+			
+
+			</div>
+
+        </div>
+
+
+
+
+
+        <div class="control-group">
+          <div class="controls">
+
+            <!--
+            <a class="btn btn-primary" id="sub"> <i class="icon-ok icon-white"></i>
+              保存
+            </a>
+            -->
+
+           <input type="submit" name="button" value="提交内容" class="btn btn-primary" />
+
+          </div>
+        </div>
+
+
+
+
+        
+		  
+        </fieldset>
+      </form>
+
+    </div>
+
+    <include file="Public:footer" />
+<script src="__PUBLIC__/static/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="__PUBLIC__/static/artDialog/plugins/iframeTools.js"></script>
+<script src="__PUBLIC__/static/upyun.js?2013"></script>     
+  
+ <link href="__PUBLIC__/colorpicker/dist/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+<script src="__PUBLIC__/colorpicker/dist/js/bootstrap-colorpicker.js"></script>
+<script>
+    $(function(){
+        $('.colorpick').colorpicker();
+    });
+</script>  
+  
+
+<script type="text/javascript" src="/Public/nativeplace.js"></script>
+<script type="text/javascript">
+$( document ).ready(function() {
+
+nat1 = nat2 = nat3 = "";
+
+  for(i=1000;i < em_nativeplace.length;i=i+500){
+    if(em_nativeplace[i] != undefined){
+      ss = '';
+      if(nat1 !=""){
+        if(i==nat1){
+          ss = "selected";  
+        } 
+      }
+      $("#province").append("<option value='"+i+"' "+ss+">"+em_nativeplace[i]+"</option>");
+    }
+  }
+
+
+  if(nat2 !=""){
+      first(nat1);    
+  }
+  if(nat3 !=""){
+    second(nat2);   
+  }
+
+});
+
+function first(v){
+  $("#f2").html('');
+  if(v=="")
+  {
+    $("#f1").html('');
+    return;
+  }
+  tmp = "<select class='input-small' name='nativeplace' id='nativeplace' onchange=\"second(this.value)\"><option value='"+v+"'>选择市</option>";
+  tmp2 = false;
+  v=parseInt(v)+1;
+  for(i=v;i < v+30;i++){
+    if(em_nativeplace[i] != undefined){
+      tmp2 = true;
+      ss = '';
+      if(nat2 == i){
+        ss = "selected";    
+      }
+      tmp += "<option value='"+i+"' "+ss+">"+em_nativeplace[i]+"</option>";
+    }
+  }
+  tmp += "</select>";
+  if(tmp2){
+    $("#f1").html(tmp);  
+  }
+}
+
+function second(v){
+  return;
+  tmp = "<select class='input-small' name='nativeplace' id='nativeplace'><option value='"+v+"'>选择区</option>";
+  tmp2 = false;
+  for(i=1;i < 30;i=i+1){
+          a = v+"."+i;
+    //console.log(a);
+    if(em_nativeplace[a] != undefined){
+      tmp2 = true;
+      ss = '';
+      if(nat3 == a){
+        ss = "selected";    
+      }
+      tmp += "<option value='"+a+"' "+ss+">"+em_nativeplace[a]+"</option>";
+    }
+  }
+  tmp += "</select>";
+  if(tmp2){
+    $("#f2").html(tmp);
+  }
+}
+
+
+</script>  
+
+    
+  
+  
+  
+</body>
+  </html>

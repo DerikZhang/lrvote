@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>{$Think.config.sitename}</title>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/admin_style.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/skins/tpphp.css" />
+    <script src="__PUBLIC__/js/jquery-1.4.4.min.js"></script>
+    <script src="__PUBLIC__/js/main.js"></script>
+    <script src="__PUBLIC__/js/artDialog.js"></script>
+    <script type="text/javascript">
+function openMsgWindow() {
+    art.dialog({
+        id:'msgDialog',
+        title: '提示信息',
+        lock:false,
+        fixed:true,
+        width:300,
+        height:100,
+        ok: function(){
+            this.title('成功提示！').content('操作成功！').time(2);
+            return false;
+         },
+         cancel: function(){
+            
+            return true;
+         },
+        content: "<div style='line-height:25px'>您有新的站内信<Br><a href=\"#\">点此阅读</a></div>"
+    });
+}
+
+function menucss(id){
+    $('#menu li a').each(
+        function(){
+            $('.selected').removeClass('selected');
+        }
+    );
+    $("#"+id).addClass('selected');
+}
+
+</script>
+</head>
+<body style="overflow:hidden;">
+    <div class="top">
+        <div class="top_about">
+       联系我们：
+       <img src="__PUBLIC__/images/mobile.gif">:&nbsp;&nbsp;<?php echo C('site_tel');?>&nbsp;&nbsp;
+        <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=<?php echo C('site_qq');?>&amp;site=qq&amp;menu=yes" target="_blank" style="color:#666666"> <img src="__PUBLIC__/images/QQ.gif">:&nbsp;&nbsp;<?php echo C('site_qq');?></a>
+        </div>
+        <div class="admin_logo">
+            <img src="<?php echo C('site_logo');?>"></div>
+        <div class="top_nav">
+            <ul id="menu">
+					
+                    <li>
+                        <a href="__APP__/System/index" id="menu1" target="main" onClick="parent.left.location='__APP__/System/left/';menucss('menu1');" class="selected">系统设置</a>
+                    </li>
+					
+                    <li>
+                        <a href="__APP__/Member/index" id="menu2" target="main" onClick="parent.left.location='__APP__/Member/left/';menucss('menu2');" >用户管理</a>
+                    </li>
+
+
+                    <li>
+                        <a href="__APP__/Vote/index" id="menu3" target="main" onClick="parent.left.location='__APP__/Vote/left/';menucss('menu3');" >投票管理</a>
+                    </li>
+
+			</ul>
+        </div>
+        <div class="top_member">
+            欢迎您，{$Think.session.loginUserName}
+            <eq name="Think.session.competence" value="1">
+                <span style="color:red;">普通用户</span>
+            </eq>
+            <eq name="Think.session.competence" value="2">
+                <span style="color:red;">商户</span>
+            </eq>
+            <eq name="Think.session.competence" value="3">
+                <span style="color:red;">VIP用户</span>
+            </eq>
+                <a href="__APP__/Person/" target="main" >更改密码</a>
+        </div>
+    </div>
+    <div class="side_switch" id="side_switch"></div>
+    <div class="side_switchl" id="side_switchl"></div>
+    <div class="left">
+    <div class="member_info">
+       
+        <a class="system_a" href="">系统设置</a>
+        <a href="__APP__/Public/logout/" class="system_log">注销</a>
+        <a href="__APP__/Public/logout/" class="system_logout">退出</a>
+    </div>
+    
+<IFRAME style="OVERFLOW: visible" id="left" name="left" src="__APP__/System/left/" frameBorder=0 width="100%" scrolling="yes" height="100%"></IFRAME>
+
+</div>
+<div class="right1">
+<IFRAME id="main" name="main" src="__APP__/System/index" frameBorder=0 width="100%" scrolling="yes" height="100%"></IFRAME>
+</div>
+</body>
+</html>
