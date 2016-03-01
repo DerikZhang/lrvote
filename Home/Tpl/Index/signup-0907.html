@@ -1,0 +1,1143 @@
+
+<!--微信分享-->
+<?php
+
+if($member['m_appid'] && $member['m_appsecret']){
+
+require_once "../Public/weixin/jssdk.php";
+$jssdk = new JSSDK($member['m_appid'], $member['m_appsecret']);
+$signPackage = $jssdk->GetSignPackage();
+?>
+
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+
+  wx.config({
+    debug: false,
+    appId: '<?php echo $signPackage["appId"];?>',
+    timestamp: <?php echo $signPackage["timestamp"];?>,
+    nonceStr: '<?php echo $signPackage["nonceStr"];?>',
+    signature: '<?php echo $signPackage["signature"];?>',
+jsApiList: [
+        'checkJsApi',
+        'onMenuShareTimeline',
+        'onMenuShareAppMessage',
+        'onMenuShareQQ',
+        'onMenuShareWeibo',
+        'hideMenuItems',
+        'showMenuItems',
+        'hideAllNonBaseMenuItem',
+        'showAllNonBaseMenuItem',
+        'translateVoice',
+        'startRecord',
+        'stopRecord',
+        'onRecordEnd',
+        'playVoice',
+        'pauseVoice',
+        'stopVoice',
+        'uploadVoice',
+        'downloadVoice',
+        'chooseImage',
+        'previewImage',
+        'uploadImage',
+        'downloadImage',
+        'getNetworkType',
+        'openLocation',
+        'getLocation',
+        'hideOptionMenu',
+        'showOptionMenu',
+        'closeWindow',
+        'scanQRCode',
+        'chooseWXPay',
+        'openProductSpecificView',
+        'addCard',
+        'chooseCard',
+        'openCard'
+      ]
+  });
+
+</script>
+
+
+<script type="text/javascript">
+wx.ready(function () {
+var shareData = {
+title: '{$vo['title']}',
+desc: '<?php echo str_replace(array("\r\n","\'"),array("",""),strip_tags($vo['info']));?>',
+link: '<?php echo C('site_url'); ?>{:U("Index/index",array("id"=>$vo['id']))}',
+imgUrl: '{$vo['picurl']}'
+};
+wx.onMenuShareAppMessage(shareData);
+wx.onMenuShareTimeline(shareData);
+wx.onMenuShareQQ(shareData);
+wx.onMenuShareWeibo(shareData);
+});
+wx.error(function (res) { 
+//alert(res.errMsg);
+});
+</script>
+
+<?php
+}
+?>
+<!--END 微信分享-->
+
+
+
+<html lang="zh-cn"><head>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>{$vo['title']}</title>
+
+    <meta name="format-detection" content="telephone=no, address=no">
+
+    <meta name="apple-mobile-web-app-capable" content="yes"> <!-- apple devices fullscreen -->
+
+    <meta name="apple-touch-fullscreen" content="yes">
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+
+    <link href="http://wx180.weixindadang.com/static/picwvbm/resource/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="http://wx180.weixindadang.com/static/picwvbm/resource/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="http://wx180.weixindadang.com/static/picwvbm/resource/css/animate.css" rel="stylesheet">
+
+    <link href="http://wx180.weixindadang.com/static/picwvbm/resource/css/common.css" rel="stylesheet">
+
+	<script type="text/javascript" src="<?php echo C('site_url'); ?>/Home/Tpl/Index/static/jquery.min.js"></script>
+
+    <!--
+    <script src="http://wx180.weixindadang.com/static/picwvbm/resource/js/require.js"></script>
+
+    <script src="http://wx180.weixindadang.com/static/picwvbm/resource/js/app/config.js"></script>
+    -->
+
+
+	<link rel="stylesheet" href="<?php echo C('site_url'); ?>/Home/Tpl/Index/static/jquery-ui.min.css?ver=0.01" type="text/css">
+
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery.wallform" src="http://wx180.weixindadang.com/static/picwvbm/resource/js/app/jquery.wallform.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="bootstrap" src="http://wx180.weixindadang.com/static/picwvbm/resource/js/app/../lib/bootstrap.min.js"></script>
+	
+	<link rel="stylesheet" href="<?php echo C('site_url'); ?>/Home/Tpl/Index/static/idangerous.swiper.css">
+	<script src="<?php echo C('site_url'); ?>/Home/Tpl/Index/static/idangerous.swiper.min.js"></script>
+	
+	</head>
+
+
+
+<body>
+
+	<style>
+
+
+		#preview
+
+{
+
+color:#cc0000;
+
+font-size:12px
+
+}
+
+.imgList 
+
+{
+
+border:1px solid #dedede;
+
+padding:4px;	
+
+}
+
+	</style>
+
+	
+
+
+
+
+
+
+
+
+
+<div class="load" style="display:none;background: url('c2/tusi.png') no-repeat;max-width: 85%;min-height: 77px;min-width: 270px;position: absolute;left: -1000px;top: -1000px;text-align: center;border-radius:10px;"><p style="color: #ffffff;line-height: 77px;font-size: 23px;"><span id="sfxsfx">正在上传中</span><img src="c2/ajax-loader-fb-b30c47c4cfb5651819070c9c1e559ead.gif"></p></div>
+
+    
+
+<div class="container container-fill">
+
+    
+
+<style>
+
+    body{background:#d2e6e9; padding-bottom:63px; font-family:Helvetica, Arial, sans-serif;}
+
+    a{color:#666666;}a:hover{color:#3ebacc;}
+
+    .profile-box{padding:10px 0; background:transparent url('static/picwvbm/resource/images/home-bg.jpg') no-repeat; background-size:100% 100%;}
+
+    .form-header{clear:both;height:20px;line-height:15px;margin-left:15px; margin-top:20px;border-left:5px solid #000000;padding:5px;font-weight:bold;postion:relative;}
+
+    .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus{color: #3ebacc;}
+
+    .btn.btn-primary{background: #56c6d6; color: #FFF; border: 0;}
+
+    @media screen and (max-width: 767px) {.tpl-calendar div,.tpl-district-container div{margin-bottom:10px;} .empty{display:none;}}
+
+    /*.btn-group-top-box{padding:10px 0; border-bottom:1px solid #a5d7de;}*/
+
+    .btn-group-top{margin:0 auto; overflow:hidden; width:270px; display:block;margin-bottom:18px}
+
+    .btn-group-top .btn{width:100px; -webkit-box-shadow:none; box-shadow:none; border-color:#5ac5d4; color:#5ac5d4; background:#d1e5e9;}
+
+    .btn-group-top .btn:hover{color:#FFF; background:#addbe1;}
+
+    .btn-group-top .btn.active{color:#FFF; background:#5ac5d4;}
+
+    select{
+
+        height:30px;-webkit-appearance:none;appearance:none;border:none;font-size:16px;padding:0px 10px;display:block;width:100%;-webkit-box-sizing:border-box;box-sizing:border-box;background-color: #FFFFFF;color:#333333;border-radius:4px;}
+
+.imgup 
+
+{
+
+border:1px solid #dedede;
+
+padding:4px;    
+
+}
+
+.btn_addPic{
+
+display: block;
+
+position: relative;
+
+width: 140px;
+
+height: 39px;
+
+overflow: hidden;
+
+border: 1px solid #EBEBEB;
+
+background: none repeat scroll 0 0 #F3F3F3;
+
+color: #6d6d6d;
+
+cursor: pointer;
+
+text-align: center;
+
+margin-bottom:8px;
+
+}
+
+.btn_addPic span{display: block;line-height: 39px;}
+
+.btn_addPic em {
+
+background:url(http://p7.qhimg.com/t014ce592c1a0b2d489.png) 0 0;
+
+display: inline-block;
+
+width: 18px;
+
+height: 18px;
+
+overflow: hidden;
+
+margin: 10px 5px 10px 0;
+
+line-height: 20em;
+
+vertical-align: middle;
+
+}
+
+.btn_addPic:hover em{background-position:-19px 0;}
+
+.filePrew {
+
+display: block;
+
+position: absolute;
+
+top: 0;
+
+left: 0;
+
+width: 140px;
+
+height: 39px;
+
+font-size: 100px; /* 增大不同浏览器的可点击区域 */
+
+opacity: 0; /* 实现的关键点 */
+
+filter:alpha(opacity=0);/* 兼容IE */
+
+} 
+
+        
+
+</style>
+
+<div class="profile">
+
+    <div class="tabbable">
+
+                        <div class="form-group">
+
+
+<style>
+.swiper-container{width:100%;max-height:200px;color:#fff;text-align:center;}.pagination{position:absolute;z-index:20;right:10px;}.swiper-pagination-switch{display:inline-block;width:5px;height:5px;border-radius:5px;background:#222;margin-right:5px;opacity:0.8;border:1px solid #fff;cursor:pointer;}.swiper-visible-switch{background:#aaa;}.swiper-active-switch{background:#fff;}
+	.imgplay{max-height:200px;width:100%}
+</style>
+<div id="content" style="max-width: 640px;margin: 0 auto;">
+
+              		<!--headpic-->
+		<div class="swiper-container" style="display:block;">
+<div class="swiper-wrapper">
+
+
+	<volist name="ad" id="adlist">
+		<div class="swiper-slide">
+		<a href="{$adlist['url']}"><img class="imgplay" src="{$adlist['picurl']}" /></a></div>
+	</volist>
+	
+	
+	</div>	
+</div>
+<div class="pagination" style="margin-top:-10px;"></div>
+</div>
+	
+	
+				    <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.pagination',
+        paginationClickable: true,
+        autoplay:2500
+    });
+    </script>
+
+
+            </div>
+
+            <div class="form-group">
+
+            <p style="text-align: center;font-weight:bold">当前报名总数：{$vo['count']}</p>
+
+            
+
+            </div>
+
+                    <div class="btn-group-top-box">
+
+            <div class="btn-group btn-group-top">
+
+                <a href="" data-toggle="tab" class="btn btn-default basic active" style="width:270px;">报名开始时间：{$vo['statdate']|date="Y-m-d",###}<br>报名结束时间：{$vo['enddate']|date="Y-m-d",###}</a>
+
+            </div>
+
+        </div>
+
+        
+
+                
+
+        
+
+        <div class="profile-box">
+
+
+<!--
+        	       	<script type="text/javascript">
+
+ require(["jquery","jquery.wallform"], function($){
+
+        $('#photoimg').on('change', function() {
+
+        	
+
+        	
+
+        	
+
+           $("#imageform").ajaxForm({target: '#preview', 
+
+				     beforeSubmit:function(){ 
+
+					
+
+					console.log('ttest');
+
+					$("#imageloadstatus").show();
+
+					 $("#imageloadbutton").hide();
+
+					 $('.imgup').hide();
+
+					 }, 
+
+					success:function(){ 
+
+				    console.log('test');
+
+					 $("#imageloadstatus").hide();
+
+					 $("#imageloadbutton").show();
+
+					}, 
+
+					error:function(){ 
+
+					console.log('xtest');
+
+					 $("#imageloadstatus").hide();
+
+					$("#imageloadbutton").show();
+
+					} }).submit();	
+
+            });
+
+        });  
+
+</script>
+-->
+
+	<form id="imageform" method="post" enctype="multipart/form-data" action="__URL__/insertForm">
+
+
+<div class="tab-pane active animated" id="tab1">
+
+            <div class="form-group">
+
+            	
+
+            <label class="col-xs-12 col-sm-12 control-label">报名照片<span style="color: red;font-size:.9em"></span><span style="color: #b0adaf"></span></label>
+
+                <div class="col-sm-12">
+
+
+
+
+
+
+<div id="imageloadstatus" style="display:none"><img src="static/loader.gif" alt="Uploading...."></div>
+
+<!--<div id='imageloadbutton'>-->
+          <input type="text" id="picurl" name="picurl" value="" class="input-large" style="width:70%">
+          <input type="button" name="button" value="上传" class="btn btn-info" onclick="upyunWapPicUpload('picurl')">
+
+<!--</div>-->
+
+
+
+
+<!--
+<div id="preview">
+<img class="imgup" style="width:100%" src="static/bm.jpg">
+</div>
+-->
+
+
+             </div>
+
+            </div>
+
+
+
+        <form class="tab-content clearfix" action="/wx/picbm.html?wid=180" method="post" enctype="multipart/form-data">
+
+                     <div class="form-group">
+
+                <label class="col-xs-12 col-sm-12 control-label">介绍<span style="color: red">*</span><span style="color: #b0adaf">(投票宣言或个人介绍)</span></label>
+
+                <div class="col-sm-12">
+
+                    <textarea name="info" id="micro_photo_imagesdesc" style="height:100px;width:100%;"></textarea>                                     
+
+                                   </div>
+
+            </div>
+
+           
+
+                        <div class="form-group">
+
+                <label class="col-xs-12 col-sm-12 control-label">真实姓名<span style="color: #f20dcf">*</span><span style="color: #b0adaf">(请填写选手的姓名)</span></label>
+
+                <div class="col-sm-12">
+
+                    <input type="text" class="form-control" name="username" value="">                </div>
+
+            </div>
+
+                        <div class="form-group">
+
+                <label class="col-xs-12 col-sm-12 control-label">手机<span style="color: red">*</span><span style="color: #b0adaf">（请准确填写手机号,以便活动通知）</span></label>
+
+                <div class="col-sm-12">
+
+                                        <input name="tel" type="number" value="" class="form-control">
+
+                                    </div>
+
+            </div>
+
+            <div class="form-group">
+
+                <label class="col-xs-12 col-sm-12 control-label">性别</label>
+
+                <div class="col-sm-12">
+
+                    
+
+                    <select name="sex" class="form-control" style="">
+
+                        <option value="0" selected="">保密</option>
+
+                        <option value="1">男</option>
+
+                        <option value="2">女</option>
+
+                    </select>                </div>
+
+            </div>
+
+            
+
+            
+
+        
+            
+
+            
+
+            
+
+            <div class="form-group">
+
+                <label class="col-xs-12 col-sm-12 control-label">地址</label>
+
+                <div class="col-sm-12">
+
+                    <input type="text" class="form-control" name="address" value="">                </div>
+
+            </div>
+
+        </div>
+
+        
+
+        <div class="form-group">
+            <label class="col-xs-12 col-sm-12 control-label"></label>
+
+            <div class="col-sm-12" style="text-align:center">
+                <button type="submit" class="btn btn-primary btn-block" name="submit" value="提交">提交</button>
+                <input type="hidden" name="token" value="<?php echo $_GET['token'];?>">
+                <input type="hidden" name="wecha_id" value="<?php echo $_GET['wecha_id'];?>">
+                <input type="hidden" name="vid" value="<?php echo $_GET['id'];?>">
+                <input type="hidden" name="jumpUrl" value="__URL__/Index/id/<?php echo $_GET['id'];?>.html">
+                <input type="hidden" name="mid" value="{$vo.mid}">
+            </div>
+        </div>
+
+        
+
+        </div>
+
+    </div>
+
+</div>
+
+    </div>
+
+   </form>  
+				   
+				   <div class="text-center footer" style="margin-top:10px; width:100%; text-align:center; word-break:break-all;">
+
+                                    				
+
+				<a href="#" style="color: #5e5e5e;font-size: 12px;"><?php echo C('copyright'); ?></a>
+
+				
+
+				                                              </div>
+                        <!--
+                        <script>require(['bootstrap']);</script>
+                        -->
+
+    
+
+    <style>
+
+        h5{color:#555;}
+
+        a{color:#555;}
+
+    </style>
+
+    
+<!--
+  <script type="text/javascript">
+
+                
+
+                function getimg(url){
+
+                    $("#pic").val(url); 
+
+                    $("#picarea").attr('src',url);  
+
+                    $(".load").hide();           
+
+                     
+
+                }
+
+                
+
+                function imgerror(title, cont,url) {
+
+                    $(".load").hide(); 
+
+                        require(["util"], function(util){
+
+                            var content = '<div class="clearfix file-browser">';
+
+                            content +=title;
+
+                            content += "</div>";
+
+                            var link ='<button id="ok" type="button" class="btn btn-primary">确定</button>';
+
+                            title ='错误提示';
+
+                            var dialog = util.dialog(title, content,link);
+
+                            dialog.modal("show");
+
+                             
+
+                            dialog.find("#ok").on("click", function(){
+
+                                dialog.modal("hide");
+
+                            });
+
+        
+
+                        });
+
+                    }
+
+                    
+
+                    function showAvatarDialog(title, cont,bt,url) {
+
+                        require(["util"], function(util){
+
+                            var content = '<div class="clearfix file-browser">';
+
+                            content +=cont;
+
+                            content += "</div>";
+
+                            
+
+                            var dialog = util.dialog(title, content,bt);
+
+                            dialog.modal("show");                             
+
+                            dialog.find("#refresh").on("click", function(){
+
+                                dialog.modal("hide");
+
+                                location=location;
+
+                            });
+
+                            dialog.find("#ok").on("click", function(){
+
+                                dialog.modal("hide");
+
+                            });
+
+                            dialog.find("#goto").on("click", function(){
+
+                                dialog.modal("hide");
+
+                                location =url;
+
+                            });
+
+                        });
+
+                    }
+
+            
+
+    
+
+                
+
+            
+
+                        </script>
+
+      <script>
+
+$(function(){
+
+    
+
+    
+
+    //$("#upload").click(function(){$("#photoimg").trigger("click")}) 
+
+    
+
+    
+
+            
+
+        //haveno();
+
+            
+
+             
+
+        
+
+})
+
+function haveno(id,name){
+
+    var top = $(window).scrollTop();
+
+$('.haveno').remove();
+
+var div = $('<div  class="haveno" style="background: none repeat scroll 0 0 rgba(0, 0, 0, 0.7);position: absolute;top:0;left:0"><div style="z-index:9999999;width:100%;max-width:320px;float:right;"><img style="width:100%" src="static/bm.png?ver=4"></div><div style="clear:both"></div><a href="{$vo['wx_url']}" style="float:right;z-index:9999999;width:80%;max-width:320px;color:#ffe70d;font-weight:bold;font-size:1.5em;line-height:40px;text-align:center;text-decoration:none;">☞ 点击这里一键关注</a><div style="clear:both"></div><div style="clear:both"></div></div>');
+
+$('body').append(div);
+
+div.css('zIndex',9999998);
+
+div.css('top',top);
+
+div.css('width',$(window).width());
+
+div.css('height',$(window).height()+10000);
+
+}
+
+function setload(c,z){
+
+var div =$('.'+c);
+
+if(!z) var z=99999999;
+
+div.css('zIndex',z);
+
+div.css('display','block');
+
+    div.css('left',parseInt(($(window).width()-div.width())/2));
+
+    var top = parseInt($(window).scrollTop()+($(window).height()-div.height())/2);
+
+    div.css('top',top);
+
+}
+
+</script>
+
+<script>
+
+    
+
+    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+
+        
+
+        
+
+    window.shareData = {
+
+        "slink": "http://wx180.weixindadang.com/wx/picbm.html?wid=180",  
+
+        "stitle": "选手在线报名+ 立即参与投票！（自动审核）",
+
+        "scontent": "选手在线报名+ 立即参与投票！（自动审核）",
+
+        "simg":"http://123.7.103.51:89/uploaded/180/160_d1183b222b2bd846f6197bf53a39ac9d.jpg"
+
+        };
+
+        // 发送给好友
+
+        WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+
+            WeixinJSBridge.invoke('sendAppMessage', {
+
+                "img_url":window.shareData.simg,
+
+                "img_width": "401",
+
+                "img_height": "275",
+
+                "link": window.shareData.slink,
+
+                "desc": window.shareData.scontent,
+
+                "title": window.shareData.stitle
+
+            }, function (res) {
+
+                _report('send_msg', res.err_msg);
+
+            })
+
+        });
+
+        // 分享到朋友圈
+
+        WeixinJSBridge.on('menu:share:timeline', function (argv) {
+
+            WeixinJSBridge.invoke('shareTimeline', {
+
+                "img_url":window.shareData.simg,
+
+                "img_width": "401",
+
+                "img_height": "275",
+
+                "link": window.shareData.slink,
+
+                "desc": window.shareData.scontent,
+
+                "title": window.shareData.stitle
+
+            }, function (res) {
+
+                _report('timeline', res.err_msg);
+
+            });
+
+        });
+
+        //微博
+
+     WeixinJSBridge.on('menu:share:weibo', function (argv) {
+
+            WeixinJSBridge.invoke('shareWeibo', {
+
+                //do nothing~
+
+            }, function (res) {
+
+                _report('weibo', res.err_msg);
+
+            });
+
+        });
+
+ 
+
+    }, false)
+
+    
+
+    function settp(id){	
+
+    	$('#sfxsfx').html("设置封面中");
+
+	 	setload('load');
+
+	 	$('.load').show();
+
+		  		$.get("/wx/picbm.html?wid=180&settp="+id, function(result){  			
+
+		  			if(result==2){	
+
+		  				$('.load').hide();
+
+		  				
+
+		  				//$(".tpimg").attr('onclick','settp('+id+');');		  				
+
+		  				
+
+		  				$(".tpimg").each(function(e){
+
+		  					
+
+		  					var idstr = $(this).parent().attr('id');
+
+		  					idstr=idstr.replace('img',"");
+
+		  					$(this).attr('onclick','settp('+idstr+');');
+
+		  					$(this).html('设为投票封面');
+
+		  					$(this).css('background','#d92534');
+
+		  				})
+
+		  				$('#tpimg'+id).removeAttr("onclick");
+
+		  				$('#tpimg'+id).html('当前投票封面');
+
+		  				$('#tpimg'+id).css('background','red');
+
+		  				alert('设置投票封面成功');		
+
+		  			}else{	
+
+		  				$('.load').hide();
+
+		  				alert('设置投票封面失败');				
+
+		  			}		
+
+		  		});
+
+		}
+
+	 function setdel(id){	
+
+	 	$('#sfxsfx').html("正在删除中");
+
+	 	setload('load');
+
+	 	$('.load').show();	
+
+		  		$.get("/wx/picbm.html?wid=180&setdel="+id, function(result){  			
+
+		  			if(result==3){
+
+		  				$('.load').hide();
+
+		  				$("#img"+id).remove();		
+
+		  				alert('删除图片成功');		
+
+		  			}else if(result==2){
+
+		  				$('.load').hide();	
+
+		  				alert('该图片目前作为投票封面使用,请设置其他图片作为投票封面.然后再删除');				
+
+		  			}else{
+
+		  				$('.load').hide();
+
+		  			alert('删除图片失败');		
+
+		  				
+
+		  			}		
+
+		  		});
+
+		}
+
+		
+
+		function opendesc(id){
+
+			$("#desc").val('');
+
+			setload('writedesc',9999999);
+
+			$('#savedesc').attr('onclick','savedesc('+id+')');	
+
+			$("#desc").val($("#desc"+id).html());
+
+		}
+
+		function savedesc(id){
+
+			$('#sfxsfx').html("正在更新照片介绍");
+
+	 	setload('load');
+
+	 	$('.load').show();
+
+			var desc=unescape($("#desc").val());
+
+				
+
+		  		$.get("/wx/picbm.html?wid=180&savedesc="+id+"&desc="+desc, function(result){  			
+
+		  			if(result==3){
+
+		  				$('.load').hide();	
+
+		  				alert('更新介绍成功');		
+
+		  			}else {
+
+		  				$('.load').hide();
+
+		  			alert('更新介绍失败');		
+
+		  				
+
+		  			}		
+
+		  		});
+
+		}
+
+</script>
+-->
+
+
+		<div style="border-radius:6px;position: absolute;display:none;height:150px;background:#fff;width:80%;" class="writedesc"> 
+
+			<div style="padding:10px;">
+
+			<div style="padding-bottom:5px;">请添加照片备注:<a onclick="$('.writedesc').hide()" style="position:absolute;top:10px;right:10px;">[关闭]</a></div>
+
+			<textarea style="height:60px;width:100%;" id="desc">				
+
+			</textarea>
+
+			<a class="btn btn-primary btn-block" id="savedesc" onclick="">保存</a>
+
+			</div>
+
+		</div>
+
+
+<?php
+if(empty($attent)){
+?>
+
+
+
+					<style>	
+#plug {
+            background: none repeat scroll 0 0 rgba(0, 0, 0, 0.7);
+            height: 100%;
+            left: 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 999999;
+        }
+
+					.dzpwrap {
+					background: none repeat scroll 0 0 #F8F8F8;
+					border-radius: 1px 1px 1px 1px;
+					position:absolute;
+					width: 280px;
+					}
+					.dzpwrap .dzptit {
+					background-image: url("");
+					background-position: 14px 14px;
+					background-repeat: no-repeat;
+					background-size: 24px auto;
+					font-size: 1.1em;
+					line-height: 40px;
+					text-align:center;
+					padding: 7px 0 0 0px;
+					}
+					.dzpwrapcont.dzpwrapcontent {
+					background-color: #ff403a;
+					background-image: url("{$ad1['picurl']}");
+					background-position: 0 0;
+					background-repeat: no-repeat;
+					background-size: 280px 130px;
+					padding-top: 130px;
+					}
+					.dzpwrapcont {
+					padding: 0 14px 16px;
+					}
+					.btndzp {
+					border-radius: 5px 5px 5px 5px;
+					display: inline-block;
+					text-decoration: none;
+					vertical-align: middle;
+					box-shadow: 0 6px #AB3C3C;
+					}
+					.dzpwrapcont .btndzp {
+					-moz-border-bottom-colors: none;
+					-moz-border-image: none;
+					-moz-border-left-colors: none;
+					-moz-border-right-colors: none;
+					-moz-border-top-colors: none;
+					color: #5D5D5D;
+					display: block;
+					font-size: 1.6em;
+					line-height: 36px;
+					text-align: center;
+					}
+					.dzpwrapcont .btnRed {
+						background:none repeat scroll 0 0 #e8e363;
+					color: #5c5c5c;
+					letter-spacing:2px;
+					font-weight:bold;
+					margin: 16px 0 0;
+					}
+					</style>
+
+<script>
+function loaddzp(){
+$('#plug').show();
+var div =$('.dzpwrap');
+div.css('zIndex',99999999);
+div.css('display','block');
+    div.css('left',parseInt(($(window).width()-div.width())/2));
+    var top = parseInt($(window).scrollTop()+($(window).height()-div.height())/2-45);
+    div.css('top',top);
+
+}
+</script>
+<div style="display:none"><img src="/upload/auto/2014/04/12/038d30ceda208a881505fe13035b7a77.jpg" /></div>
+<div style="display:none"><img src="/static/gz.png" /></div>
+
+<div class="dzpwrap" style="display:none">
+    <article >
+        <header class="dzptit">添加我们后,回复【{$vo['keyword']}】参与活动</header> 
+        <section class="dzpwrapcont dzpwrapcontent">
+            <a href="{$vo['wx_url']}" class="btndzp btnRed">如何添加我们 ?</a> 
+        </section>
+    </article>
+</div>
+
+<script>
+$(function(){
+	loaddzp();
+});
+</script>
+<div style="display: none;" id="plug"></div>
+
+<?php } ?>
+
+
+<div style="display:none;">
+    <script src="http://s95.cnzz.com/stat.php?id=1256277963&web_id=1256277963" language="JavaScript"></script>
+</div>  
+
+</body>
+
+
+<script src="__PUBLIC__/static/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="__PUBLIC__/static/artDialog/plugins/iframeTools.js"></script>
+<script src="__PUBLIC__/static/upyun.js?2013"></script>     
+  
+  
+
+</html>

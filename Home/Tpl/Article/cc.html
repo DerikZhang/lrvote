@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>关于我们-懒人微信投票系统</title>
+<meta name="description" content="#">
+<meta name="Keywords" content="#">
+<script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script> 
+<link rel="stylesheet" href="/front/css/style.css" type="text/css" />
+
+<link rel="stylesheet" href="/front/css/aboutus.css" type="text/css"/>
+</head>
+
+<body>
+<div class="wrap">
+	
+
+
+
+<script type="text/javascript">
+$(function(){
+	var videoCC='';
+	if(videoCC!='videoCC'){
+		/*锚点加运动*/
+		$('a[href*=#]').click(function() {
+	        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+	            var $target = $(this.hash);
+	            $target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']');
+	            if ($target.length) {
+	                var targetOffset = $target.offset().top;
+	                $('html,body').animate({
+	                    scrollTop: targetOffset
+	                },
+	                1000);
+	                return false;
+	            }
+	        }
+	    }); 
+	}
+	
+	
+	
+	
+	
+	var ytx={};
+	$('[t_nav]').hover(function(){
+		var _nav = $(this).attr('t_nav');
+		clearTimeout( ytx[ _nav + '_timer' ] );
+		ytx[ _nav + '_timer' ] = setTimeout(function(){
+			$('[t_nav]').each(function(){
+				$(this)[ _nav == $(this).attr('t_nav') ? 'addClass':'removeClass' ]('active');
+			});
+			$('#'+_nav).stop(true,true).slideDown(200);
+		}, 150);
+	},function(){
+		var _nav = $(this).attr('t_nav');
+		clearTimeout( ytx[ _nav + '_timer' ] );
+		ytx[ _nav + '_timer' ] = setTimeout(function(){
+			$('[t_nav]').removeClass('active');
+			$('#'+_nav).stop(true,true).slideUp(200);
+		}, 150);
+	});	
+});
+</script>
+<div class="top" id="top">
+        <div class="headerbox" id="headerBox">
+        <div class="header">
+            <div class="logo"><a href="/"><img src="/front/images/logo.png" title="懒人微信投票系统"/></a></div>  
+            <ul class="nav">
+                <li  t_nav="home"><a href="/" class="na">首页</a></li>
+                <li  t_nav="api"><a href="/chanpin.html" class="na default">产品优势</a>
+                    
+                </li>
+                <li t_nav="product"  ><a href="/tiyan.html" class="na default">在线体验</a>
+                    
+                </li>
+                <li  t_nav="price"><a href="/help.html" class="na">帮助中心</a></li>
+                <li class="current" t_nav="text"><a href="/about.html" class="na">关于我们</a></li>
+               
+                  
+            </ul> 
+            <div class="login_box">
+
+                        <a href="/Member/index.php/Public/login"  rel="nofollow"  class="zhuce">登&nbsp;录</a>  
+                
+            </div>
+        </div>
+    </div>
+</div>
+ <div class="main">
+  <div class="docu_box">
+  <div class="tabs_list">
+    	<h1>关于我们</h1>
+        <ul class="tabs_div">
+
+		  <li ><a href="/chanpin.html" rel="#tab0">产品介绍</a></li>
+		  <li ><a href="/tiyan.html" rel="#tab00">在线体验</a></li>
+		  <li class="current"><a href="/Home/index.php/Article/cc.html" rel="#tab000">客户案例</a></li>
+          <li ><a href="/about.html" rel="#tab1">公司介绍</a></li>
+          <li><a href="/service.html" rel="#tab2">服务条款</a></li>
+          <li ><a href="/cooperation.html" rel="#tab3">联系我们</a></li>
+
+          
+        </ul>
+     </div>
+    <div class="docu_detail_box">
+     	<div class="docu_detail_div1" id="tab000" style="display:block;">
+			<h1 class="content_title">客户案例<font size="1" color="red">(排名不分先后顺序，若活动下线，您可以让客服发最新线上的案例噢！)</FONT></h1>
+               
+		<volist id="vo" name="list">
+
+                <ul class="newsList">
+                	
+                		<li><a href="/Home/index.php/Article/article/id/{$vo.id}.html" target="_blank">{$vo.title}</a><span>{$vo.keyword}</span></li>
+
+                </ul>
+                 
+	    </volist>             
+
+<div class="page">
+{$page}
+</div>
+
+
+           
+            </div>
+    </div>
+  </div>
+  </div>
+ 
+					
+
+
+
+ 
+
+
+
+
+
+<div class="footer_box" id="footer_box">
+    <div class="footer" style="height: 50px;">
+        
+        
+        
+        
+        
+    </div>
+    
+      
+        <div class="zx_box" >
+            <a href="http://wpa.qq.com/msgrd?v=3&uin=524076166&site=qq&menu=yes" class="zx_online" id="BizQQWPA"></a>
+        </div>
+        
+     
+    <div class="copyrightbox">
+        <div class="copyright">
+            <p><span><a href="#" title="/">懒人微信投票系统平台</a><em>©</em> Copyright 2014-2015</span><span>All Rights Reserved 武汉仁裕元科技有限公司</span> <span>公司地址：武汉市珞喻路珞喻中心95号T1 2单元2003室</span> <span>鄂ICP备15001973号-1</span></p>
+
+            
+        </div>
+    </div>
+</div>
+</body>
+</html>

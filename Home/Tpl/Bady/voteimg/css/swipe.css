@@ -1,0 +1,11 @@
+body{ margin:0; padding:0}
+.addWrap{ position:relative; background:#fff;margin:0; padding:0; overflow:hidden}
+.addWrap .swipe{overflow: hidden;visibility: hidden;position:relative;width: 100%;}
+.addWrap .swipe-wrap{overflow:hidden;position:relative;width: 100%;}
+.addWrap .swipe-wrap > div {float: left;width: 50%;position:relative;}
+
+#position{ position:absolute;right:0; padding-right:8px; margin:0;   width:100%; filter: alpha(opacity=50);text-align: center;  bottom: 10px;}
+#position li{width:10px;height:10px;margin:0 2px;display:inline-block;-webkit-border-radius:5px;border-radius:5px;background-color:#AFAFAF;}
+#position li.cur{background-color:#FF0000;}
+.img-responsive { display: block;width: 100%;  height: auto;}
+

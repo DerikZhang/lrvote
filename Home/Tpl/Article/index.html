@@ -1,0 +1,747 @@
+
+
+
+ 
+
+
+ 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script> 
+<link rel="stylesheet" href="/front/css/style.css" type="text/css" />
+
+
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>微信投票平台系统源码-全球独家发售源代码,无需担心多次费用,可任意二次开发,支持任何第三方微信营销平台！</title>
+<meta name="Keywords" content="微信投票源码,微信投票系统源码,微信投票系统,微信投票软件,微信投票平台,微信投票管理系统,微信关注投票软件"/>
+<meta name="description" content="懒人投票是一个单、多用户版微信关注投票系统软件,我们独家发售源代码,让您无需担心每次活动费用高、用户数据外泄、可以任意二次开发DIY，让您打造真正属于自己投票系统！"/>
+<link rel="stylesheet" href="/front/css/smsAndLandingCall/sms_voice.css" type="text/css" />
+<link rel="stylesheet" href="/front/css/smsAndLandingCall/free_zixun.css" type="text/css" />
+<script src="/js/tab_move.js"></script>
+<script src="/js/layer/layer.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		/*锚点加运动*/
+		$('a[href*=#]').click(function() {
+	        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+	            var $target = $(this.hash);
+	            $target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']');
+	            if ($target.length) {
+	                var targetOffset = $target.offset().top;
+	                $('html,body').animate({
+	                    scrollTop: targetOffset-220
+	                },
+	                1000);
+	                return false;
+	            }
+	        }
+	    });
+		/*轮播图*/
+		homeNav();
+		var xiuxiu=$("#xiuxiu").val();
+        if(xiuxiu=='xiuxiu'){
+        	  $.layer({
+					type : 2,
+					title: false,
+					shade:[0.8, '#393D49'],
+					shadeClose: false,
+					maxmin: false,
+					fix : true,  
+					area: ['640px', '360px'],                     
+					iframe: {
+						src : '../activity/smssp'
+					}
+				});
+        }
+	});
+	
+</script>
+</head>
+
+<body>
+
+	
+
+
+
+ 
+
+
+
+
+
+
+
+<script type="text/javascript">
+$(function(){
+	var videoCC='';
+	if(videoCC!='videoCC'){
+		/*锚点加运动*/
+		$('a[href*=#]').click(function() {
+	        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+	            var $target = $(this.hash);
+	            $target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']');
+	            if ($target.length) {
+	                var targetOffset = $target.offset().top;
+	                $('html,body').animate({
+	                    scrollTop: targetOffset
+	                },
+	                1000);
+	                return false;
+	            }
+	        }
+	    }); 
+	}
+	
+	
+	
+	
+	
+	var ytx={};
+	$('[t_nav]').hover(function(){
+		var _nav = $(this).attr('t_nav');
+		clearTimeout( ytx[ _nav + '_timer' ] );
+		ytx[ _nav + '_timer' ] = setTimeout(function(){
+			$('[t_nav]').each(function(){
+				$(this)[ _nav == $(this).attr('t_nav') ? 'addClass':'removeClass' ]('active');
+			});
+			$('#'+_nav).stop(true,true).slideDown(200);
+		}, 150);
+	},function(){
+		var _nav = $(this).attr('t_nav');
+		clearTimeout( ytx[ _nav + '_timer' ] );
+		ytx[ _nav + '_timer' ] = setTimeout(function(){
+			$('[t_nav]').removeClass('active');
+			$('#'+_nav).stop(true,true).slideUp(200);
+		}, 150);
+	});	
+});
+</script>
+
+
+<div class="top" id="top">
+    	<div class="headerbox" id="headerBox">
+    	<div class="header">
+ 			<div class="logo"><a href="/"><img src="/front/images/logo.png" title="懒人微信投票系统"/></a></div>  
+            <ul class="nav">
+            	<li class="current" t_nav="home"><a href="/" class="na">首页</a></li>
+                <li  t_nav="api"><a href="/chanpin.html" class="na default">产品优势</a>
+                	
+                </li>
+                <li t_nav="product"  ><a href="/tiyan.html" class="na default">在线体验</a>
+                	
+                </li>
+                <li  t_nav="price"><a href="/help.html" class="na">帮助中心</a></li>
+                <li  t_nav="text"><a href="/about.html" class="na">关于我们</a></li>
+               
+                  
+            </ul> 
+	        <div class="login_box">
+
+		        		<a href="/Member/index.php/Public/login"  rel="nofollow"  class="zhuce">登&nbsp;录</a>  
+				
+	        </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="main">
+   
+
+
+ 
+
+
+
+<script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script> 
+<link rel="stylesheet" href="/front/css/style.css" type="text/css" />
+
+
+
+ <div class="banner_box" id="banner_box">
+    	<div class="banner">
+            <ul class="banner_list" id="banner_list">
+                <li class="bm1" style="opacity:1; filter:alpha:opacity(100); z-index:99;">
+                	<div class="banner_con">
+                        <h1 class="title"></h1>
+                        <h3 class="s_title">独家自主研发 · 无需多次费用  
+</h3>
+						<p class="con">支持未认证个人(单位)订阅号、服务号<em>&nbsp;&nbsp;</em></p>
+						<p class="con">支持任何第三方微信营销平台<em>&nbsp;&nbsp;*例如：微盟、小猪cms、微信管家、有赞等等</em></p>
+                        <a href="http://wpa.qq.com/msgrd?v=3&uin=524076166&site=qq&menu=yes" class="ask_btn free_ask">立即咨询</a>
+                        <a href="#" class="view_btn" style="text-decoration: none;">免费体验: 400-001-9651</a> 
+                    </div>
+                </li>
+                
+            </ul>
+            
+           
+        </div>
+        <script src="/js/layer/layer.min.js"></script>
+        <script>
+        $(function(){
+			/*播放视频*/
+			$('.flash_btn').click(function(){
+				$.layer({
+					type : 2,
+					title: false,
+					shade:[0.8, '#393D49'],
+					shadeClose: false,
+					maxmin: false,
+					fix : true,  
+					area: ['640px', '360px'],                     
+					iframe: {
+						src : '../activity/smssp'
+					}
+				});
+		
+			})	
+		})
+        </script>
+    </div>
+   <input type="hidden" name="xiuxiu" id="xiuxiu" value="">
+    <div class="sms_btnbox" id="tiyan">
+        
+    </div>
+    <div class="div1">
+    	<div class="div1_con">
+        	<h2 class="title">免费试用</h2>
+            <ul class="con_box">
+            	<li class="l1">
+                	<h3 class="s_title">
+                    	<span>全功能开放测试</span>
+                    </h3>
+                    <p class="content">所有功能全部开放测试，让您对产品全面了解，让您不花一分冤枉钱！</p>
+                </li>
+                <li class="l2">
+                	<h3 class="s_title">
+                    	<span>超长时间无条件试用</span>
+                        
+                    </h3>
+                    <p class="content">只要您申请试用，就可以享受超长试用，一直到完全明白每个细节功能！</p>
+                </li>
+            </ul>
+            <h2 class="title">功能特性</h2>
+            <ul class="icon_list">
+            	<li class="l1 w1">
+                	<span>基础功能</span>
+                    <em>配置齐全丰富<br/>支持任何第三方</em>
+                </li>
+                <li class="l2 w2">
+                	<span>防作弊系统</span>
+                    <em>微信标识符作弊识别<br/>IP投票次数限制</em>
+                </li>
+                <li class="l3 w3">
+                	<span>瀑布流页面</span>
+                    <em>极致下拉加载页面<br/>图片自适应、压缩</em>
+                </li>
+                <li class="l4 w4">
+                	<span>排名显目</span>
+                    <em>排名页面简洁大方<br/>一目了然</em>
+                </li>
+                <li class="l5 w1">
+                	<span>广告系统</span>
+                    <em>广告位互不影响<br/>无限增加广告</em>
+                </li>
+                <li class="l6 w2">
+                	<span>无限创建投票活动</span>
+                    <em>一个账号创建N个投票活动<br/>活动可以同时开启</em>
+                </li>
+                <li class="l7 w3">
+                	<span>信息帅选</span>
+                    <em>输入选手名称<br/>自动下拉关联选手信息</em>
+                </li>
+                <li class="l8 w4">
+                	<span>沟通无障碍</span>
+                    <em>一键拨号 <br/>一键分享朋友圈</em>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="div6" style="height:580px">
+    	<div class="div6_con">
+        	<h2 class="title">我们的客户</h2>
+            <div class="imgbox" >
+            
+                <img src="/front/images/smsAndLandingCall/kh_img.jpg"    alt=""/>
+
+            </div>
+        </div>
+    </div>
+    <div class="div3" style="height: 480px;">
+    	<div class="div3_con">
+        	<h2 class="title" style="padding: 8px 0 0 8px;">合作流程</h2>
+            <ul class="step_list">
+                <li>
+                    <span class="span1"></span>
+                    <p>申请测试账号</p>
+                </li>
+                <li>
+                    <span class="span2"></span>
+                    <p>全功能试用测试</p>
+                </li>
+                <li>
+                    <span class="span3"></span>
+                    <p>签订合作合同</p>
+                </li>
+                <li class="l1">
+                    <span class="span4"></span>
+                    <p>负责安装调试到上线</p>
+                </li>
+            </ul>
+            <p class="content">咨询在线客服，即可免费获得长时间测试账号  <a href="http://wpa.qq.com/msgrd?v=3&uin=524076166&site=qq&menu=yes" target="_blank">&gt;&gt;立即试用</a><br/>若需个性化定制，请随时联系我们：400-001-9651</p>
+            
+        </div>
+    </div>
+    <div class="div2" id="price">
+    	<div class="div2_con">
+        	<h2 class="title" style="padding: 8px 0 0 8px;">产品价格</h2>
+            <p>一次小的投入，无需多次活动都需要花费、完全可以二次开发、真正搭建一个属于自己的平台！
+</p>
+            <div class="price_box">
+            	<div class="head_title">
+                	<span class="span1">&nbsp;</span>
+                    <span class="span2">基础功能</span>
+                    <span class="span3">防刷票模块</span>
+                    <span class="span4">广告模块</span>
+                    <span class="span5">整合任何第三方</span>
+                    <span class="span6">多用户使用</span>
+                    <span class="span7">More</span>
+                </div>
+                <div class="price_div">
+                	<ul class="price_list">
+                    	<li>
+                        	<span class="span1 gray">单用户版</span>
+                            <span class="span2"><em class="org">√</em></span>
+                            <span class="span3"><em class="org">√</em></span>
+                            <span class="span4"><em class="org">√</em></span>
+                            <span class="span5"><em class="org">√</em></span>
+                            <span class="span6"><em class="org">×</em></span>
+                        </li>
+                        <li>
+                        	<span class="span1 blue1">多用户版</span>
+                            <span class="span2 blue"><em class="org">√</em></span>
+                            <span class="span3 blue"><em class="org">√</em></span>
+                            <span class="span4 blue"><em class="org">√</em></span>
+                            <span class="span5 blue"><em class="org">√</em></span>
+                            <span class="span6 blue"><em class="org">√</em></span>
+                        </li>
+                        
+                    </ul>
+                    <div class="contact_box" style="padding: 20px 40px 10px 46px;"><a href="http://wpa.qq.com/msgrd?v=3&uin=524076166&site=qq&menu=yes" class="free_ask">联<br/>系<br/>我<br/>们</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="div7">
+    	<div class="div7_con">
+        	<h2 class="title">服务与技术支持</h2>
+            <ul class="div7_list">
+            	<li class="l1 w1">
+                	<span class="span1"></span>
+                	<h3 class="s_title">专业技术支持</h3>
+                    <p class="con">我们提供专业的咨询、技术支持<br/>和售后服务</p>
+                </li>
+                <li class="l2 w2">
+                	<span class="span2"></span>
+                	<h3 class="s_title">保障稳定</h3>
+                    <p class="con">独自开发代码<br/>设计高性能流量访问</p>
+                </li>
+                <li class="l3 w3">
+                	<span class="span3"></span>
+                	<h3 class="s_title">安全可靠</h3>
+                    <p class="con">代码编写严谨规范<br/>经过无数次安全测试</p>
+                </li>
+                <li class="l4 w4">
+                	<span class="span4"></span>
+                	<h3 class="s_title">客户验证</h3>
+                    <p class="con">企业客户验证<br/>让您放心使用</p>
+                </li>
+                <li class="l5 w1">
+                	<span class="span5"></span>
+                	<h3 class="s_title">接入方便</h3>
+                    <p class="con">内置多个第三方平台接口<br/>完美兼容任何第三方平台</p>
+                </li>
+                <li class="l6 w2">
+                	<span class="span6"></span>
+                	<h3 class="s_title">免费测试</h3>
+                    <p class="con">在购买之前可以对功能进行体验<br/>测试通过再正式使用</p>
+                </li>
+                <li class="l7 w3">
+                	<span class="span7"></span>
+                	<h3 class="s_title">多种客户示例</h3>
+                    <p class="con">提供客户没有下线案例参考<br/>吸收别人精华为自己所用</p>
+                </li>
+                <li class="l8 w4">
+                	<span class="span8"></span>
+                	<h3 class="s_title">平台持续优化</h3>
+                    <p class="con">提供客户满意的服务<br/>持续改进平台</p>
+                </li>
+            </ul>
+         
+        </div>
+    </div>
+    
+
+<!-- 引入咨询隐藏框 -->
+
+<!-- 咨询 -->
+<link rel="stylesheet" href="/front/css/free_zixun.css" type="text/css" />
+<script src="/js/jquery-easing-1.3.pack.js" type="text/javascript"></script>
+
+<script language="JavaScript" type="text/javascript">
+//验证码刷新
+function refreshRandCodeConsult() {
+	$('#randCodeImgConsult').hide().attr('src',
+		'/jcaptcha?' + Math.floor(Math.random() * 100)).fadeIn();
+}
+function fn_focus(ele){
+	if(ele.value == ele.defaultValue){
+		ele.value = '';
+		ele.style.color = 'rgb(51,51,51)';
+	}
+}
+function fn_blur(ele){
+	var reg = /^[\s]*$/;
+	if(reg.test(ele.value) || ele.value == ele.defaultValue){
+		ele.value = ele.defaultValue;
+		ele.style.color = 'rgb(200,200,200)';
+	}
+} 
+$(document).ready(function () {
+/* 	var oHt = $('.zx_nr').height()+73+'px';
+	$(".move_on").hover(function () {
+		state1();
+		//$(this).animate({left:'20px'},50);
+		$(this).animate({ 
+			marginRight: "0px"
+		},{duration: 880, easing: "easeOutBounce"});
+	},function(){
+		$(this).animate({ 
+			marginRight: "-22px"
+		},{duration: 880, easing: "easeOutBounce"});
+		clearTimeout(timer1);
+		clearTimeout(timer2);
+	}); */
+/* 	$('.move_on').click(function(){
+		$(this).css('height','0');
+		$('.free_search').animate({right:'0px'},200).delay(200).animate({height:oHt},200);
+	});
+	$('.span_tel,.btn_cancel').click(function(){
+		$('.free_search').animate({height:'53px'},200).delay(200).animate({right:'-352px'},200);
+		$('.f_step2').hide();
+		$('.f_step1').show();
+		$('.move_on').delay(600).animate({height:'156px'},200);
+		
+	}); */
+	//获取验证码
+/* 	$('#getCheck').click(function(){
+		var mobile=$("#mobile").val();
+		var randCode=$("#randCode").val();
+		var accountId=$("#accountId").val();
+		if(randCode==""){
+			$('.error').show();
+			$("#codeError").text("验证码不能为空");
+			return false;
+		}else{
+			$.ajax({
+				type : "POST",
+				url : "../freeAdvice/sendVoiceCode",//短信验证码接口为：/freeAdvice/sendSmsCode
+				data : "accountId="+accountId+"&tel="+mobile+"&randCode="+randCode,
+				dataType : "json",
+				success : function(data) {
+					if(data.flag){
+						$('.error').show();
+						$("#codeError").text(data.msg);
+						//$('.show').hide();
+					}else{
+						$('.error').show();
+						$("#codeError").text(data.msg);
+						refreshRandCode();
+						return;
+					}
+				}
+			});
+		}
+	}); */
+	//拨打电话
+	$('.btn_zixun').click(function(){
+/* 		var verifyCode=$("#verifyCode").val();
+		if(verifyCode=="" || verifyCode=="请输入接收到的验证码"){
+			$('.error').show();
+			$("#codeError").text("请先获取语音验证码");
+			return;
+		} */
+		
+		var mobile=$("#mobile").val();
+		var randCode=$("#randCodeConsult").val();
+/* 		if(verifyCode==""){
+			$("#randCodeError").text("电话验证码不能为空");
+			return false;
+		}else{
+			$("#randCodeError").text("");
+		} */
+		$.ajax({
+			type : "POST",
+			url : "../freeAdvice/call",
+			data : "mobile="+mobile+"&randCode="+randCode,//"&verifyCode="+verifyCode,
+			dataType : "json",
+			success : function(data) {
+				if(data.flag){
+					$('.codeError').hide();
+					$('.f_step1').hide();
+					$('.f_step2').show();
+					//$("#randCodeError").text(data.msg);
+					refreshRandCode();
+				}else{
+					$('.codeError').show();
+					$("#codeError").text(data.msg);
+					refreshRandCode();
+					return;
+				}
+			}
+		});
+	});
+	
+	/* var oHt = $('.zx_nr').height()+73+'px'; */
+	$('.free_ask').click(function(){
+		//$(this).css('height','0');
+		$('.free_search').animate({left:'0px'},200).delay(200).animate({height:'305px'},200);
+	});
+	$('.span_tel,.btn_cancel,.close_btn').click(function(){
+		$('.free_search').animate({height:'53px'},200).delay(200).animate({left:'-352px'},200);
+		$('.f_step2').hide();
+		$('.f_step1').show();
+		//$('.move_on').delay(600).animate({height:'156px'},200);
+		refreshRandCode();
+	});
+/*var timer3 = null;
+	var timer4 = null;
+	function state3(){
+		$(".rotate1").removeClass("r2"); 
+		$(".rotate1").addClass("r1");
+		timer4 = setTimeout(state4,90);
+	}
+	function state4(){	   
+		$(".rotate1").removeClass("r1");
+		$(".rotate1").addClass("r2"); 
+		timer3 = setTimeout(state3,90);
+	}
+	$(".activity_s").each(function () {
+		state3();
+		//$(this).animate({left:'20px'},50);
+		$(this).animate({ 
+		},{duration: 880, easing: "easeOutBounce"});
+	});
+	,function(){
+		$(this).animate({ 
+		},{duration: 880, easing: "easeOutBounce"});
+		clearTimeout(timer3);
+		clearTimeout(timer4);
+	})
+	$('.activity_Div .btn_close').click(function(){
+		$(this).parent().parent().animate({left:-287},500);
+		$('.activity_s').animate({left:0},800).show();
+		state3();
+		$('.activity_s').animate({
+		},{duration: 880, easing: "easeOutBounce"});
+		return false;
+	});
+	$('.activity_s').click(function(){
+		$('.activity_Div').animate({left:68},500);
+		$('.activity_s').animate({left:-59},800).hide();
+		clearTimeout(timer3);
+		clearTimeout(timer4);
+	});*/
+});
+</script>
+
+<div class="free_search">	
+<div class="htDiv">
+	<span class="span_tel"><img src="/front/images/tel.png" /></span><span class="span_theme">400-610-1019</span><a href="javascript:void(0)" class="close_btn"></a>
+</div>
+<div class="zx_nr">
+<div class="f_step1">
+	<p>本通话使用电话回拨能力，<span style="color:#000;font-weight:bold;">完全免费</span><br/>将对您的号码严格保密，请放心使用<br/><span style="color:#000;font-weight:bold;">您也可以电话拨打400-610-1019</span></p>
+    <form action="" id="returnCallFrom" name="returnCallFrom">
+    <div class="inform_div">
+    	<input type="hidden" id="accountId" name="accountId" value="unloadUser"/>
+    	<dl>
+            <dt><input name="mobile" id="mobile" type="text" class="i_txt" value="请输入您的电话（请勿使用总机号）" onclick="fn_focus(this);" onblur="fn_blur(this);"  style="width:213px;"/><!--<span class="error">错误信息</span>--></dt>
+        </dl>
+        <dl>
+            <dt><input name="randCode" id="randCodeConsult" type="text" class="i_txt1" value="请输入右侧验证码" onclick="fn_focus(this);" onblur="fn_blur(this);"/>
+			<img id="randCodeImgConsult" onclick="refreshRandCodeConsult()" src="../jcaptcha" class="check_code" /><span class="codeError" style="display:none" id="codeError"></span>
+			</dt>
+			<!-- <div  class="error" style="display:none;margin-top: 0"><span id="codeError"></span></div> -->
+        </dl>
+
+        <a href="javascript:void(0)" class="btn_zixun" id="RealMianFeiZiXun">免费咨询</a>
+    </div>
+    </form>
+</div>
+<div class="f_step2" style="display:none">
+	<p>正在呼叫，请注意接听来电</p>
+	<!-- <p><span id="randCodeError"></span></p> -->
+    <img src="front/images/tel_ing1.jpg" />
+    <!-- <input type="submit" value="挂断" class="btn_cancel mt54" onblur="fn_blur(this)"/> -->
+    <a href="javascript:void(0)" class="btn_cancel mt54">关闭</a>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+function toChannel(){
+	window.open("../activity/channel");
+}
+</script>
+
+<!-- <div class="common_free"">
+      <div class="common_child">
+            <div class="childdiv_con">
+                <h3>想了解更多信息或<span id="channel" onclick="toChannel()" style="cursor:pointer;text-decoration: underline;">加盟渠道</span>，请咨询：400-610-1019</h3>
+                <p>短信验证码不稳定？需要网络通话？需要音视频会议？需要IVR或呼叫中心？还是需要外呼通知能力？</p>
+            </div>
+            <a href="javascript:void(0)" class="free_ask" id="MianFeiZiXun">免费电话咨询</a>
+        </div>
+</div> -->
+   <div class="common_askbox">
+    	<div class="common_ask">
+        	<a href="http://wpa.qq.com/msgrd?v=3&uin=524076166&site=qq&menu=yes" class="num" target="_blank"><i>立即试用</i></a>
+        	<h3>有疑问或想了解更多，请咨询：400-001-9651</h3>
+            
+        </div>
+    </div>
+
+
+
+ 
+
+
+
+
+
+<div class="footer_box" id="footer_box">
+	<div class="footer">
+    	<div class="f1">
+        	<h3>关于我们</h3>
+        	<ul>
+            		<li><a href="/chanpin.html" target="_blank" rel="nofollow">产品介绍</a></li>
+                <li><a href="/about.html" target="_blank" rel="nofollow">公司介绍</a></li>
+              
+              
+               <li><a href="/Home/index.php/Article/cc.html" style="" target="_blank" rel="nofollow">客户案例</a></li>
+                <li><a href="/service.html" target="_blank">服务条款</a></li>
+                <li><a href="/cooperation.html" target="_blank" rel="nofollow">联系我们</a></li>
+            </ul>
+        </div>
+        <div class="f2">
+        	<h3>核心模块</h3>
+        	<ul>
+            	
+
+
+                <li>多种防作弊</li>
+                <li>自定义导航</li>
+                <li>自定义菜单</li>
+                <li>多用户管理</li>
+                <li>广告管理</li>
+            </ul>
+        </div>
+        <div class="f3">
+        	<h3>&nbsp;</h3>
+        	<ul>
+                 <li>前/后台自助报名</li>
+                <li>数据一键导出</li>
+                <li>粉丝详细获取</li>
+                <li>用户投票明细统计</li>
+                <li>自定义背景</li>
+            </ul>
+        </div>
+        <div class="f4">
+        	<h3>客户案例</h3>
+        	<ul>
+				<volist id="vo" name="list">
+				<li><a href="/Home/index.php/Article/article/id/{$vo.id}.html" target="_blank">{$vo.title|msubstr=0,12}
+</a></li>
+				</volist>
+
+            </ul>
+        </div>
+        <div class="f5">
+        	<h3>联系我们</h3>
+        	<ul>
+        	
+                
+               
+                <li><span>售前客服：</span>524076166</li>
+                <li><span>售后客服：</span>1330407081</li>
+                <li><span>电话咨询：</span>400-001-9651</li>
+                <li><span style="float:left;">在线咨询：</span><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=524076166&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:524076166:51" alt="点击这里给我发消息" title="点击这里给我发消息"/></a>
+            </ul>
+        </div>
+        <div class="f6">
+        	<h3>关注我们</h3>
+            <img src="/front/images/weixin.png" alt="懒人模板"/>
+        </div>
+    </div>
+
+    
+        <div class="zx_box" >
+            <a href="http://wpa.qq.com/msgrd?v=3&uin=524076166&site=qq&menu=yes" class="zx_online" id="BizQQWPA"></a>
+        </div>
+        
+     
+    <div class="copyrightbox">
+    	<div class="copyright">
+        	<p><span><a href="#" title="/">懒人微信投票系统平台</a><em>©</em> Copyright 2014-2015</span><span>All Rights Reserved 武汉仁裕元科技有限公司</span> <span>公司地址：武汉市珞喻路珞喻中心95号T1 2单元2003室</span> <span>鄂ICP备15001973号-1</span></p>
+
+        	
+        </div>
+    </div>
+</div>
+
+    
+<script language="JavaScript" type="text/javascript">
+function fn_focus(ele){
+	if(ele.value == ele.defaultValue){
+		ele.value = '';
+		ele.style.color = 'rgb(51,51,51)';
+	}
+}
+function fn_blur(ele){
+	var reg = /^[\s]*$/;
+	if(reg.test(ele.value) || ele.value == ele.defaultValue){
+		ele.value = ele.defaultValue;
+		ele.style.color = 'rgb(200,200,200)';
+	}
+} 
+/* $(document).ready(function () {
+	var oHt = $('.zx_nr').height()+73+'px';
+	
+	$('.free_ask').click(function(){
+		$('.free_search').animate({left:'0px'},200).delay(200).animate({height:oHt},200);
+	});
+	$('.span_tel,.btn_cancel,.close_btn').click(function(){
+		$('.free_search').animate({height:'53px'},200).delay(200).animate({left:'-352px'},200);
+		$('.f_step2').hide();
+		$('.f_step1').show();
+		
+	});
+	$('.btn_zixun').click(function(){
+		$('.f_step1').hide();
+		$('.f_step2').show();
+	});
+}); */
+</script>
+</body>
+</html>

@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+<script type="text/javascript"> 
+    var page_begintime = (+new Date());
+
+    var biz = "MjM5NDU5MDU4Mw==";
+    var sn = "f05ceff7bb52286fba379b1ee7ecc3a0" || "";
+    var mid = "209789091" || "";
+    var idx = "1" || "" ;
+    
+    //辟谣需求
+    var is_rumor = ""*1;
+    var norumor = ""*1;
+    if (!!is_rumor&&!norumor){
+      if (!document.referrer || document.referrer.indexOf("mp.weixin.qq.com/mp/rumor") == -1){
+        location.href = "http://mp.weixin.qq.com/mp/rumor?action=info&__biz=" + biz + "&mid=" + mid + "&idx=" + idx + "&sn=" + sn + "#wechat_redirect";
+      }
+    }
+
+    //原创需求，需要跳转到中间页
+    /*
+    var copyrightInfo = {
+        display_source : ""*1,
+        nocopyrightsource : ""*1
+    };
+    if (!!copyrightInfo.display_source&&!copyrightInfo.nocopyrightsource){
+      if (!document.referrer || document.referrer.indexOf("mp.weixin.qq.com/mp/reprint") == -1){
+        location.href = "http://mp.weixin.qq.com/mp/reprint?action=info&__biz=" + biz + "&mid=" + mid + "&idx=" + idx + "&sn=" + sn + "#wechat_redirect";
+      }
+    }*/
+</script>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+
+<link rel="dns-prefetch" href="//res.wx.qq.com">
+<link rel="dns-prefetch" href="//mmbiz.qpic.cn">
+<link rel="shortcut icon" type="image/x-icon" href="http://res.wx.qq.com/mmbizwap/en_US/htmledition/images/icon/common/favicon22c41c.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<script type="text/javascript">
+    String.prototype.html = function(encode) {
+        var replace =["&#39;", "'", "&quot;", '"', "&nbsp;", " ", "&gt;", ">", "&lt;", "<", "&amp;", "&", "&yen;", "¥"];
+        if (encode) {
+            replace.reverse();
+        }
+        for (var i=0,str=this;i< replace.length;i+= 2) {
+             str=str.replace(new RegExp(replace[i],'g'),replace[i+1]);
+        }
+        return str;
+    };
+
+    window.isInWeixinApp = function() {
+        return /MicroMessenger/.test(navigator.userAgent);
+    };
+
+    window.getQueryFromURL = function(url) {
+        url = url || 'http://qq.com/s?a=b#rd'; // 做一层保护，保证URL是合法的
+        var query = url.split('?')[1].split('#')[0].split('&'),
+            params = {};
+        for (var i=0; i<query.length; i++) {
+            var arg = query[i].split('=');
+            params[arg[0]] = arg[1];
+        }
+        if (params['pass_ticket']) {
+        	params['pass_ticket'] = encodeURIComponent(params['pass_ticket'].html(false).html(false).replace(/\s/g,"+"));
+        }
+        return params;
+    };
+
+    (function() {
+	    var params = getQueryFromURL(location.href);
+        window.uin = params['uin'] || '';
+        window.key = params['key'] || '';
+        window.wxtoken = params['wxtoken'] || '';
+        window.pass_ticket = params['pass_ticket'] || '';
+    })();
+
+    window.logs = {
+    	pagetime: {}
+    };
+</script>
+
+        <title>幸福空间“童绘中国梦”少儿创意绘画大赛&nbsp;初赛500强网络最佳作品人气奖微信投票</title>
+        
+<link rel="stylesheet" type="text/css" href="http://res.wx.qq.com/mmbizwap/en_US/htmledition/style/page/appmsg/page_mp_article_improve29d6db.css">
+<style>
+        .rich_media_content{font-size:18px;}
+    </style>
+<!--[if lt IE 9]>
+<link rel="stylesheet" type="text/css" href="http://res.wx.qq.com/mmbizwap/en_US/htmledition/style/page/appmsg/page_mp_article_improve_pc2826cc.css">
+<![endif]-->
+<script type="text/javascript">
+    document.domain = "qq.com";
+</script>
+
+    </head>
+    <body id="activity-detail" class="en_US mm_appmsg" ontouchstart="">
+        
+    <script type="text/javascript">
+        var write_sceen_time = (+new Date());
+    </script>
+    
+    <div id="js_cmt_mine" class="discuss_container editing access" style="display:none;">
+        <div class="discuss_container_inner">
+            <h2 class="rich_media_title">幸福空间“童绘中国梦”少儿创意绘画大赛&nbsp;初赛500强网络最佳作品人气奖微信投票</h2>
+            <span id="log"></span>
+            <div class="frm_textarea_box_wrp">
+                <span class="frm_textarea_box">
+                    <textarea id="js_cmt_input" class="frm_textarea" placeholder="评论将由公众帐号筛选后显示，对所有人可见。"></textarea>
+                    <div class="emotion_tool">
+                        <span class="emotion_switch" style="display:none;"></span>
+                        <span id="js_emotion_switch" class="pic_emotion_switch_wrp">
+                            <img class="pic_default" src="http://res.wx.qq.com/mmbizwap/en_US/htmledition/images/icon/appmsg/emotion/icon_emotion_switch.2x278965.png" alt="">
+                            <img class="pic_active" src="http://res.wx.qq.com/mmbizwap/en_US/htmledition/images/icon/appmsg/emotion/icon_emotion_switch_active.2x278965.png" alt="">
+                        </span>
+                        <div class="emotion_panel" id="js_emotion_panel">
+                            <span class="emotion_panel_arrow_wrp" id="js_emotion_panel_arrow_wrp">
+                                <i class="emotion_panel_arrow arrow_out"></i>
+                                <i class="emotion_panel_arrow arrow_in"></i>
+                            </span>
+                            <div class="emotion_list_wrp" id="js_slide_wrapper">
+                                
+                                
+                            </div>
+                            <ul class="emotion_navs" id="js_navbar">
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </span>
+            </div>
+            <div class="discuss_btn_wrp"><a id="js_cmt_submit" class="btn btn_primary btn_discuss btn_disabled" href="javascript:;">提交</a></div>
+            <div class="discuss_list_wrp" style="display:none">
+                <div class="rich_tips with_line title_tips discuss_title_line">
+                    <span class="tips">我的评论</span>
+                </div>
+                <ul class="discuss_list" id="js_cmt_mylist"></ul>
+            </div>
+            <div class="rich_tips tips_global loading_tips" id="js_mycmt_loading">
+                <img src="http://res.wx.qq.com/mmbizwap/en_US/htmledition/images/icon/common/icon_loading_white2805ea.gif" class="rich_icon icon_loading_white" alt="">
+                <span class="tips">加载中</span>
+            </div>
+            <div class="wx_poptips" id="js_cmt_toast" style="display:none;">
+                <img alt="" class="icon_toast" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGoAAABqCAYAAABUIcSXAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3NpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDoyMTUxMzkxZS1jYWVhLTRmZTMtYTY2NS0xNTRkNDJiOGQyMWIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MTA3QzM2RTg3N0UwMTFFNEIzQURGMTQzNzQzMDAxQTUiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MTA3QzM2RTc3N0UwMTFFNEIzQURGMTQzNzQzMDAxQTUiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NWMyOGVjZTMtNzllZS00ODlhLWIxZTYtYzNmM2RjNzg2YjI2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjIxNTEzOTFlLWNhZWEtNGZlMy1hNjY1LTE1NGQ0MmI4ZDIxYiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pmvxj1gAAAVrSURBVHja7J15rF1TFMbXk74q1ZKHGlMkJVIhIgg1FH+YEpEQJCKmGBpThRoSs5jVVNrSQUvEEENIhGiiNf9BiERICCFIRbUiDa2qvudbOetF3Tzv7XWGffa55/uS7593977n3vO7e5+199p7v56BgQGh0tcmvAUERREUQVEERREUQVEERREUQVEERREUQVEERREUQVEERREUQVEERVAUQVEERVAUQbVYk+HdvZVG8b5F0xj4RvhouB+eCy8KrdzDJc1RtAX8ILxvx98V1GyCSkN98Cx4z/95/Wn4fj6j6tUEeN4wkFSnw1MJqj5NhBfAuwaUHREUg4lqNMmePVsHll/HFhVfe1t3FwpJI8DXCCquDrCWNN4B6Tb4M3Z98aTPmTvh0YHl18PXw29yZiKejoPvcUD6E74yFBJbVDk6Bb7K8aP/Hb4c/tRzEYIqprPhSxzlf4Uvhb/0Xoig8qnHAJ3lqPMzfDH8XZ4LEpRf2sVdA5/sqPO9Qfop70UJyn+/boaPddT5yrq7VUUvTIVJI7q74MMddXR8NB1eXcYvhBpZm0s2w72/o86HFoKvLau/pYaXzjLMdUJ6y0LwtWV9CIIaXtvA8+G9HHV03u5q+K+yH47U0NoRngPv7KjzHDwTLj0bS1BDazfJJlcnOOostC6ysnCT+q80G/sIvFVgeW09D8FPVT0uoP7VfvAD8NjA8pqmuAN+OcYAjso0RbIZ8DGB5TVNcRO8JMaHY9SXSdfa3eeANJimWBLrA7JFiZwIXye+NMUV8CcxP2SRFjXefok7NRjSGZJlWUPvw2/wtNiQirSoXWyMsR28wR7AzzYM0oXw+Y7yK+CLJGeaoqjyrJSdZJD6Ov4+z5y6NJc0Az7NUecHydIUy+v60KNyQHoM3nKI1y7YCFiq0i7uBvgER52vDdKqWn9djhY1Dn4G3n6Ecqm2rF74dvgoR53S0hQxW9RJAZAGW5bSn58QJA27dQ7uIEedjywEX5NKVxCqsY6y+qA+LxFI4+yZ6oH0trWkNan80jygtIUsc5SflgAsDXgehfdx1KkkTRE76tN+Xue2jnTU0Ru1oIbvpt30bBtKhOp5yaaRkts0lic8V1i6dPcIRx2d/l8Y8XtNNEg7OOo8bl1kmmOKnDsO88CaYzejau0hWZqiL7C83oCH4SeTHvwV2BqqsHRVztSEYOmWF80NeXZT6Hd4KflResE9vCnBOlCyGfDNAstHTVPUDWoQ1t3iW+9WNizvlhfd4aerXd+ThqiMfNR6+9LvOOro5OY5JX2H4+F7HZD+kGzlamMgldWiirQsjcwWFbjmqZJteekJLK9pisvgL6RhKvuciZiwzrWWGapfrPy30kBVcSBIrw0aD3PU0XB6cehntq7rTMf7/2iQlktDVdXJLXlg6VjmiYBn6rWSTRCH6hvJ0hQrpcGq8oidsmHpTP8t8DGO9/vcWt9qabiqPgup1yKyQwvC2tSefZ73SSpNkUJ4PlLorlHZ+446nc8f3fIyywlJhwrTuwVSjBa1ccvSxN0hjjoK5xVrYZMd9V6XbFfgBukixTwGLg8sDam3dZR/wZ6L/dJlin1en8LS+bgpFbz3Ygvzu1J1HKxYNqxGpCmaCEo12rrBorD6LRp8UbpcdR5VWhTW35KlKd6QFqjuM2XzwlpnMxTvSkuUwuG/Xlg6NtPjbT6WFimF/VG6LEvXgn8QGDjMbBukVECFwhpoS+CQatfX2Q1q6H7wENHdrfCr0lKleEB9JyxNneus+VJpsVL9TwI6W65LovWIGl3KtVJaLv7LBwYTFEERFEVQFEERFEVQFEERFEVQFEERFEVQFEERFEVQFEERFFWq/hFgADUMN4RzT6/OAAAAAElFTkSuQmCC">
+                <p class="toast_content">已评论</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="js_article" class="rich_media">
+        
+        <div id="js_top_ad_area" class="top_banner">
+ 
+        </div>
+                
+
+        <div class="rich_media_inner">
+            <div id="page-content">
+                <div id="img-content" class="rich_media_area_primary">
+                    <h2 class="rich_media_title" id="activity-name">
+                        幸福空间“童绘中国梦”少儿创意绘画大赛&nbsp;初赛500强网络最佳作品人气奖微信投票 
+                    </h2>
+                    <div class="rich_media_meta_list">
+                        						                        <em id="post-date" class="rich_media_meta rich_media_meta_text">2015-08-14</em>
+
+                                                <a class="rich_media_meta rich_media_meta_link rich_media_meta_nickname" href="javascript:void(0);" id="post-user">幸福空间</a>
+                        <span class="rich_media_meta rich_media_meta_text rich_media_meta_nickname">幸福空间</span>
+
+                        <div id="js_profile_qrcode" class="profile_container" style="display:none;">
+                            <div class="profile_inner">
+                                <strong class="profile_nickname">幸福空间</strong>
+                                <img class="profile_avatar" id="js_profile_qrcode_img" src="" alt="">
+
+                                <p class="profile_meta">
+                                <label class="profile_meta_label">微信号</label>
+                                <span class="profile_meta_value">xfkj621</span>
+                                </p>
+
+                                <p class="profile_meta">
+                                <label class="profile_meta_label">功能介绍</label>
+                                <span class="profile_meta_value">一群人、一颗心、一生只做一件事，为天下的孩子营造幸福的成长空间</span>
+                                </p>
+                                
+                            </div>
+                            <span class="profile_arrow_wrp" id="js_profile_arrow_wrp">
+                                <i class="profile_arrow arrow_out"></i>
+                                <i class="profile_arrow arrow_in"></i>
+                            </span>
+                        </div>
+                    </div>
+                                        
+                                                            
+                                        <div class="rich_media_thumb_wrp" id="media">
+                        
+                                                <script>
+                            (function(){
+                                var cover = "http://mmbiz.qpic.cn/mmbiz/r3lFYPpUtmmLvmODicBj9qgUxxDJbrDL3rPL1HDc30h5b7F7nWT0dK8jEwwsBsHliaEojOQZgOfrBMhF2dwwhPQw/0?wx_fmt=jpeg";
+                                document.write('<img class="rich_media_thumb" id="js_cover" onerror="this.parentNode.removeChild(this)" data-backsrc='+ cover +'  data-src="' + cover + '" />');
+                            })();
+                        </script>
+                                            </div>
+                                        
+                    
+                    <div class="rich_media_content " id="js_content">
+                        
+                        <p><span style="line-height: 0px;"><span style="line-height: 0px;"><span style="line-height: 0px;">﻿</span>﻿</span>﻿</span><img data-type="gif" data-src="http://mmbiz.qpic.cn/mmbiz/r3lFYPpUtmlQT2KkYohS1JOWl6MJ2nCiaiajAXsh5p0uytn4cz9XPfwXKwZNcATfdyl9Qib3Kj9rG5EkVKQMT4RaA/0?wx_fmt=gif" data-ratio="0.11857707509881422" data-w=""  /><br  /></p><p><br  /></p><section class="135editor" data-id="85593" style="white-space: normal; border: 0px none; padding: 0px;"><section style="text-align: center;"><section style="display: inline-block; margin: 5px 0px 3em;"><section style="font-size: 14px; border: none; margin-top: 3.5em; margin-bottom: 0.5em; box-sizing: border-box; padding: 0px;"><section style="font-size: 14px; box-sizing: border-box; padding: 0px; margin: 0px;"><section data-bgopacity="50%" data-width="16.5em" style="width: 16.5em; height: 16.5em; margin-top: 0em; -webkit-transform: rotate(-45deg); font-size: 14px; box-sizing: border-box; padding: 0px; background-color: rgba(221, 240, 237, 0.498039);"><section data-width="90%" style="width: 207.88194274902344px; height: 20em; margin-left: -1.5em; padding-top: 0.5em; padding-right: 1em; -webkit-transform: rotate(-10deg); font-size: 1em; font-family: inherit; font-weight: inherit; text-align: right; text-decoration: inherit; color: rgb(255, 255, 255); box-sizing: border-box;"><br  /></section></section></section></section><section style="font-size: 14px; border: none; margin-top: 0em; margin-bottom: 0.5em; box-sizing: border-box; padding: 0px;"><section style="font-size: 14px; box-sizing: border-box; padding: 0px; margin: 0px;"><section data-bgopacity="50%" data-width="16.5em" style="width: 16.5em; height: 16.5em; margin-top: -16.5em; -webkit-transform: rotate(-35deg); font-size: 14px; box-sizing: border-box; padding: 0px; background-color: rgba(221, 240, 237, 0.498039);"><section class="135brush" data-style="text-align: justify; font-size: 14px; box-sizing: border-box; padding: 0px; margin: 0px;color:#7f7f7f" data-width="80%" style="width: 184.7916717529297px; height: 20em; padding-top: 2em; padding-bottom: 2em; padding-left: 1em; -webkit-transform: rotate(35deg); font-family: inherit; font-weight: inherit; text-decoration: inherit; box-sizing: border-box;"><p style="line-height: 1.75em;"><span style="color: rgb(0, 112, 192);"><strong><span style="font-size: 20px; font-family: 清茶楷体预览版;">童绘中国梦</span></strong></span></p><p style="line-height: 1.75em;"><span style="color: rgb(0, 112, 192);"><strong><span style="font-size: 20px; font-family: 清茶楷体预览版;">少年儿童笔尖下的梦想艺术表达</span></strong></span></p><p style="line-height: 1.75em;"><span style="color: rgb(0, 112, 192);"><strong><span style="font-size: 20px; font-family: 清茶楷体预览版;"><br  /></span></strong></span></p><p style="line-height: 1.75em;"><span style="color: rgb(0, 112, 192);"><strong><span style="font-size: 20px; font-family: 清茶楷体预览版;">零距离展现少年儿童们的内心世界</span></strong></span></p><p style="margin-top: 0px; margin-bottom: 0px; text-align: justify; font-size: 14px; box-sizing: border-box; padding: 0px;"><br  /></p></section></section></section></section></section></section><section data-width="0px" style="width: 0px; height: 0px; clear: both;"></section></section><section class="135editor" data-id="85593" style="white-space: normal; border: 0px none; padding: 0px;"><section data-width="0px" style="width: 0px; height: 0px; clear: both;"></section></section><p style="white-space: normal;"><br  /></p><p style="white-space: normal;"><br  /></p><p style="white-space: normal; text-align: center;"><span style="font-size: 19px; font-family: 宋体;">【童绘中国梦】</span></p><p style="text-align: center; line-height: 1.5em;"><span style="font-size: 16px;">幸福空间（全国）第一届少儿创意绘画大赛</span></p><p style="text-align: center; line-height: 1.5em;"><span style="font-size: 16px;">第七届“多喜爱”杯少儿创意绘画大赛</span></p><p style="text-align: center; line-height: 1.5em;"><span style="font-size: 18px; color: rgb(255, 0, 0); line-height: 28px; text-align: center;">初赛500强网络最佳作品人气奖微信投票</span></p><p style="white-space: normal;"><span style="font-size: 19px; font-family: 宋体;"><br  /></span></p><p style="white-space: normal;"><span style="font-size: 16px; font-family: 宋体; color: rgb(75, 172, 198);"></span></p><hr style="white-space: normal;"  /><p><br  /></p><p style="white-space: normal; text-indent: 32px;"><span style="font-size: 16px; font-family: 宋体;"></span></p><p style="white-space: normal; text-indent: 32px; line-height: 1.75em;"><span style="font-size: 18px; font-family: 宋体;">    少年强则中国强，少年儿童是我们祖国未来的希望和栋梁。他们极富想象力和创造力，是中国梦实现的强大动力。</span></p><p style="white-space: normal; text-indent: 32px; line-height: 1.75em;"><span style="font-size: 18px; font-family: 宋体;"></span></p><p style="white-space: normal; text-indent: 32px; line-height: 1.75em;"><span style="font-size: 18px; font-family: 宋体;">    为了更好的关注少年儿童，零距离接触少年儿童们的内心世界，幸福空间青少年儿童家居连锁机构策划了以“童绘中国梦”为主题，以绘画为形式的公益大赛，为杭州市广大少年儿童提供一个梦想表达的笔尖艺术舞台。同一片蓝天，同系中国梦，在这个夏天，以梦为马，绘出未来。</span></p><p style="white-space: normal; line-height: 1.75em;"><span style="font-size: 18px; font-family: 宋体;"></span></p><p style="white-space: normal; text-indent: 32px; line-height: 1.75em;"><span style="font-size: 18px; font-family: 宋体;">    经过评委老师公正、专业的评选，已从20000幅绘画作品中评选出500强，现将这500幅绘画作品上传于<span style="font-size: 18px; color: rgb(255, 0, 0);">幸福空间</span>微信公众号（<span style="font-size: 18px; color: rgb(255, 0, 0);">xfkj621</span>），通过微信公众投票方式来评选出最具网络人气的<span style="font-size: 18px; color: rgb(255, 0, 0);">一等奖、二等奖、三等奖、纪念奖</span>。</span></p><p><span style="font-size: 18px; font-family: 宋体;"><br  /></span></p><hr  /><p><br  /></p><p style="line-height: 3em;"><span style="font-size: 20px;">关注幸福空间官方微信（<span style="color: rgb(255, 0, 0);">xfkj621</span>）进行投票，更多精彩送给您！</span></p><p style="line-height: 3em;"><span style="font-size: 20px;">您的一票是对小朋友们的极大肯定，他/她很在意，谢谢！</span></p><p style="line-height: 3em;"><span style="font-size: 20px; color: rgb(255, 0, 0);">参赛小朋友的家长可以将投票活动链接发送到朋友圈，发挥您朋友圈的强大力量为小朋友多投一票吧！</span></p><p><br  /></p><p><br  /></p><section class="135editor" data-id="85557" style="font-size: 16px; white-space: normal; border: 0px none; padding: 0px; box-sizing: border-box; margin: 0px; font-family: 微软雅黑;"><section style="margin-top: 100px; padding: 10px; color: rgb(62, 62, 62); line-height: 24px; border: 3px solid rgb(128, 177, 53); border-top-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px; border-bottom-left-radius: 8px; box-sizing: border-box;"><section style="border: 0px none rgb(128, 177, 53); clear: both; color: inherit; padding: 0px; margin: 0px; box-sizing: border-box;"><section data-width="6px" style="color: rgb(255, 255, 255); float: right; width: 6px; border-top-left-radius: 50%; border-top-right-radius: 50%; border-bottom-right-radius: 50%; border-bottom-left-radius: 50%; margin-bottom: -3px; box-shadow: rgb(117, 117, 117) 0px 0px 5px; border-color: rgb(172, 196, 136); padding: 0px; background-color: rgb(128, 177, 53); box-sizing: border-box; height: 6px !important;"></section><section data-width="6px" style="color: rgb(255, 255, 255); width: 6px; border-top-left-radius: 50%; border-top-right-radius: 50%; border-bottom-right-radius: 50%; border-bottom-left-radius: 50%; margin-bottom: -2px; box-shadow: rgb(117, 117, 117) 0px 0px 5px; border-color: rgb(172, 196, 136); padding: 0px; background-color: rgb(128, 177, 53); box-sizing: border-box; height: 6px !important;"></section></section><section data-style="color:rgb(33,33,33);text-align:center;" style="padding: 10px; color: inherit; margin: 0px; box-sizing: border-box;"><p style="margin-top: -123px; clear: none; color: inherit; padding: 0px; text-align: right;"><img data-ratio="0.8013698630136986" data-type="png" data-w="146" data-src="http://mmbiz.qpic.cn/mmbiz/yqVAqoZvDibEiba8ruGLqpuHyEIY8fyZA0Rda6hXY1E5EVZtiackDIkaKA1ck2YYUEMDNaOrxDts89tBAxV5a0FcQ/0?wx_fmt=png" title="543.png" style="color: inherit; margin: 0px; padding: 0px;"  /></p><section><p style="color: inherit; padding: 0px; line-height: 1.75em; text-align: center;"><strong><span style="color: rgb(255, 0, 0); font-size: 24px; font-family: sans-serif; line-height: 31.99652862548828px;">投票方式</span></strong></p><p style="color: inherit; padding: 0px; line-height: 1.75em;"><span style="font-family: sans-serif; line-height: 31.99652862548828px; font-size: 18px;"><br  /></span></p><p style="color: inherit; padding: 0px; line-height: 1.75em;"><span style="color: rgb(0, 0, 0); margin: 0px; padding: 0px;"></span><span style="font-family: sans-serif; line-height: 31.99652862548828px; font-size: 18px;">关注 幸福空间 官方微信号（<span style="font-size: 18px; color: rgb(255, 0, 0);">xfkj621</span>），而后点击菜单栏底部的“<span style="font-size: 18px; color: rgb(255, 0, 0);">童绘中国梦</span>”或者回复关键字“<span style="font-size: 18px; color: rgb(255, 0, 0);">童绘</span>”进入活动主页面进行投票。每个微信号<span style="font-size: 18px; color: rgb(255, 0, 0);">每天</span>可以投票<span style="font-size: 18px; color: rgb(255, 0, 0);">3次</span>，多投将不计入总票数。</span><span style="line-height: 31.99652862548828px; font-family: 宋体; font-size: 18px; color: rgb(255, 0, 0);">投票时间：2015年8月15日08:00-8月25日23:00<span style="font-size: 18px; color: rgb(0, 0, 0);">。</span></span></p><p style="color: inherit; padding: 0px; line-height: 1.75em;"><span style="font-size: 18px; color: rgb(255, 0, 0); line-height: 31.99652862548828px; font-family: 宋体;"><br  /></span></p><p style="color: inherit; padding: 0px; line-height: 1.75em;"><span style="font-size: 18px; color: rgb(255, 0, 0); line-height: 31.99652862548828px; font-family: 宋体;">★看图操作</span></p><p style="color: inherit; padding: 0px; line-height: 1.75em;"><span style="font-size: 18px; color: rgb(255, 0, 0); line-height: 31.99652862548828px; font-family: 宋体;"><br  /></span></p><p style="color: inherit; padding: 0px; line-height: 1.75em;"><span style="font-size: 18px; color: rgb(255, 0, 0); line-height: 31.99652862548828px; font-family: 宋体;">①关注幸福空间（xfkj621）公众号，点击底部菜单栏“童绘中国梦”，</span><span style="color: rgb(255, 0, 0); font-size: 18px; line-height: 24px;">点击“我要投票”</span></p><p><span style="color: rgb(255, 0, 0); font-size: 18px;"><br  /></span></p><p><img data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz/r3lFYPpUtmnvWBPOOVlUBJiaGQwxmXPnkzKkKOfqUhMuiaXgp9J4EicK7KtuMwdnAfmWfGzArpztvPag9SJGDZzjA/0?wx_fmt=jpeg" data-ratio="1.7782608695652173" data-w="460"  /></p><p><br  /></p><p><br  /></p><p><span style="color: rgb(255, 0, 0); font-size: 18px;">②弹出童绘中国梦微信投票的首页</span></p><p><span style="color: rgb(255, 0, 0); font-size: 18px;"><br  /></span></p><p><img data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz/r3lFYPpUtmnvWBPOOVlUBJiaGQwxmXPnkqbE7CoxibIblGg2H2Wa9JccgenMj9W6j3eSwM6ICeKODRKrzvhIVMFQ/0?wx_fmt=jpeg" data-ratio="1.7782608695652173" data-w="460"  /><br  /></p><p><br  /></p><p><br  /></p><p><span style="color: rgb(255, 0, 0); font-size: 18px;">③输入参赛选手的姓名或编号进行搜索，</span><span style="color: rgb(255, 0, 0); font-family: 宋体; font-size: 18px; line-height: 31.99652862548828px;">如输入姓名：朱家毓，系统会自动<span style="color: rgb(255, 0, 0); font-family: 宋体; font-size: 17.77777862548828px; line-height: 31.99652862548828px;">跳出参赛选手 朱家毓  的活动界面</span></span></p><p><span style="color: rgb(255, 0, 0); font-family: 宋体; font-size: 18px; line-height: 31.99652862548828px;"><br  /></span></p><p style="color: inherit; padding: 0px; line-height: 1.75em;"><span style="font-size: 18px; color: rgb(255, 0, 0); line-height: 31.99652862548828px; font-family: 宋体;"><img data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz/r3lFYPpUtmlCGaQXsSJ4BFsVKfMhJU2febgSiazJ2jX5NgZpicKaQz3MhiaTTTvwUUEh8iaWVyQ3p0cDFiby2BSSS5w/0?wx_fmt=jpeg" style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;" data-ratio="1.5" data-w="460"  /></span></p><p style="color: inherit; padding: 0px; line-height: 1.75em;"><br  /></p><p><img data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz/r3lFYPpUtmlCGaQXsSJ4BFsVKfMhJU2fOkibSICumn50anlVuHJwPd7jrBVciagcAQ1aicyOJfZicNu5slb0Z3SjSA/0?wx_fmt=jpeg" style="" data-ratio="1.5" data-w="460"  /></p><p><br  /></p><p><br  /></p><p><span style="color: rgb(255, 0, 0); font-size: 18px;">④点击右边的“投票”即可投票成功</span></p><p><span style="color: rgb(255, 0, 0); font-size: 18px;"><br  /></span></p><p><img data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz/r3lFYPpUtmlCGaQXsSJ4BFsVKfMhJU2faRW7L8eDicH7TEYiaQBgTRjZvcYylYLuaO3xzKD7FiaMhiaj6rBibA8Hclw/0?wx_fmt=jpeg" data-ratio="1.5" data-w="460"  /><br  /></p><p><br  /></p><p><br  /></p><section style="white-space: normal;"><section class="135article" style="background-image: none;"><section class="135editor" data-id="85557" style="border: 0px none; padding: 0px; box-sizing: border-box; margin: 0px; font-size: 16px; font-family: 微软雅黑;"><section style="margin-top: 100px; padding: 10px; color: rgb(62, 62, 62); line-height: 24px; border: 3px solid rgb(128, 177, 53); border-top-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px; border-bottom-left-radius: 8px; box-sizing: border-box;"><section data-style="color:rgb(33,33,33);text-align:center;" style="padding: 10px; color: inherit; margin: 0px; box-sizing: border-box;"><p style="margin-top: -123px; clear: none; color: inherit; padding: 0px; text-align: right;"><img data-ratio="0.8013698630136986" data-type="png" data-w="146" data-src="http://mmbiz.qpic.cn/mmbiz/yqVAqoZvDibEiba8ruGLqpuHyEIY8fyZA0Rda6hXY1E5EVZtiackDIkaKA1ck2YYUEMDNaOrxDts89tBAxV5a0FcQ/0?wx_fmt=png" title="543.png" style="color: inherit; margin: 0px; padding: 0px;"  /></p><p style="text-align: center;"><span style="font-size: 24px; color: rgb(255, 0, 0);"><strong>投票规则</strong></span></p><p><br  /></p><p style="font-family: sans-serif; font-size: 14.44444465637207px; line-height: 2em;"><span style="font-size: 18px;">1.参赛对象为浙江杭州市地区及部分外地小朋友，年龄在3-13周岁</span></p><p style="font-family: sans-serif; font-size: 14.44444465637207px; line-height: 2em;"><span style="font-size: 18px;">2.<span style="font-size: 18px; color: rgb(255, 0, 0);">本次活动现不支持在线报名，初赛500强名单不分先后顺序</span></span></p><p style="font-family: sans-serif; font-size: 14.44444465637207px; line-height: 2em;"><span style="font-size: 18px;">3.参与活动的小朋友们需对自己的作品真实性负责，若被举报并证实有虚假现象将被取消资格，票数无效</span></p><p style="font-family: sans-serif; font-size: 14.44444465637207px; line-height: 2em;"><span style="font-size: 18px;">4.每个微信号每天可以投票<span style="font-size: 18px; color: rgb(255, 0, 0);"><span style="font-size: 18px;">3</span>次</span>，多投将不计入总票数  </span></p><p style="font-family: sans-serif; font-size: 14.44444465637207px; line-height: 2em;"><span style="font-size: 18px;">5.如果有用网络软件恶意刷票的现象，将直接取消参赛资格</span></p><p style="font-family: sans-serif; font-size: 14.44444465637207px; line-height: 2em;"><span style="font-size: 18px;">6.本次活动不设评委，根据票数决出最终名次。如票数相同，将由组委会评选出最终结果。</span></p><p><br  /></p></section><section style="border: 0px none rgb(128, 177, 53); clear: both; color: inherit; padding: 0px; margin: 0px; box-sizing: border-box;"><section data-width="6px" style="color: rgb(255, 255, 255); float: right; width: 6px; border-top-left-radius: 50%; border-top-right-radius: 50%; border-bottom-right-radius: 50%; border-bottom-left-radius: 50%; margin-bottom: -3px; box-shadow: rgb(117, 117, 117) 0px 0px 5px; border-color: rgb(172, 196, 136); padding: 0px; background-color: rgb(128, 177, 53); box-sizing: border-box; height: 6px !important;"></section><section data-width="6px" style="color: rgb(255, 255, 255); width: 6px; border-top-left-radius: 50%; border-top-right-radius: 50%; border-bottom-right-radius: 50%; border-bottom-left-radius: 50%; margin-bottom: -2px; box-shadow: rgb(117, 117, 117) 0px 0px 5px; border-color: rgb(172, 196, 136); padding: 0px; background-color: rgb(128, 177, 53); box-sizing: border-box; height: 6px !important;"></section></section></section><section data-width="0px" style="width: 0px; height: 0px; clear: both; box-sizing: border-box; padding: 0px; margin: 0px;"></section></section><p><br  /></p><p><br  /></p></section><p><br  /></p></section><p><br  /></p><section class="135article" style="white-space: normal; background-image: none;"><section class="135editor" data-id="85557" style="border: 0px none; padding: 0px; box-sizing: border-box; margin: 0px; font-size: 16px; font-family: 微软雅黑;"><section style="margin-top: 100px; padding: 10px; color: rgb(62, 62, 62); line-height: 24px; border: 3px solid rgb(128, 177, 53); border-top-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px; border-bottom-left-radius: 8px; box-sizing: border-box;"><section style="border: 0px none rgb(128, 177, 53); clear: both; color: inherit; padding: 0px; margin: 0px; box-sizing: border-box;"><section data-width="6px" style="color: rgb(255, 255, 255); float: right; width: 6px; border-top-left-radius: 50%; border-top-right-radius: 50%; border-bottom-right-radius: 50%; border-bottom-left-radius: 50%; margin-bottom: -3px; box-shadow: rgb(117, 117, 117) 0px 0px 5px; border-color: rgb(172, 196, 136); padding: 0px; background-color: rgb(128, 177, 53); box-sizing: border-box; height: 6px !important;"></section><section data-width="6px" style="color: rgb(255, 255, 255); width: 6px; border-top-left-radius: 50%; border-top-right-radius: 50%; border-bottom-right-radius: 50%; border-bottom-left-radius: 50%; margin-bottom: -2px; box-shadow: rgb(117, 117, 117) 0px 0px 5px; border-color: rgb(172, 196, 136); padding: 0px; background-color: rgb(128, 177, 53); box-sizing: border-box; height: 6px !important;"></section></section><section data-style="color:rgb(33,33,33);text-align:center;" style="padding: 10px; color: inherit; margin: 0px; box-sizing: border-box;"><p style="margin-top: -123px; clear: none; color: inherit; padding: 0px; text-align: right;"><img data-ratio="0.8013698630136986" data-type="png" data-w="146" data-src="http://mmbiz.qpic.cn/mmbiz/yqVAqoZvDibEiba8ruGLqpuHyEIY8fyZA0Rda6hXY1E5EVZtiackDIkaKA1ck2YYUEMDNaOrxDts89tBAxV5a0FcQ/0?wx_fmt=png" title="543.png" style="color: inherit; margin: 0px; padding: 0px;"  /></p><p style="text-align: center;"><strong><span style="font-size: 24px; color: rgb(255, 0, 0);">参赛奖品</span></strong></p><p><br  /></p><p style="font-family: sans-serif; font-size: 14.44444465637207px; line-height: 2em;"><span style="font-size: 18px;">1、一等奖：2016年创意美术暑期杭州艺术之旅+入选作品入纪念画册并赠送一本纪念画册；</span></p><p style="font-family: sans-serif; font-size: 14.44444465637207px; line-height: 2em;"><span style="font-size: 18px;">2、二等奖：精美收纳储物桶+入选作品入纪念画册并赠送一本纪念画册；</span></p><p style="font-family: sans-serif; font-size: 14.44444465637207px; line-height: 2em;"><span style="font-size: 18px;">3、三等奖：精美收纳储物桶；</span></p><p style="font-family: sans-serif; font-size: 14.44444465637207px; line-height: 2em;"><span style="font-size: 18px;">4、纪念奖：凡是入围500强的选手都将获得入围500强的表彰奖状一份。</span></p><p style="font-family: sans-serif; font-size: 14.44444465637207px; line-height: 2em;"><br  /></p></section><section style="border: 0px none rgb(128, 177, 53); clear: both; color: inherit; padding: 0px; margin: 0px; box-sizing: border-box;"><section data-width="6px" style="color: rgb(255, 255, 255); float: right; width: 6px; border-top-left-radius: 50%; border-top-right-radius: 50%; border-bottom-right-radius: 50%; border-bottom-left-radius: 50%; margin-bottom: -3px; box-shadow: rgb(117, 117, 117) 0px 0px 5px; border-color: rgb(172, 196, 136); padding: 0px; background-color: rgb(128, 177, 53); box-sizing: border-box; height: 6px !important;"></section><section data-width="6px" style="color: rgb(255, 255, 255); width: 6px; border-top-left-radius: 50%; border-top-right-radius: 50%; border-bottom-right-radius: 50%; border-bottom-left-radius: 50%; margin-bottom: -2px; box-shadow: rgb(117, 117, 117) 0px 0px 5px; border-color: rgb(172, 196, 136); padding: 0px; background-color: rgb(128, 177, 53); box-sizing: border-box; height: 6px !important;"></section></section></section><section data-width="0px" style="width: 0px; height: 0px; clear: both; box-sizing: border-box; padding: 0px; margin: 0px;"></section></section></section><p style="white-space: normal; text-indent: 32px; line-height: 1.75em;"><br  /></p><p style="white-space: normal; text-indent: 32px; line-height: 1.75em;"><span style="font-size: 18px; color: rgb(255, 0, 0);">注：本次绘画大赛的最终解释权归幸福空间青少年儿童家居连锁机构所有</span></p><p><br  /></p><section class="135editor" data-id="44423" style="white-space: normal; border: 0px none; padding: 0px;"><section style="margin: 10px 0px;"><span style="color: rgb(255, 255, 255); font-size: 18px;"><strong><span class="135brush" data-bcless="darken" data-brushtype="text" style="background-color: rgb(255, 159, 168); border-bottom-width: 4px; border-bottom-style: solid; border-bottom-color: rgb(255, 124, 135); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; font-size: 18px; line-height: 36px; margin: 0px 7px 11px 0px; padding: 5px 10px; text-align: center;">活动单位</span></strong></span></section></section><p style="white-space: normal;"><img data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz/r3lFYPpUtmlCGaQXsSJ4BFsVKfMhJU2fvfWQ1SVdeFticBOvM6JA2lLgk343waic9OZExr1vVu0VyL0HpS0sOxLQ/0?wx_fmt=jpeg" data-ratio="0.5804347826086956" data-w="460"  /><br  /></p><p style="white-space: normal; text-indent: 32px; line-height: 1.75em;"><span style="color: rgb(255, 0, 0);"><span style="font-family: 微软雅黑; line-height: 23.99305534362793px; font-size: 18px;">  </span><span style="color: rgb(0, 112, 192);"><span style="font-family: 微软雅黑; line-height: 23.99305534362793px; font-size: 18px;">  以爱之名，传递幸福。在此，我们将对以上绘画大赛的支持单位致以崇高的敬意，谢谢你们一直以来的支持和关注，让我们携手并行，共同进步</span><span style="font-family: 微软雅黑; font-size: 20px; line-height: 23.99305534362793px;">。</span></span></span></p><p><br  /></p><p><br  /></p><section class="135editor" data-id="28" style="white-space: normal; border: 0px none; padding: 0px;"><p class="135brush" style="margin-top: 0px; margin-bottom: 0px; padding: 0px; max-width: 100%; min-height: 1.5em; line-height: 2em; word-wrap: break-word; word-break: normal; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; color: rgb(255, 255, 255); text-align: center; background-color: rgb(89, 150, 235);"><strong><span style="font-size: 24px;">历届绘画大赛精彩回顾</span></strong></p><section data-width="0px" style="width: 0px; height: 0px; clear: both;"></section></section><p style="white-space: normal; text-indent: 32px; line-height: 1.75em;"><br  /></p><p style="white-space: normal; text-indent: 32px; line-height: 1.75em;"><span style="font-size: 18px; color: rgb(0, 112, 192);">    幸福空间“多喜爱”杯少儿创意绘画大赛至今已连续举办七年了，这期间凝聚了广大参赛小朋友和工作人员的汗水、成就和感动，让我们一起来见证往期历届绘画大赛的精彩瞬间吧！</span></p><p style="white-space: normal;"><br  /></p><p style="white-space: normal;"><img data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz/r3lFYPpUtmlCGaQXsSJ4BFsVKfMhJU2f7SvGbycboypMXTwk6MExkcCOHN6kiaOmicQWAicTp9CgmWfNyTxRiaViaEQ/0?wx_fmt=jpeg" data-ratio="1.1021739130434782" data-w="460"  /><br  /></p><p><img data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz/r3lFYPpUtmlCGaQXsSJ4BFsVKfMhJU2fUKnKticaIMDeNViaiaoYiamZBIicP0SuTjp9bG15FUg5EA6icOv2AkxQNvlw/0?wx_fmt=jpeg" data-ratio="1.1021739130434782" data-w="460" style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"  /></p><p><br  /></p><p><img data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz/r3lFYPpUtmlCGaQXsSJ4BFsVKfMhJU2fygiaGgxqn5MwchLOUuQoFNkzPicpbO1EH2pNAVDOjfrrKH7CB8TL97NA/0?wx_fmt=jpeg" style="" data-ratio="1.1021739130434782" data-w="460"  /></p><p><img data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz/r3lFYPpUtmlCGaQXsSJ4BFsVKfMhJU2fObMH8H1xnrbWvqaic9KYtcS9p69LibPWzPl4zGI21lAWX4heiapxY4LRA/0?wx_fmt=jpeg" style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;" data-ratio="1.1021739130434782" data-w="460"  /></p><p><br  /></p><p style="white-space: normal;"><iframe class="video_iframe" style="   z-index:1; " height="375" width="500" frameborder="0" data-src="http://v.qq.com/iframe/player.html?vid=z0160py8m3q&amp;width=500&amp;height=375&amp;auto=0" allowfullscreen=""></iframe><br  /></p><p style="white-space: normal;"><br  /></p><hr style="white-space: normal;"  /><p style="white-space: normal;"><br  /></p><p style="white-space: normal;"><br  /></p><p style="white-space: normal; text-align: center;"><span style="color: rgb(0, 112, 192);"><strong><span style="font-size: 24px;">幸福空间</span></strong></span></p><p style="white-space: normal; text-align: center;"><span style="color: rgb(0, 112, 192);"><strong><span style="font-size: 24px;">青少年儿童家居连锁机构</span></strong></span></p><section class="135editor" data-id="39" style="white-space: normal; border: 0px none; padding: 0px;"><section style="max-width: 100%; margin: 0.8em 0px 0.5em; overflow: hidden;"><section class="135article" style="background-image: none;"><section class="135editor" data-id="53766" style="border: 0px none; padding: 0px; box-sizing: border-box; margin: 0px; font-size: 16px; font-family: 微软雅黑;"><section style="max-width: 100%; margin: 0.8em 0px 0.5em; overflow: hidden; box-sizing: border-box; padding: 0px;"><section class="135brush" data-brushtype="text" placeholder="请输入标题" style="display: inline-block; color: rgb(255, 255, 255); font-size: 18px; font-weight: bold; padding: 10px 12px; line-height: 1.2; vertical-align: top; border-top-left-radius: 1em; border-top-right-radius: 0em; border-bottom-right-radius: 1em; border-bottom-left-radius: 0em; border-color: rgb(137, 146, 194); background-color: rgb(55, 74, 174); margin: 0px; box-sizing: border-box !important;"><span style="border-color: rgb(55, 74, 174); color: inherit; font-size: 16px;">公司简介</span></section></section><section data-width="0px" style="width: 0px; height: 0px; clear: both; box-sizing: border-box; padding: 0px; margin: 0px;"></section></section><p><br  /></p><p style="text-indent: 28px; line-height: 2em;"><span style="color: rgb(0, 112, 192); font-size: 18px;"><span style="color: rgb(0, 112, 192); font-family: 宋体;">幸福空间青少年儿童家居连锁机构是一家专门服务于青少年儿童家居的大型企业，“幸福空间”旗下有多喜爱、至白小屋、多喜爱</span>W3<span style="color: rgb(0, 112, 192); font-family: 宋体;">松木系列、多喜爱</span>W5<span style="color: rgb(0, 112, 192); font-family: 宋体;">实木系列、欣美书桌、舒达床垫、喜梦宝七个品牌。在完善的科学理论系统上，通过设计师的精心研究开发而诞生的青少年儿童家具品牌，致力于为青少年儿童提供科学、专业、舒适、有益于身心健康成长的家居生活环境。我们是一支快乐、充满朝气、极具凝聚力的团队，崇尚“认真第一、聪明第二”的做事态度，公司具备完善的培训系统和管理机制。品质、服务零投诉是我们一直追求的服务宗旨。</span></span></p><p style="text-indent: 28px; line-height: 2em;"><span style="color: rgb(0, 112, 192); font-family: 宋体;"></span></p><p><img data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz/r3lFYPpUtmlCGaQXsSJ4BFsVKfMhJU2f38OvBRE6aQYicL7ylK2WpnrKSsnib4Mju2FkrJTSDsECuU8jZ5VpmYGw/0?wx_fmt=jpeg" style="" data-ratio="0.8152173913043478" data-w="460"  /></p><p><img data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz/r3lFYPpUtmlCGaQXsSJ4BFsVKfMhJU2f8gYoSibxYy1lC0xhtRlrKc8MDh9Hw2iaVZVcibiaRMcbNqta6eVpMJPpNw/0?wx_fmt=jpeg" style="" data-ratio="0.8152173913043478" data-w="460"  /></p><p><img data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz/r3lFYPpUtmlCGaQXsSJ4BFsVKfMhJU2fGRWEE7ibajLSScPsSTMB7ISn9JZw9ibrWL5aQ6kjvhh5elBqNJ3gCVaA/0?wx_fmt=jpeg" style="" data-ratio="0.8152173913043478" data-w="460"  /></p><p style="text-indent: 28px; line-height: 2em;"><span style="color: rgb(0, 112, 192); font-family: 宋体;"></span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="color: rgb(0, 112, 192);"><strong><span style="font-size: 16px; font-family: 宋体;">幸福空间青少年儿童家居连锁机构各品牌</span></strong></span><strong><span style="font-size: 16px; font-family: 宋体;"><span style="color: rgb(0, 112, 192); line-height: 31.99652862548828px; text-indent: 28px;">门店详细地址</span>：</span></strong></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="color: rgb(255, 0, 0);"><strong><span style="font-size: 16px; font-family: 宋体;">多喜爱专卖店</span></strong></span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="color: rgb(0, 112, 192);"><strong><span style="font-size: 16px; font-family: 宋体;">1</span></strong><strong><span style="font-size: 16px; font-family: 宋体;">、东方家私专卖店</span></strong></span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="font-size: 16px; font-family: 宋体;">地址：杭州秋涛北路70号东方家私三楼302展厅                </span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="font-size: 16px; font-family: 宋体;">电话：0571-86973901</span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="color: rgb(0, 112, 192);"><strong><span style="font-size: 16px; font-family: 宋体;">2</span></strong><strong><span style="font-size: 16px; font-family: 宋体;">、第六空间大都会博览园专卖店</span></strong></span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="font-size: 16px; font-family: 宋体;">地址：滨江江南大道第六空间大都会家居博览园现代馆三楼B319  </span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="font-size: 16px; font-family: 宋体;">电话：0571-87391875</span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="color: rgb(0, 112, 192);"><strong><span style="font-size: 16px; font-family: 宋体;">3</span></strong><strong><span style="font-size: 16px; font-family: 宋体;">、新时代紫金广场专卖店</span></strong></span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="font-size: 16px; font-family: 宋体;">地址：古墩路705号新时代时尚家具馆紫金广场二楼B201-B202</span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="font-size: 16px; font-family: 宋体;">电话：0571-88949728</span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="color: rgb(255, 0, 0);"><strong><span style="font-size: 16px; font-family: 宋体;">多喜爱W5专卖店</span></strong></span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="color: rgb(0, 112, 192);"><strong><span style="font-size: 16px; font-family: 宋体;">1、</span></strong><strong><span style="font-size: 16px; font-family: 宋体;">欧亚达专卖店</span></strong></span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="font-size: 16px; font-family: 宋体;">地址：江干区秋涛路72号欧亚达三楼A3228展厅</span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="font-size: 16px; font-family: 宋体;">电话：0571-86531061</span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="color: rgb(0, 112, 192);"><strong><span style="font-size: 16px; font-family: 宋体;">2、</span></strong><strong><span style="font-size: 16px; font-family: 宋体;">红星美凯龙专卖店</span></strong></span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="font-size: 16px; font-family: 宋体;">地址：古墩路701号红星美凯龙二楼多喜爱B8011-1</span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="font-size: 16px; font-family: 宋体;">电话：0571-86521379</span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="color: rgb(255, 0, 0);"><strong><span style="font-size: 16px; font-family: 宋体;">至白小屋专卖店：</span></strong></span><strong><span style="font-size: 16px; font-family: 宋体;"></span></strong></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="color: rgb(0, 112, 192);"><strong><span style="font-size: 16px; font-family: 宋体;">1</span></strong><strong><span style="font-size: 16px; font-family: 宋体;">、东方家私专卖店</span></strong></span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="font-size: 16px; font-family: 宋体;">地址：杭州秋涛北路70号东方家私三楼337-338展厅</span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="font-size: 16px; font-family: 宋体;">电话：0571-86021097</span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="color: rgb(0, 112, 192);"><strong><span style="font-size: 16px; font-family: 宋体;">2</span></strong><strong><span style="font-size: 16px; font-family: 宋体;">、新时代紫金广场专卖店</span></strong></span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="font-size: 16px; font-family: 宋体;">地址：古墩路705号新时代时尚家具馆紫金广场二楼B201-B202</span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="font-size: 16px; font-family: 宋体;">电话：0571-88949772</span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="font-size: 16px; font-family: 宋体;"></span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="color: rgb(255, 0, 0);"><strong><span style="font-size: 16px; font-family: 宋体;">欣美</span></strong><strong><span style="font-size: 16px; font-family: 宋体;">功能</span></strong><strong><span style="font-size: 16px; font-family: 宋体;">书桌专卖店</span></strong></span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="color: rgb(0, 112, 192);"><strong><span style="font-size: 16px; font-family: 宋体;">1</span></strong><strong><span style="font-size: 16px; font-family: 宋体;">、欧亚达专卖店</span></strong></span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="font-size: 16px; font-family: 宋体;">地址：江干区秋涛路72号欧亚达三楼A3238展厅</span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="font-size: 16px; font-family: 宋体;">电话：0571-86530719</span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="color: rgb(0, 112, 192);"><strong><span style="font-size: 16px; font-family: 宋体;">2</span></strong><strong><span style="font-size: 16px; font-family: 宋体;">、万达专卖店</span></strong></span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="font-size: 16px; font-family: 宋体;">地址：</span><span style="font-size: 16px; font-family: 宋体;">拱墅区杭行路666号万达百货二楼欣美功能书桌专柜</span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="font-size: 16px; font-family: 宋体;">电话：0571-85779663</span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="font-size: 16px; font-family: 宋体;"></span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="color: rgb(255, 0, 0);"><strong><span style="font-size: 16px; font-family: 宋体;">喜梦宝专卖店：</span></strong></span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="color: rgb(0, 112, 192);"><strong><span style="font-size: 16px; font-family: 宋体;">1、</span></strong><strong><span style="font-size: 16px; font-family: 宋体;">欧亚达专卖店</span></strong></span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="font-size: 16px; font-family: 宋体;">地址：江干区秋涛路72号欧亚达三楼288A展厅</span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="font-size: 16px; font-family: 宋体;">电话：0571-86602971</span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="color: rgb(0, 112, 192);"><strong><span style="font-size: 16px; font-family: 宋体;">2、</span></strong><strong><span style="font-size: 16px; font-family: 宋体;">红星美凯龙专卖店</span></strong></span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="font-size: 16px; font-family: 宋体;">地址：西湖区古墩路701号红星美凯龙三楼C8015</span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="font-size: 16px; font-family: 宋体;">电话：0571-86602972</span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="font-size: 16px; font-family: 宋体;"></span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="color: rgb(255, 0, 0);"><strong><span style="font-size: 16px; font-family: 宋体;">舒达床垫专卖店：</span></strong></span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="font-size: 16px; font-family: 宋体;">1、</span><span style="font-size: 16px; font-family: 宋体;">地址：红星美凯龙一楼A8036舒达床垫</span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="font-size: 16px; font-family: 宋体;">  </span><span style="font-size: 16px; font-family: 宋体;">电话：0571-</span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; white-space: normal; text-indent: 28px; line-height: 2em;"><span style="color: rgb(0, 112, 192); font-family: 宋体;"><br  /></span></p><p style="color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 23.99305534362793px; white-space: normal;"><span style="font-size: 16px; font-family: 宋体; color: rgb(255, 0, 0);">全国统一客服热线：400 808 7680</span></p><p><span style="font-size: 16px; font-family: 宋体; color: rgb(255, 0, 0);"><br  /></span></p><section class="135article" style="background-image: none;"><section class="135editor" data-id="53766" style="border: 0px none; padding: 0px; box-sizing: border-box; margin: 0px; font-size: 16px; font-family: 微软雅黑;"><section style="max-width: 100%; margin: 0.8em 0px 0.5em; overflow: hidden; box-sizing: border-box; padding: 0px;"><section class="135brush" data-brushtype="text" placeholder="请输入标题" style="display: inline-block; color: rgb(255, 255, 255); font-size: 18px; font-weight: bold; padding: 10px 12px; line-height: 1.2; vertical-align: top; border-top-left-radius: 1em; border-top-right-radius: 0em; border-bottom-right-radius: 1em; border-bottom-left-radius: 0em; border-color: rgb(137, 146, 194); background-color: rgb(55, 74, 174); margin: 0px; box-sizing: border-box !important;"><span style="border-color: rgb(55, 74, 174); color: inherit; font-size: 16px;">企业文化</span></section></section></section></section></section></section></section><p style="white-space: normal; text-align: center;"><span style="color: rgb(0, 112, 192); font-size: 20px;"><strong><span style="font-family: 宋体; background-color: white;"><br  /></span></strong></span></p><p style="white-space: normal;"><span style="color: rgb(0, 112, 192); font-size: 16px;"><strong><span style="color: rgb(0, 112, 192); font-family: 宋体; background-color: white;">幸福空间  </span></strong><strong><span style="color: rgb(0, 112, 192); font-family: 宋体; background-color: white;">传承根系文化  </span></strong><strong><span style="color: rgb(0, 112, 192); font-family: 宋体; background-color: white;">创造共同幸福</span></strong></span></p><p style="margin-bottom: 0.1px; white-space: normal; line-height: 24px; background-color: white;"><br  /><span style="font-size: 15px; color: rgb(0, 112, 192);"></span></p><section class="135editor" data-id="53766" style="white-space: normal; border: 0px none; padding: 0px;"><section style="max-width: 100%; margin: 0.8em 0px 0.5em; overflow: hidden;"><section class="135brush" data-brushtype="text" placeholder="请输入标题" style="display: inline-block; color: rgb(255, 255, 255); font-size: 18px; font-weight: bold; padding: 10px 12px; line-height: 1.2; vertical-align: top; border-top-left-radius: 1em; border-top-right-radius: 0em; border-bottom-right-radius: 1em; border-bottom-left-radius: 0em; border-color: rgb(137, 146, 194); background-color: rgb(55, 74, 174); box-sizing: border-box !important;"><span style="border-color: rgb(55, 74, 174); color: inherit; font-size: 16px;">发展使命</span></section></section><section data-width="0px" style="width: 0px; height: 0px; clear: both;"></section></section><p><br  /></p><p style="margin-bottom: 0.1px; white-space: normal; line-height: 2em; background-color: white;"><span style="font-size: 18px; line-height: 24px; color: rgb(0, 112, 192);">一群人、一颗心、一生只做一件事，为天下的孩子营造幸福的成长空间，我们希望幸福空间能陪伴孩子们一起成长。<br  /></span></p><p style="white-space: normal; line-height: 2em;"><br  /></p><p style="white-space: normal; line-height: 2em;"><span style="color: rgb(0, 112, 192);"><img data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz/r3lFYPpUtmlCGaQXsSJ4BFsVKfMhJU2fR8cnNN6TMcZgK5Q1NWLNY43hWurq4JbkWXwx95fW1pdAhdYYqaicw9g/0?wx_fmt=jpeg" data-ratio="1.3326086956521739" data-w="460"  /><br  /></span></p><p style="white-space: normal; line-height: 2em;"><span style="color: rgb(0, 112, 192);"><br  /></span></p><p style="white-space: normal;"><span style="color: rgb(0, 112, 192);"><img data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz/r3lFYPpUtmlCGaQXsSJ4BFsVKfMhJU2f9Q6StlVRKc3T80LjiaBgIgNSJ9ZHGcmibX2wTopwWG7eicCCqHownW9WA/0?wx_fmt=jpeg" data-ratio="1.3326086956521739" data-w="460"  /><br  /></span></p><p style="white-space: normal;"><span style="color: rgb(0, 112, 192);"><br  /></span></p><p style="white-space: normal;"><span style="color: rgb(0, 112, 192);"><br  /></span></p><p style="white-space: normal;"><span style="color: rgb(0, 112, 192);"></span></p><p style="margin-bottom: 0.1px; white-space: normal; text-align: center; line-height: 28px; background-color: white;"><span style="color: rgb(0, 112, 192);"><strong><span style="font-family: 宋体;">来幸福空间吧！</span></strong><strong><span style="font-family: 宋体;"></span></strong></span></p><p style="margin-bottom: 0.1px; white-space: normal; text-align: center; line-height: 28px; background-color: white;"><span style="color: rgb(0, 112, 192);"><strong><span style="font-family: 宋体;">我们也许不是您唯一的选择，</span></strong><strong><span style="font-family: 宋体;"></span></strong><strong><span style="font-family: 宋体;"></span></strong></span></p><p style="margin-bottom: 0.1px; white-space: normal; text-align: center; line-height: 28px; background-color: white;"><span style="color: rgb(0, 112, 192);"><strong><span style="font-family: 宋体;">但一定是您最好的选择！</span></strong></span></p><p style="white-space: normal;"><span style="color: rgb(0, 112, 192);"><br  /></span><br  /></p><p style="white-space: normal;"><span style="color: rgb(0, 112, 192);"><br  /></span></p><p style="margin-bottom: 0.1px; white-space: normal; line-height: 24px; background-color: white;"><img data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz/r3lFYPpUtmk9131ZHkN1MGrMOUGQv9MoQOsZm4EBicB0W5LhPnSDCzT9zwPcEeTz5LS7ClCah75lskABos8QOHQ/0?wx_fmt=jpeg" data-ratio="0.1956521739130435" data-w="460"  /><br  /></p><p style="white-space: normal; text-indent: 32px; line-height: 1.75em;"><br  /></p><p style="white-space: normal;"><img data-s="300,640" data-type="jpeg" data-src="http://mmbiz.qpic.cn/mmbiz/r3lFYPpUtmk9131ZHkN1MGrMOUGQv9Mop4Ph0yNkkVLCjejGVpEIY6jSLTF8KTSfheuws9cnLfWjbN6wC5ibTYQ/0?wx_fmt=jpeg" data-ratio="1.434782608695652" data-w="460"  /><br  /></p><p style="white-space: normal; text-indent: 32px; line-height: 1.75em;"><br  /></p><p style="color: inherit; padding: 0px; line-height: 1.75em;"><br  /></p></section></section><section style="border: 0px none rgb(128, 177, 53); clear: both; color: inherit; padding: 0px; margin: 0px; box-sizing: border-box;"><section data-width="6px" style="color: rgb(255, 255, 255); float: right; width: 6px; border-top-left-radius: 50%; border-top-right-radius: 50%; border-bottom-right-radius: 50%; border-bottom-left-radius: 50%; margin-bottom: -3px; box-shadow: rgb(117, 117, 117) 0px 0px 5px; border-color: rgb(172, 196, 136); padding: 0px; background-color: rgb(128, 177, 53); box-sizing: border-box; height: 6px !important;"></section><section data-width="6px" style="color: rgb(255, 255, 255); width: 6px; border-top-left-radius: 50%; border-top-right-radius: 50%; border-bottom-right-radius: 50%; border-bottom-left-radius: 50%; margin-bottom: -2px; box-shadow: rgb(117, 117, 117) 0px 0px 5px; border-color: rgb(172, 196, 136); padding: 0px; background-color: rgb(128, 177, 53); box-sizing: border-box; height: 6px !important;"></section></section></section><section data-width="0px" style="width: 0px; height: 0px; clear: both; box-sizing: border-box; padding: 0px; margin: 0px;"></section></section><p style="white-space: normal;"><br  /></p><p><br  /></p><p><br  /></p><p><br  /></p>
+                    </div>
+                    <script type="text/javascript">
+                        var first_sceen__time = (+new Date());
+
+                        if ("" == 1 && document.getElementById('js_content'))
+                            document.getElementById('js_content').addEventListener("selectstart",function(e){ e.preventDefault(); });
+
+                                        (function(){
+                            if (navigator.userAgent.indexOf("WindowsWechat") != -1){
+                                var link = document.createElement('link');
+                                var head = document.getElementsByTagName('head')[0];
+                                link.rel = 'stylesheet';
+                                link.type = 'text/css';
+                                link.href = "http://res.wx.qq.com/mmbizwap/en_US/htmledition/style/page/appmsg/page_mp_article_improve_pc2826cc.css";
+                                head.appendChild(link);
+                            }
+                        })();
+                    </script>
+                    <link rel="stylesheet" type="text/css" href="http://res.wx.qq.com/mmbizwap/en_US/htmledition/style/page/appmsg/page_mp_article_improve_combo29ab01.css">
+                                        
+                                        
+                                        <div class="rich_media_tool" id="js_toobar3">
+                                                                    <div id="js_read_area3" class="media_tool_meta tips_global meta_primary" style="display:none;">Pageview <span id="readNum3"></span></div>
+
+                        <span style="display:none;" class="media_tool_meta meta_primary tips_global meta_praise" id="like3">
+                            <i class="icon_praise_gray"></i><span class="praise_num" id="likeNum3"></span>
+                        </span>
+
+                        <a id="js_report_article3" style="display:none;" class="media_tool_meta tips_global meta_extra" href="javascript:void(0);">Report</a>
+
+                    </div>
+                </div>
+
+                <div class="rich_media_area_extra">
+
+                    
+                                        <div class="mpda_bottom_container" id="js_bottom_ad_area">
+                        
+                    </div>
+
+                    
+                    <div id="js_iframetest" style="display:none;"></div>
+
+                    
+                                    </div>
+               
+            </div>
+            <div id="js_pc_qr_code" class="qr_code_pc_outer" style="display:none;">
+                <div class="qr_code_pc_inner">
+                    <div class="qr_code_pc">
+                        <img id="js_pc_qr_code_img" class="qr_code_pc_img">
+                        <p>微信扫一扫<br>关注该公众号</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+        
+        <script>window.moon_map = {"appmsg/emotion/caret.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/appmsg/emotion/caret278965.js","appmsg/emotion/map.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/appmsg/emotion/map278965.js","appmsg/emotion/textarea.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/appmsg/emotion/textarea27cdc5.js","appmsg/emotion/nav.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/appmsg/emotion/nav278965.js","appmsg/emotion/common.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/appmsg/emotion/common278965.js","appmsg/emotion/slide.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/appmsg/emotion/slide27cdc5.js","biz_wap/jsapi/cardticket.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/biz_wap/jsapi/cardticket275627.js","pages/report.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/pages/report2933be.js","pages/music_player.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/pages/music_player298e98.js","pages/loadscript.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/pages/loadscript2933be.js","appmsg/emotion/dom.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/appmsg/emotion/dom278965.js","appmsg/emotion/emotion.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/appmsg/emotion/emotion27f4f1.js","biz_wap/utils/hashrouter.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/biz_wap/utils/hashrouter2805ea.js","a/gotoappdetail.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/a/gotoappdetail2a21d2.js","a/ios.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/a/ios275627.js","a/android.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/a/android275627.js","a/profile.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/a/profile29b1f9.js","a/card.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/a/card29b1f9.js","biz_wap/utils/position.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/biz_wap/utils/position29b1f9.js","appmsg/a_report.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/appmsg/a_report282222.js","biz_common/utils/monitor.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/biz_common/utils/monitor27f4f1.js","biz_common/utils/report.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/biz_common/utils/report275627.js","biz_common/utils/huatuo.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/biz_common/utils/huatuo293afc.js","biz_common/utils/cookie.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/biz_common/utils/cookie275627.js","pages/voice_component.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/pages/voice_component298e98.js","new_video/ctl.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/new_video/ctl2933be.js","biz_common/utils/spin.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/biz_common/utils/spin275627.js","biz_wap/jsapi/pay.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/biz_wap/jsapi/pay275627.js","appmsg/reward_entry.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/appmsg/reward_entry29bb2b.js","appmsg/comment.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/appmsg/comment29f4e9.js","appmsg/like.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/appmsg/like29f4e9.js","appmsg/a.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/appmsg/a29ff2a.js","pages/version4video.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/pages/version4video2933be.js","biz_wap/utils/storage.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/biz_wap/utils/storage275627.js","biz_common/tmpl.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/biz_common/tmpl275627.js","biz_common/ui/imgonepx.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/biz_common/ui/imgonepx275627.js","biz_common/dom/attr.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/biz_common/dom/attr275627.js","biz_wap/utils/ajax.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/biz_wap/utils/ajax297cdb.js","biz_common/utils/string/html.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/biz_common/utils/string/html29f4e9.js","appmsg/report.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/appmsg/report29f4e9.js","biz_common/dom/class.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/biz_common/dom/class275627.js","appmsg/report_and_source.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/appmsg/report_and_source29f4e9.js","appmsg/page_pos.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/appmsg/page_pos29f4e9.js","appmsg/cdn_speed_report.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/appmsg/cdn_speed_report275627.js","appmsg/voice.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/appmsg/voice29ef1e.js","appmsg/qqmusic.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/appmsg/qqmusic29ef1e.js","appmsg/iframe.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/appmsg/iframe2989c2.js","appmsg/review_image.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/appmsg/review_image29d138.js","appmsg/outer_link.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/appmsg/outer_link275627.js","biz_wap/jsapi/core.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/biz_wap/jsapi/core275627.js","biz_common/dom/event.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/biz_common/dom/event275627.js","appmsg/copyright_report.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/appmsg/copyright_report2805ea.js","appmsg/pay_for_reading.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/appmsg/pay_for_reading28f721.js","appmsg/async.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/appmsg/async2a21d2.js","biz_wap/ui/lazyload_img.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/biz_wap/ui/lazyload_img275627.js","biz_common/log/jserr.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/biz_common/log/jserr2805ea.js","appmsg/share.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/appmsg/share29bb2b.js","biz_wap/utils/mmversion.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/biz_wap/utils/mmversion275627.js","appmsg/cdn_img_lib.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/appmsg/cdn_img_lib275627.js","biz_common/utils/url/parse.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/biz_common/utils/url/parse275627.js","biz_wap/utils/device.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/biz_wap/utils/device27f470.js","biz_wap/jsapi/a8key.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/biz_wap/jsapi/a8key2a0084.js","appmsg/index.js":"http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/appmsg/index2a2005.js"};window.moon_crossorigin = true;</script><script type="text/javascript" src="http://res.wx.qq.com/mmbizwap/en_US/htmledition/js/biz_wap/moon275627.js" crossorigin></script>
+    <script id="voice_tpl" type="text/html">        
+        <span id="voice_main_<#=voiceid#>_<#=posIndex#>" class="db audio_area <#if(!musicSupport){#> unsupport<#}#>">
+            <span class="tc tips_global unsupport_tips" <#if(show_not_support!==true){#>style="display:none;"<#}#>>
+            当前浏览器不支持播放音乐或语音，请在微信或其他浏览器中播放            </span>
+            <span class="audio_wrp db">
+                <span id="voice_play_<#=voiceid#>_<#=posIndex#>" class="audio_play_area">
+                    <i class="icon_audio_default"></i>
+                    <i class="icon_audio_playing"></i>
+                    <img src="http://res.wx.qq.com/mmbizwap/en_US/htmledition/images/icon/appmsg/audio/icon_audio_unread26f1f1.png" alt="" class="pic_audio_default">
+                </span>
+                <span class="audio_length tips_global"><#=duration_str#></span>
+                <span class="db audio_info_area">
+                    <strong class="db audio_title"><#=title#></strong>
+                    <span class="audio_source tips_global"><#if(window.nickname){#>来自<#=window.nickname#><#}#></span>
+                </span>
+                <span id="voice_progress_<#=voiceid#>_<#=posIndex#>" class="progress_bar" style="width:0px;"></span>
+            </span>
+        </span>
+    </script>
+
+    <script id="qqmusic_tpl" type="text/html">        
+        <span id="qqmusic_main_<#=comment_id#>_<#=posIndex#>" class="db qqmusic_area <#if(!musicSupport){#> unsupport<#}#>">
+            <span class="tc tips_global unsupport_tips" <#if(show_not_support!==true){#>style="display:none;"<#}#>>
+            当前浏览器不支持播放音乐或语音，请在微信或其他浏览器中播放            </span>
+            <span class="db qqmusic_wrp">
+                <span class="db qqmusic_bd">
+                    <span id="qqmusic_play_<#=musicid#>_<#=posIndex#>" class="play_area">
+                        <i class="icon_qqmusic_switch"></i>
+                        <img src="http://res.wx.qq.com/mmbizwap/en_US/htmledition/images/icon/appmsg/qqmusic/icon_qqmusic_default.2x26f1f1.png" alt="" class="pic_qqmusic_default">
+                        <img src="<#=music_img#>" data-autourl="<#=audiourl#>" data-musicid="<#=musicid#>" class="qqmusic_thumb" alt="">
+                    </span>
+                                        <a id="qqmusic_home_<#=musicid#>_<#=posIndex#>" href="javascript:void(0);" class="access_area">
+                        <span class="qqmusic_songname"><#=music_name#></span>
+                        <span class="qqmusic_singername"><#=singer#></span>
+                        <span class="qqmusic_source"><img src="http://res.wx.qq.com/mmbizwap/en_US/htmledition/images/icon/appmsg/qqmusic/icon_qqmusic_source263727.png" alt=""></span>
+                    </a>
+                </span>
+            </span>       
+        </span>
+    </script>
+
+    <script id="t_cmt" type="text/html">
+        <li class="discuss_item" id="cid<# if (is_from_me == 1) { #><#=my_id#><# } else { #><#=content_id#><# } #>">
+            <# if(is_elected == 1){ #>
+            <div class="discuss_opr">
+                <span class="media_tool_meta tips_global meta_praise js_comment_praise <# if(like_status == 1){ #>praised<# } #>" data-status="<#=like_status#>" data-content-id='<#=content_id#>'>
+                    <i class="icon_praise_gray"></i>
+                    <span class="praise_num"><# if(like_num_format !== 0){ #><#=like_num_format#> <# } #></span>
+                </span>
+            </div>
+            <# } #>
+            <div class="user_info">
+                <strong class="nickname"><#=nick_name#><# if(is_from_friend == 1){ #>(朋友)<# } #></strong>
+                <img class="avatar" src="<#=logo_url#>">
+            </div>
+            <div class="discuss_message">
+                <span class="discuss_status"><#=status#></span>
+                <div class="discuss_message_content">
+                <#=content#>
+                </div>
+            </div>
+            <p class="discuss_extra_info">
+                <#=time#>               
+                <# if (is_from_me == 1) { #>
+                <a class="discuss_del js_del" href="javascript:;" data-my-id="<#=my_id#>" data-content-id="<#=content_id#>">删除</a>
+                <# } #>
+            </p>
+            <# if(reply && reply.reply_list && reply.reply_list.length > 0){ #>
+                <div class="reply_result">
+                    <div class="nickname">作者回复</div>
+                    <div class="discuss_message">
+                        <div class="discuss_message_content">
+                        <#=reply.reply_list[0].content#>
+                        </div>
+                    </div>
+                    <p class="discuss_extra_info"><#=reply.reply_list[0].time#></p>
+                </div>
+            <# } #>
+                
+        </li>
+    </script>
+
+    <script type="text/html" id="img_copyright_tpl">
+        <span class="original_img_wrp">            
+            <span class="tips_global">来自: <#=source_nickname#></span>
+        </span>    
+    </script>
+
+  <script id="t_ad" type="text/html">
+    <div class="rich_media_extra" id="gdt_area">
+        <# if(pos_type==0){ #>
+        <div class="rich_tips with_line title_tips">
+            <span class="tips">广告</span>
+        </div>
+        <# } #>
+        <div class="js_ad_link extra_link" data-type="<#=type#>" data-ticket="<#=ticket#>" data-url="<#=url#>" data-rl="<#=rl#>"  data-aid="<#=aid#>" data-pt="<#=pt#>" data-tid="<#=traceid#>" data-gid="<#=group_id#>" data-apurl="<#=apurl#>">
+
+
+
+
+            <# if(pt==1){ #>
+            <#=hint_txt#>
+            <img class="icon_arrow_gray" src="http://res.wx.qq.com/mmbizwap/en_US/htmledition/images/icon/common/icon_arrow_gray1f0949.png">
+            <img class="icon_loading_white icon_after" style="display:none;" id="loading_<#=traceid#>" src="http://res.wx.qq.com/mmbizwap/en_US/htmledition/images/icon/common/icon_loading_white2805ea.gif">
+            <# }else if(pt==2){ #>
+            
+            <# if (logo.indexOf("http://mmsns.qpic.cn/") == 0){ #>
+            <div class="brand_logo"><img src="<#=logo#>" alt="logo图片"></div>
+            <# } #>
+            <img class="appmsg_banner" src="<#=image_url#>">
+            <# if(watermark_type!=0){ #><i class="promotion_tag"><# if(watermark_type==1){ #>商品推广<# }else if (watermark_type==2){ #>活动推广<# }else if (watermark_type==3){ #>应用下载<# } #></i><# } #>
+            <# }else if(pt==7){ #>
+            
+            <div class="preview_group preview_card">
+                <div class="preview_group_inner card_inner">
+                    <div class="preview_group_info">
+                        <strong class="preview_group_title2"><#=hint_txt#></strong>
+                        <div class="preview_group_desc"><#=ad_desc#></div>
+                        <img src="<#=image_url#>" alt="" class="preview_card_avatar">
+                    </div>
+                </div>
+            </div>
+            <# }else if(pt==100){ #>
+            <div class="preview_group">
+                <div class="preview_group_inner">
+                    <div class="preview_group_info append_btn">
+                        <strong class="preview_group_title"><#=biz_info.nick_name#></strong>
+                        <div class="preview_group_desc"><#=hint_txt#></div>
+                        <# if(!!biz_info.head_img){ #>
+                        <img src="<#=biz_info.head_img#>" alt="" class="preview_group_avatar br_radius">
+                        <# }else{ #>
+                        <img class="preview_group_avatar br_radius" src="http://mmbiz.qpic.cn/mmbiz/a5icZrUmbV8p5jb6RZ8aYfjfS2AVle8URwBt8QIu6XbGewB9wiaWYWkPwq4R7pfdsFibuLkic16UcxDSNYtB8HnC1Q/0" alt="<#=biz_info.nick_name#>">
+                        <# } #>                                 
+                    </div>
+                    <div class="preview_group_opr">
+                        <a id="js_view_profile_<#=pos_type#>" <# if(biz_info.is_subscribed == 0){ #>style="display:none"<# } #> class="btn btn_inline btn_primary btn_line js_ad_btn" href="javascript:void(0);">查看</a>
+                        <a id="js_add_contact_<#=pos_type#>" data-url="<#=url#>" data-type="<#=type#>" data-tid="<#=traceid#>" data-rl="<#=rl#>" <# if(biz_info.is_subscribed ==1){ #>style="display:none"<# } #> class="btn btn_inline btn_line  btn_primary js_ad_btn" href="javascript:void(0);">关注</a>
+                    </div>
+                </div>
+            </div>
+            <# }else if(pt==102){ #>
+            <div class="preview_group">
+                <div class="preview_group_inner">
+                    <div class="preview_group_info append_btn">
+                        <strong class="preview_group_title"><#=app_info.app_name#></strong>
+                        <div class="preview_group_desc"><#=hint_txt#></div>
+                        <img src="<#=app_info.icon_url#>" alt="" class="preview_group_avatar br_radius">
+                    </div>
+                    <div class="preview_group_opr">
+                        <a id="js_app_action_<#=pos_type#>" class="btn btn_inline btn_primary js_ad_btn btn_download" href="javascript:void(0);">下载</a>
+                    </div>
+                </div>
+            </div>
+            <# }else if(pt==101){ #>
+            <div class="preview_group preview_card">
+                <div class="preview_group_inner card_inner">                            
+                    <div class="preview_group_info append_btn">
+                        <strong class="preview_group_title"><#=app_info.app_name#></strong>
+                        <div class="preview_group_desc"><#=hint_txt#></div>
+                        <img src="<#=app_info.icon_url#>" alt="" class="preview_card_avatar">                               
+                    </div>
+                    <div class="preview_group_opr">
+                        <a href="javascript:void(0);" id="js_app_action_<#=pos_type#>" class="btn btn_inline btn_primary js_ad_btn">下载</a>
+                    </div>
+                </div>                        
+            </div>
+            <# }else if(pt==103||pt==104){ #>
+            <div class="preview_group obvious_app">
+                <div class="preview_group_inner">
+                    <div class="pic_app">
+                        <img src="<#=image_url#>" alt="">
+                    </div>
+                    <div class="info_app">
+                        <p class="name_app"><#=app_info.app_name#></p>
+                        <# if(pt==103){ #>
+                        <p class="profile_app" style="display:none;"><span class="fun_exp"><#=app_info._category#></span><em>|</em><span class="compacity"><#=app_info._app_size#></span></p>
+                        <# } else if(pt==104){ #>
+                        <p class="profile_app" style="display:none;"><span class="fun_exp"><#=app_info._app_size#></span><em>|</em><span class="compacity"><#=app_info._down_count#></span></p>
+                        <# } #>
+                        
+                        <p class="grade_app" id="js_app_rating_<#=pos_type#>">
+                            
+                            <span class="js_stars stars" style="display:none;"></span>
+                            
+                            <span class="js_scores scores"></span>
+                        </p>
+                        <div class="dm_app">
+                            <a href="javascript:void(0);" id="js_appdetail_action_<#=pos_type#>" class="ad_btn btn_download js_ad_btn">下载</a>
+                            <p class="extra_info">来自<# if(pt==103){ #>App Store<# }else{ #>腾讯应用宝<# } #></p>
+                        </div>
+                    </div>
+                </div>            
+            </div>
+            <# }else if(pt==105){ #>
+            <div class="mpda_card cardticket">
+                <div class="cardticket_hd cell">
+                    <div class="cell_hd">
+                        <span class="radius_avatar">
+                            <img class="avatar" src="<#=card_info.card_logo_url#>">
+                        </span>
+                    </div>
+                    <div class="cell_bd cell_primary"><#=card_info.card_title#></div>
+                    <div class="cell_ft">
+                        <a href="javascript:void(0);"  class="btn btn_plain_primary btn_inline js_ad_btn" id="js_card_action_<#=pos_type#>">领券</a>
+                    </div>
+                </div>
+                <div class="cardticket_ft">
+                    <div class="cardticket_theme"></div>
+                    <p class="cardticket_source tips_global"><#=card_info.card_brand_name#></p>
+                </div>
+            </div>
+            <# } #>
+        </div>
+    </div>
+  </script>
+  <script type="text/javascript">
+      var not_in_mm_css = "http://res.wx.qq.com/mmbizwap/en_US/htmledition/style/page/appmsg/not_in_mm2637b1.css";
+      var windowwx_css = "http://res.wx.qq.com/mmbizwap/en_US/htmledition/style/page/appmsg/page_mp_article_improve_pc2826cc.css";
+      var tid = "";
+      var aid = "";
+      var clientversion = "0";
+      var appuin = "MjM5NDU5MDU4Mw==";
+
+      var source = "";
+      var scene = 75;
+      
+      var itemidx = "";
+      var nickname = "幸福空间";
+      var ct = "1439529336";
+      var user_name = "gh_17c194dd5d0f";
+      var user_name_new = "";
+      var fakeid   = "";
+      var version   = "";
+      var is_limit_user   = "0";
+      var msg_title = "幸福空间“童绘中国梦”少儿创意绘画大赛&nbsp;初赛500强网络最佳作品人气奖微信投票";
+      var msg_desc = "关注&nbsp;&nbsp;幸福空间官方微信（xfkj621）进行投票，更多精彩送给您您的一票是对小朋友们的极大肯定，他/她很在";
+      var msg_cdn_url = "http://mmbiz.qpic.cn/mmbiz/r3lFYPpUtmmLvmODicBj9qgUxxDJbrDL3rPL1HDc30h5b7F7nWT0dK8jEwwsBsHliaEojOQZgOfrBMhF2dwwhPQw/0?wx_fmt=jpeg";
+      var msg_link = "http://mp.weixin.qq.com/s?__biz=MjM5NDU5MDU4Mw==&amp;mid=209789091&amp;idx=1&amp;sn=f05ceff7bb52286fba379b1ee7ecc3a0#wechat_redirect";
+      var user_uin = "0"*1;
+      var msg_source_url = '';
+      var img_format = 'jpeg';
+      var srcid = '';
+      var networkType;
+      var appmsgid = '' || '209789091';
+      var comment_id = "0" * 1;
+      var comment_enabled = "" * 1;
+      var is_need_reward = "0" * 1;
+      var is_https_res = ("" * 1) && (location.protocol == "https:");
+
+      var devicetype = "";
+      var source_username = "";
+      var reprint_ticket = "";
+      var source_mid = "";
+      var source_idx = "";
+
+      var show_comment = "";
+      var __appmsgCgiData = {
+            can_use_page : "0"*1,
+            is_wxg_stuff_uin : "0"*1,
+            card_pos : "",
+            copyright_stat : "0",
+            hd_head_img : "http://wx.qlogo.cn/mmhead/Q3auHgzwzM48HlVZJ8Blu1jHChRsTTgJ3lodBwd63TyStDBaanVicWA/0"||(window.location.protocol+"//"+window.location.host + "http://res.wx.qq.com/mmbizwap/en_US/htmledition/images/pic/appmsg/pic_rumor_link.2x264e77.jpg")
+      };
+      var _empty_v = "http://res.wx.qq.com/mmbizwap/en_US/htmledition/images/pic/pages/voice/empty26f1f1.mp3";
+
+      var copyright_stat = "0" * 1;
+
+      var pay_fee = "" * 1; // 付费阅读费用
+      var pay_timestamp = "";
+      var need_pay = "" * 1;
+
+      var need_report_cost = "0" * 1;
+      
+            window.wxtoken = "";
+        </script>
+
+  <script type="text/javascript">
+      seajs.use('appmsg/index.js');
+  </script>
+
+
+    </body>
+</html>
+
+ 

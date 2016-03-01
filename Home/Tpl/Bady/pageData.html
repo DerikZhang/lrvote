@@ -1,0 +1,68 @@
+
+<volist id="vo1" name="list">
+<ol class="li" id="olli">
+    <div id="content_tab">
+        <div>
+            <div id="content_pic">
+                <a href="__URL__/content/subscribe/{$subscribe}/id/{$vo1['vid']}/fid/{$vo1.id}
+                    <?php
+
+                    if(Cookie::get('token_'.$_GET['id']) && Cookie::get('wecha_id_'.$_GET['id'])){
+
+                    echo '/token/'.Cookie::get('token_'.$_GET['id']).'/wecha_id/'.Cookie::get('wecha_id_'.$_GET['id']);
+
+
+                    }
+
+                    ?>.html">
+                    <div class="img_po">
+                        <div class="img_po_div"></div>
+                        <div class="img_po_txt">编号: {$vo1.num}</div>
+                    </div>
+                    <img src="{$vo1.picurl}" />
+                </a>
+            </div>
+        </div>
+        <div id="content_xinxi">{$vo1.username}</div>
+        <div id="content_result">
+            <div id="content_rebu">
+
+                <?php
+                if( !empty($subscribe)  || $member['m_isConnent'] === '0'  ){
+                ?>
+                      <eq name="vo.isVerify" value="0">
+                          <a href="__URL__/vote/vid/{$vo1['id']}/id/{$vo['id']}"  class="vote"><button class="STYLE1" id="content_button">投票</button></a>
+                      </eq>
+                      <eq name="vo.isVerify" value="1">
+                          <a href="javascript:void(0);"  onclick="showVerify({$vo1['id']},{$vo['id']})" class="vote"><button class="STYLE1" id="content_button">投票</button></a>
+                      </eq> 
+
+                <?php
+                }else{
+                ?>
+                <button class="STYLE1" id="content_button" onclick="loaddzp()">投票</button>
+
+                <?php
+                }
+                ?>
+
+
+            </div>
+            <div  class="content_piao_1" id="content_piao">{$vo1.ticket}票</div>
+        </div>
+    </div>
+</ol>
+</volist>
+<div class="current" style="display:none;">
+<?php 
+if( $currentPage >= $totalPages    ){
+?>
+0
+<?php
+}else{
+?>
+{$currentPage}
+<?php
+}
+?>
+</div>

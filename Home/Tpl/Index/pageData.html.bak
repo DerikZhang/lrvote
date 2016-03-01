@@ -1,0 +1,100 @@
+	<div id="content"  style="max-width: 640px;margin: 0 auto;">
+		
+		<div id="thumbs"  class="masonry" style="margin: 0 auto;padding-left:12px;">
+
+  <volist id="vo1" name="list">
+				<div class="imgbox masonry-brick" itemscope="" itemtype="http://schema.org/ImageObject" style="margin-bottom: 5px; display:none;width:45%;margin-left:10px;">
+					
+					<ul style="display:none">
+						<div id="inline_content{$vo1['id']}" style="padding:3px; background:#fff;text-align: center">
+							<div style="width:100%;position:relative;">
+								<img id="bigimg{$vo1['id']}" style="width:70%;height:70%" dsrc="{$vo1['picurl']}" src="{$vo1['picurl']}">
+							</div>
+							
+							<div style="font-size: 1.4em;padding:14px 2px 10px 2px;text-align: left;font-style:italic;" class="ldesc"><span style="background:url(<?php echo C('site_url'); ?>/Home/Tpl/Index/c2/y1.png) no-repeat left top;width:24px;height:18px;text-indent:-99999px;background-size:18px auto;display:inline-block;">"</span>{$vo1['info']}<span style="background:url(<?php echo C('site_url'); ?>/Home/Tpl/Index/c2/y2.png) no-repeat 6px top;width:24px;height:20px;text-indent:-99999px;background-size:18px auto;display:inline-block;">"</span></div><div style="font-size: 1.5em;width:100%;text-align:right;padding-bottom:0px;" class="ldesc">— {$vo1['num']}号 {$vo1['username']}<span style="width:2px;height:10px;text-indent:-99999px;display:inline-block;"></span></div>			<div style="position: relative;padding-bottom:2px">
+							
+							<div id="bigbt44314" style="float:left;padding-top:10px">
+                    	<div class="btg"></div>
+						    
+<?php 
+					if($_SESSION['token'] && $_SESSION['wecha_id']){
+					?>
+						<a href="__URL__/vote/vid/{$vo1['id']}/id/{$vo1['vid']}"><button meid="{$vo1['id']}号 {$vo1['username']}" class="btn" type="button">投票</button></a>
+					<?php
+					}else{
+					?>
+						<button meid="{$vo1['id']}号 {$vo1['username']}" onclick="loaddzp()" class="btn" type="button">投票</button>
+					<?php
+					}
+					?>
+
+
+							<span class="count" meid="{$vo1['username']}">{$vo1['ticket']}</span><span class="p" style="font-size:1.1em;padding-left:2px;">票</span></div>
+		
+							<div style="float:right;padding-top:10px">
+							<button onclick="shareurl();" class="btn" type="button" style="width:100px">♥为Ta拉票</button></div><div style="clear:both"></div>
+						</div>
+					</div>
+					
+				</ul>
+			
+				 <a href="#inline_content{$vo1['id']}" id="light{$vo1['id']}" style="display:none"></a>
+
+				<a  style="padding: 0px;margin: 0px;margin-bottom:-1px;" href="javascript:void(0);" onclick="showBig({$vo1['id']},'{$vo1['picurl']}')"><img class="small" style="border-width: 5px 5px 0px; border-top-style: solid; border-right-style: solid; border-left-style: solid; border-top-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-left-color: rgb(255, 255, 255); width: 135px;" src="{$vo1['picurl']}"></a>
+				<!--100以内-->
+				
+				
+				<div class="name" style="padding: 0px 5px; position: relative; top: -4px; width: 135px; background: rgb(255, 255, 255);"><span style="width: 135px; z-index: 2; color: rgb(146, 144, 145); height: 32px; font-size: 1.3em; line-height: 32px; display: inline-block; text-align: center; overflow: hidden; background: rgb(241, 241, 241);">{$vo1['num']}号 {$vo1['username']}</span></div>
+				
+				<div class="btn-wrap btn-wrap{$vo1['id']}" style="width: 135px; padding: 5px; margin: -4px 0px 0px; height: 29px; position: relative; background: rgb(255, 255, 255);">
+					<div class="btg"></div>
+
+					
+
+					
+					<?php 
+					if($_SESSION['token'] && $_SESSION['wecha_id']){
+					?>
+						<a href="__URL__/vote/vid/{$vo1['id']}/id/{$vo1['vid']}"><button meid="{$vo1['id']}号 {$vo1['username']}" class="btn" type="button">投票</button></a>
+					<?php
+					}else{
+					?>
+						<button meid="{$vo1['id']}号 {$vo1['username']}" onclick="loaddzp()" class="btn" type="button">投票</button>
+					<?php
+					}
+					?>
+
+
+
+					<span class="count" meid="{$vo1['id']}号 {$vo1['username']}">{$vo1['ticket']}</span><span class="p" style="font-size:1.1em;padding-left:2px;">票</span></div>
+				</div>
+  </volist>
+</div>
+
+
+<div id="page_loading">
+		<img src="http://cdn3.lbstatic.nu/assets/ajax-loader-fb-b30c47c4cfb5651819070c9c1e559ead.gif" alt="page loading">
+		<span style="margin-top: 15px;font-size:1.4em">...给力加载中...</span>
+</div>
+
+
+<div id="next_page" style="text-align: center;">
+	<!-- 获取下一页的页数 -->
+	<?php 
+		if( $currentPage >= $totalPages   ){
+	?>
+		<a hehe="" class="number"></a>
+	<?php
+	}else{
+	?>
+		<a hehe="__URL__/pageData/id/<?php echo $_GET['id'];?>/<?php echo C('VAR_PAGE');?>/<?php echo $currentPage+1;?>" class="number"></a>
+	<?php
+		}
+    ?>
+</div>
+
+
+
+</div>
+
+

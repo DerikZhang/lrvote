@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="gbk">
+		<title>{$Think.config.sitename}_提示</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="format-detection" content="telephone=no">
+		<script language="javascript">
+		function JumpUrl(){
+			location='javascript:history.go(-1);';
+		}
+		</script>
+	</head>
+	<body>
+		<link rel="stylesheet" href="__PUBLIC__/yhd/v3.base.css">
+		<link rel="stylesheet" href="__PUBLIC__/yhd/add.css">
+		<link type="text/css" href="__PUBLIC__/yhd/popupTips.css" rel="stylesheet"/>
+		<link href="__PUBLIC__/yhd/mobile.min.css?v=20140331" type="text/css" rel="stylesheet" />
+		<!--footer end-->
+		<script type="text/javascript" src="__PUBLIC__/yhd/zepto.min.js"></script>
+		<script type="text/javascript" src="__PUBLIC__/yhd/v2-mobile.min.js"></script>
+		<script type="text/javascript" src="__PUBLIC__/yhd/zepto.cookie.min.js?v=20140331"></script>
+		<script type="text/javascript" src="__PUBLIC__/yhd/tracker.js?v=20140331"></script>
+		<script type="text/javascript" src="__PUBLIC__/yhd/yalert.js?v=20140331"></script>
+		<script type="text/javascript">
+		if(YAlert){
+		new YAlert({
+		title : '提示信息',
+		content : '<?php 
+if(!empty($error)){
+	echo $error;
+}else{
+	if(!empty($message)){ 
+		echo $message;
+	}	
+}	
+					?>',
+		show : true,
+		close : {
+		text : '关闭',
+		<?php if($jumpUrl !== 'nojump'){  ?>
+		click : function(){
+		  location.href='<?php echo($jumpUrl); ?>';
+		}
+		<?php }?>
+
+		}
+		});
+		}
+		</script>
+	</body>
+</html>

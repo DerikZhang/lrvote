@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>{$Think.config.sitename}-登陆</title>
+
+  <link href="__PUBLIC__/css/style.css" rel="stylesheet" media="screen">
+
+  <script src="__PUBLIC__/js/jquery-1.4.4.min.js"></script>
+
+  <script>
+
+  $(function(){
+
+  var _select=$('.select');
+
+    _select.click(function(){
+
+      $(this).find('ul').show();
+
+    })
+
+
+
+    $('.select li').click(function(){
+
+      var eid=$(this).attr('eid');
+
+      var eid_input='<input type="hidden" value="'+eid+'" name="eid" id="eid" \/>';
+
+      var _eidhtml=$(this).html();
+
+      $('.eid_value').html(_eidhtml);
+
+      if($('#eid').attr('value')){
+
+        $('#eid').attr('value',eid);  
+
+      }
+
+      
+
+    })
+
+    $('.select ul').hover(function(){
+
+      
+
+    },function(){
+
+      $(this).hide();
+
+    })
+
+  })
+
+</script>
+
+</head>
+
+<body style="background: #dfdfdf;">
+
+  <div class="login">
+
+    <div class="login_form">
+
+
+
+      <div class="form_info">
+
+
+
+        <form class="form-signin" action="/Member/index.php/Public/checkLogin/" method="post">
+
+          <div class="field">
+
+            <label>用户名：</label>
+
+            <input type="text" name="admin_name" class="text" size="20"></div>
+
+          <div class="field">
+
+            <label>密 码：&nbsp;&nbsp;</label>
+
+            <input type="password" name="password" class="text" size="20"></div>
+
+<!--           <div class="field">
+
+            <label>验证码：</label>
+
+            <input type="text" name="verify" class="text" size="10">
+
+            <cite class="yzm"><img id="verifyImg" SRC="__URL__/verify/" onClick="fleshVerify()" border="0" alt="点击刷新验证码" style="cursor:pointer" align="absmiddle"></cite>
+
+          </div> -->
+
+          <div class="field">
+
+            <label></label>
+
+            <button class="button" style="margin-left:50px;_margin-left:48px" onclick="javascript:window.location='main.html'"></button>
+
+
+
+          </div>
+
+
+
+        </form>
+
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+  
+
+<script language="JavaScript">
+
+<!--
+
+function fleshVerify(type){ 
+
+  //重载验证码
+
+  var timenow = new Date().getTime();
+
+  if (type){
+
+    $('#verifyImg').attr("src", '__URL__/verify/adv/1/'+timenow);
+
+  }else{
+
+    $('#verifyImg').attr("src", '__URL__/verify/'+timenow);
+
+  }
+
+}
+
+//-->
+
+</script>
+
+
+
+</body>
+
+</html>
